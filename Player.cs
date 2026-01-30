@@ -3,9 +3,9 @@ using System;
 
 public partial class Player : CharacterBody3D
 {
-	public const float Speed = 5.0f;
-	public const float JumpVelocity = 4.5f;
-	public const float Sensitivity = 0.01f;
+	public const float Speed = 1.5f;
+	public const float JumpVelocity = 1.3f;
+	public const float Sensitivity = 0.005f;
 
 	protected Node3D Head => GetNode<Node3D>("Head");
 	protected Camera3D Camera => GetNode<Node3D>("Head")
@@ -50,7 +50,7 @@ public partial class Player : CharacterBody3D
 		// Get the input direction and handle the movement/deceleration.
 		// As good practice, you should replace UI actions with custom gameplay actions.
 		Vector2 inputDir = Input.GetVector("left", "right", "forward", "back");
-		Vector3 direction = (Transform.Basis * new Vector3(inputDir.X, 0, inputDir.Y)).Normalized();
+		Vector3 direction = (Head.Transform.Basis * new Vector3(inputDir.X, 0, inputDir.Y)).Normalized();
 		if (direction != Vector3.Zero)
 		{
 			velocity.X = direction.X * Speed;
