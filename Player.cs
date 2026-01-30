@@ -3,23 +3,35 @@ using System;
 
 public partial class Player : CharacterBody3D
 {
+	#region Constants
+	// Movement consts
 	public const float WalkSpeed = 1.5f;
 	public const float SprintSpeed = 2.2f;
 	public const float JumpVelocity = 2.0f;
 	public const float Sensitivity = 0.003f;
 
-	// Bob variables
+	// Bob consts
 	public const float BobFrequency = 8.0f;
 	public const float BobAmplitude = 0.05f;
 
-	private float _bobTime = 0.0f;	
-	private float _speed = WalkSpeed;
+	// fov consts
+	public const float BaseFOV = 75.0f;
+	public const float FOVChange = 1.5f;
+	#endregion
 
+    #region Variables
+	private float _bobTime = 0.0f;
+	private float _speed = WalkSpeed;
+	#endregion
+
+
+	#region Nodes
 	protected Node3D Head => GetNode<Node3D>("Head");
 	protected Camera3D Camera => GetNode<Node3D>("Head")
             .GetNode<Camera3D>("Camera3D");
 
 	protected Vector3 Gravity => GetGravity() * 0.66f;
+	#endregion
 	
 	public override void _Ready()
 	{
@@ -52,13 +64,15 @@ public partial class Player : CharacterBody3D
 			velocity += Gravity * (float)delta;
 		}
 
+		#region Movement
+
 		// Handle Jump.
 		if (Input.IsActionJustPressed("ui_accept") && IsOnFloor())
 		{
 			velocity.Y = JumpVelocity;
 		}
 
-		if( Input.IsActionPressed("sprint"))
+		if (Input.IsActionPressed("sprint"))
 		{
 			_speed = SprintSpeed;
 		}
@@ -66,6 +80,7 @@ public partial class Player : CharacterBody3D
 		{
 			_speed = WalkSpeed;
 		}
+		
 
 		// Get the input direction and handle the movement/deceleration.
 		// As good practice, you should replace UI actions with custom gameplay actions.
@@ -89,8 +104,9 @@ public partial class Player : CharacterBody3D
 			velocity.X = (float)Mathf.Lerp(Velocity.X, direction.X * _speed, delta * 2.0f);
 			velocity.Z = (float)Mathf.Lerp(Velocity.Z, direction.Z * _speed, delta * 2.0f);
 		}
-		
+
 		Velocity = velocity;
+		#endregion
 		
 
 
@@ -103,6 +119,13 @@ public partial class Player : CharacterBody3D
 		Camera.Transform = lookTransform;
 		#endregion
 
+		#region FOV Change
+		var velocityClamped = Mathf.Clamp(velocityLength, 0.5, SprintSpeed * 2);
+		var targetFOV = BaseFOV + FOVChange * velocityClamped;
+		Camera.Fov = (float)Mathf.Lerp(Camera.Fov, targetFOV, (float)delta * 8.0f);
+		#endregion
+
+		// Move the character.
 		MoveAndSlide();
 
 	}
