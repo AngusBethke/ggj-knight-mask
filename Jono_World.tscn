@@ -11,31 +11,71 @@ metallic_specular = 0.0
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bcbcq"]
 albedo_color = Color(0.51383567, 0.0021119774, 0.75869745, 1)
 
-[sub_resource type="Gradient" id="Gradient_3ga38"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3ga38"]
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_7e7f2"]
-gradient = SubResource("Gradient_3ga38")
+[sub_resource type="Curve" id="Curve_7e7f2"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.1554054, 0.9887641), 0.48909432, 0.48909432, 0, 0, Vector2(0.5472973, 0.64044946), -1.0452648, -1.0452648, 0, 0, Vector2(1, 0), -1.7402669, 0.0, 0, 0]
+point_count = 4
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_tlwt5"]
-lifetime_randomness = 0.54
+[sub_resource type="CurveTexture" id="CurveTexture_qynta"]
+curve = SubResource("Curve_7e7f2")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_km2i6"]
+angle_min = -720.0
+angle_max = 487.7
 direction = Vector3(0, 1, 0)
-spread = 15.0
-flatness = 1.0
-initial_velocity_min = 0.5
-initial_velocity_max = 1.0
+spread = 5.0
+initial_velocity_min = 0.099999994
+initial_velocity_max = 0.099999994
 gravity = Vector3(0, 0, 0)
-scale_min = 0.19999999
-scale_max = 0.79999995
-color_ramp = SubResource("GradientTexture1D_7e7f2")
-turbulence_noise_speed_random = 0.0
+scale_min = 0.099999994
+scale_curve = SubResource("CurveTexture_qynta")
+color = Color(1, 0.3764706, 0, 1)
+color_ramp = SubResource("GradientTexture1D_3ga38")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aqk2v"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8irxy"]
+transparency = 1
+blend_mode = 1
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 0, 0, 1)
 
-[sub_resource type="BoxMesh" id="BoxMesh_036b0"]
-material = SubResource("StandardMaterial3D_aqk2v")
-size = Vector3(0.01, 0.01, 0.01)
+[sub_resource type="BoxMesh" id="BoxMesh_6h23g"]
+material = SubResource("StandardMaterial3D_8irxy")
+size = Vector3(0.05, 0.05, 0.05)
+
+[sub_resource type="Gradient" id="Gradient_s7pub"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_t306i"]
+gradient = SubResource("Gradient_s7pub")
+
+[sub_resource type="Curve" id="Curve_4dwsv"]
+_data = [Vector2(0, 0.06741583), 0.0, 0.0, 0, 0, Vector2(0.35135138, 0.73033714), 0.0, 0.0, 0, 0, Vector2(0.76351357, 0.3595506), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_b4otg"]
+curve = SubResource("Curve_4dwsv")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_l4m7b"]
+direction = Vector3(0, 1, 0)
+spread = 0.8
+initial_velocity_min = 0.099999994
+initial_velocity_max = 0.099999994
+gravity = Vector3(0, 0, 0)
+scale_min = 0.5
+scale_max = 0.7
+scale_curve = SubResource("CurveTexture_b4otg")
+color = Color(0.007999355, 0.17202824, 0.46751368, 1)
+color_ramp = SubResource("GradientTexture1D_t306i")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3y8rl"]
+render_priority = -1
+transparency = 1
+blend_mode = 3
+vertex_color_use_as_albedo = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_ok3q7"]
+material = SubResource("StandardMaterial3D_3y8rl")
+radius = 0.02
+height = 0.1
 
 [node name="Jono_World" type="Node3D" unique_id=1672319449]
 
@@ -244,12 +284,35 @@ size = Vector3(1, 1, 0.1)
 material = ExtResource("3_qynta")
 
 [node name="Particle System" type="Node3D" parent="." unique_id=1832953457]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9061136, 2.8784256, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6245925, 1.2910198, 0.49932235)
 
-[node name="Torch-Fire" type="GPUParticles3D" parent="Particle System" unique_id=43027351]
-amount = 56
-lifetime = 0.060000000000000005
-speed_scale = 0.1
-randomness = 0.77
-process_material = SubResource("ParticleProcessMaterial_tlwt5")
-draw_pass_1 = SubResource("BoxMesh_036b0")
+[node name="Torch" type="Node3D" parent="Particle System" unique_id=1176736981]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.026147604, 0)
+
+[node name="Torch-Fire" type="GPUParticles3D" parent="Particle System/Torch" unique_id=1921586870]
+amount = 500
+lifetime = 2.0
+speed_scale = 2.0
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_km2i6")
+draw_pass_1 = SubResource("BoxMesh_6h23g")
+
+[node name="Torch-Smoke" type="GPUParticles3D" parent="Particle System/Torch" unique_id=188217752]
+amount = 25
+lifetime = 2.5
+speed_scale = 2.0
+process_material = SubResource("ParticleProcessMaterial_l4m7b")
+draw_pass_1 = SubResource("SphereMesh_ok3q7")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Particle System/Torch" unique_id=1387630843]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.016917825, 0)
+light_color = Color(0.8343336, 0.54252225, 1.1551381e-06, 1)
+
+[node name="Dragon Fire" type="Node3D" parent="Particle System" unique_id=838257086]
+
+[node name="Castle Wall Torches" type="Node3D" parent="." unique_id=1373801302]
+transform = Transform3D(0.81915206, 0.57357645, 0, -0.57357645, 0.81915206, 0, 0, 0, 1, 1.5602257, 1.2, 0.5)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Castle Wall Torches" unique_id=346238003]
+radius = 0.05
+height = 0.2
