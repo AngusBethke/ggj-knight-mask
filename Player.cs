@@ -35,8 +35,9 @@ public partial class Player : CharacterBody3D
 			{
 				Head.RotateY(-mouseMotionEvent.Relative.X * Sensitivity);
 				Camera.RotateX(-mouseMotionEvent.Relative.Y * Sensitivity);
-				float cameraRotationX = Mathf.Clamp(Camera.Rotation.X,Mathf.DegToRad(-40),Mathf.DegToRad(60));
-				Camera.Rotation = new Vector3(cameraRotationX, Camera.Rotation.Y, Camera.Rotation.Z);
+				float cameraRotationX = Mathf.Clamp(Camera.Rotation.X, Mathf.DegToRad(-40), Mathf.DegToRad(60));
+				float cameraRotationY = Mathf.Clamp(Camera.Rotation.Y, Mathf.DegToRad(-40), Mathf.DegToRad(40));
+				Camera.Rotation = new Vector3(cameraRotationX, cameraRotationY, Camera.Rotation.Z);
 			}
 		}
     }
@@ -70,32 +71,37 @@ public partial class Player : CharacterBody3D
 		// As good practice, you should replace UI actions with custom gameplay actions.
 		Vector2 inputDir = Input.GetVector("left", "right", "forward", "back");
 		Vector3 direction = (Head.Transform.Basis * new Vector3(inputDir.X, 0, inputDir.Y)).Normalized();
-		if (direction != Vector3.Zero)
+		if (IsOnFloor())
 		{
-			velocity.X = direction.X * _speed;
-			velocity.Z = direction.Z * _speed;
+			if (direction != Vector3.Zero)
+			{
+				velocity.X = direction.X * _speed;
+				velocity.Z = direction.Z * _speed;
+			}
+			else
+			{
+				velocity.X = (float)Mathf.Lerp(Velocity.X, direction.X * _speed, delta * 10.0f);
+				velocity.Z = (float)Mathf.Lerp(Velocity.Z, direction.Z * _speed, delta * 10.0f);
+			}
 		}
 		else
 		{
-			velocity.X = Mathf.MoveToward(Velocity.X, 0, _speed);
-			velocity.Z = Mathf.MoveToward(Velocity.Z, 0, _speed);
-		}
-
-		Velocity = velocity;
-
-		float isOnFloor = IsOnFloor() ? 1 : 0;
-
-		var velocityLength = velocity.Length();
-        if(velocityLength > 0 && isOnFloor > 0)
-		{
-			_bobTime += (float)delta * velocityLength * isOnFloor;
+			velocity.X = (float)Mathf.Lerp(Velocity.X, direction.X * _speed, delta * 2.0f);
+			velocity.Z = (float)Mathf.Lerp(Velocity.Z, direction.Z * _speed, delta * 2.0f);
 		}
 		
-	
+		Velocity = velocity;
+		
 
+
+		#region Head Bobbing
+		float isOnFloor = IsOnFloor() ? 1 : 0;
+		var velocityLength = velocity.Length();
+		_bobTime += (float)delta * velocityLength * isOnFloor;
 		Transform3D lookTransform = Camera.Transform;
 		lookTransform.Origin = HeadBob(_bobTime);
 		Camera.Transform = lookTransform;
+		#endregion
 
 		MoveAndSlide();
 
