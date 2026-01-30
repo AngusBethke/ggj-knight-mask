@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://68avu4uvsd05"]
 
-[ext_resource type="Material" uid="uid://ciarlg67u1wne" path="res://Castle_Maze_Blocker.tres" id="1_3ga38"]
-[ext_resource type="Script" uid="uid://b0xv7hodkk234" path="res://MainMenu.cs" id="1_qynta"]
-[ext_resource type="Material" uid="uid://jo8jjdsqm83" path="res://Castle_Interior_Wall.tres" id="2_7e7f2"]
-[ext_resource type="Material" uid="uid://balj71yfouxvd" path="res://Castle_Turret_Wall.tres" id="3_qynta"]
-[ext_resource type="Script" uid="uid://c8mf2a1xa7uyf" path="res://Player.cs" id="4_7e7f2"]
+[ext_resource type="Script" uid="uid://b0xv7hodkk234" path="res://MainMenu.cs" id="1_5gtpt"]
+[ext_resource type="Material" uid="uid://ciarlg67u1wne" path="res://Castle_Maze_Blocker.tres" id="2_4pthx"]
+[ext_resource type="Material" uid="uid://jo8jjdsqm83" path="res://Castle_Interior_Wall.tres" id="3_g67ou"]
+[ext_resource type="Material" uid="uid://balj71yfouxvd" path="res://Castle_Turret_Wall.tres" id="4_2o7le"]
+[ext_resource type="Script" uid="uid://c8mf2a1xa7uyf" path="res://Player.cs" id="5_rkt7w"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2dftf"]
 albedo_color = Color(0, 0.8862745, 0.13725491, 1)
@@ -51,7 +51,7 @@ tonemap_mode = 2
 glow_enabled = true
 
 [node name="MainMenu" type="Node2D" unique_id=525812452]
-script = ExtResource("1_qynta")
+script = ExtResource("1_5gtpt")
 
 [node name="Jono_World" type="Node3D" parent="." unique_id=1672319449]
 
@@ -128,7 +128,7 @@ size = Vector3(1, 1, 0.1)
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.004572153, -0.0017104149, -3.5073004)
 use_collision = true
 size = Vector3(1, 1, 0.1)
-material = ExtResource("1_3ga38")
+material = ExtResource("2_4pthx")
 
 [node name="1m-Wall5" type="CSGBox3D" parent="Jono_World/Maze Walls" unique_id=1852490132]
 transform = Transform3D(0.00017471706, 0, -0.99999976, 0, 1, 0, 0.99999976, 0, 0.00017471706, -1.0097911, -0.0017104149, -6.506691)
@@ -202,43 +202,43 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 2, 2.4997835)
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.0038194656, -0.0029160976, -0.004352331)
 use_collision = true
 size = Vector3(2.9935913, 1, 0.1)
-material = ExtResource("2_7e7f2")
+material = ExtResource("3_g67ou")
 
 [node name="2m-Wall2" type="CSGBox3D" parent="Jono_World/Castle Interior Walls" unique_id=1097741085]
 transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 0.99618053, -0.0029160976, 1.4924433)
 use_collision = true
 size = Vector3(2, 1, 0.1)
-material = ExtResource("2_7e7f2")
+material = ExtResource("3_g67ou")
 
 [node name="2m-Wall4" type="CSGBox3D" parent="Jono_World/Castle Interior Walls" unique_id=1863915178]
 transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 0.99618053, -0.0029160976, -1.5075567)
 use_collision = true
 size = Vector3(2, 1, 0.1)
-material = ExtResource("2_7e7f2")
+material = ExtResource("3_g67ou")
 
 [node name="5m-Wall2" type="CSGBox3D" parent="Jono_World/Castle Interior Walls" unique_id=367368329]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.9961805, -0.0029160976, 0.49209428)
 use_collision = true
 size = Vector3(2.00029, 1, 0.1)
-material = ExtResource("2_7e7f2")
+material = ExtResource("3_g67ou")
 
 [node name="5m-Wall3" type="CSGBox3D" parent="Jono_World/Castle Interior Walls" unique_id=1100263349]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.9961805, -0.0029160976, -0.99955726)
 use_collision = true
 size = Vector3(1, 1, 0.1)
-material = ExtResource("2_7e7f2")
+material = ExtResource("3_g67ou")
 
 [node name="5m-Wall4" type="CSGBox3D" parent="Jono_World/Castle Interior Walls" unique_id=285269962]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4961805, -0.0029160976, -0.5075567)
 use_collision = true
 size = Vector3(1, 1, 0.1)
-material = ExtResource("2_7e7f2")
+material = ExtResource("3_g67ou")
 
 [node name="5m-Wall5" type="CSGBox3D" parent="Jono_World/Castle Interior Walls" unique_id=2123982950]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4961805, -0.0029160976, -1.5075567)
 use_collision = true
 size = Vector3(1, 1, 0.1)
-material = ExtResource("2_7e7f2")
+material = ExtResource("3_g67ou")
 
 [node name="Castle Turret Walls" type="Node3D" parent="Jono_World" unique_id=163007957]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -0.00021648407)
@@ -246,19 +246,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -0.00021648407)
 [node name="5m-Wall6" type="CSGBox3D" parent="Jono_World/Castle Turret Walls" unique_id=2095305407]
 use_collision = true
 size = Vector3(1, 1, 0.1)
-material = ExtResource("3_qynta")
+material = ExtResource("4_2o7le")
 
 [node name="5m-Wall7" type="CSGBox3D" parent="Jono_World/Castle Turret Walls" unique_id=1358265184]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.5, 0, 0.5)
 use_collision = true
 size = Vector3(1, 1, 0.1)
-material = ExtResource("3_qynta")
+material = ExtResource("4_2o7le")
 
 [node name="5m-Wall8" type="CSGBox3D" parent="Jono_World/Castle Turret Walls" unique_id=1214286658]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.5, 0, 0.5)
 use_collision = true
 size = Vector3(1, 1, 0.1)
-material = ExtResource("3_qynta")
+material = ExtResource("4_2o7le")
 
 [node name="Node3D" type="Node3D" parent="Jono_World" unique_id=1832953457]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9061136, 2.8784256, 0)
@@ -273,7 +273,7 @@ draw_pass_1 = SubResource("BoxMesh_036b0")
 
 [node name="Player" type="CharacterBody3D" parent="Jono_World" unique_id=1321096557]
 transform = Transform3D(0.3, 6.0488073e-05, -3.765313e-05, -6.0483926e-05, 0.3, 3.304548e-05, 3.7659793e-05, -3.3037886e-05, 0.3, 1.7824798, 0.8706565, 11.221754)
-script = ExtResource("4_7e7f2")
+script = ExtResource("5_rkt7w")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Jono_World/Player" unique_id=590892280]
 transform = Transform3D(1, -2.741718e-11, 2.910383e-11, 2.6631142e-11, 1, -2.910383e-11, 2.910383e-11, 1.4551915e-11, 1, -0.00018368941, 0.9110524, 0.0001001358)
