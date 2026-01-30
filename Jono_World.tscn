@@ -218,6 +218,34 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.0
 use_collision = true
 size = Vector3(5.000366, 1, 0.1)
 
+[node name="Castle Wall Torches" type="Node3D" parent="Maze Walls" unique_id=1373801302]
+transform = Transform3D(0.81915206, 0.57357645, 0, -0.57357645, 0.81915206, 0, 0, 0, 1, 2.0602257, 0.20000005, -6.4997835)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Maze Walls/Castle Wall Torches" unique_id=346238003]
+radius = 0.05
+height = 0.2
+
+[node name="Castle Wall Torches2" type="Node3D" parent="Maze Walls" unique_id=1991463359]
+transform = Transform3D(0.81915206, 0.57357645, 0, -0.57357645, 0.81915206, 0, 0, 0, 1, 2.06, 0.2, -4.5)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Maze Walls/Castle Wall Torches2" unique_id=2133994449]
+radius = 0.05
+height = 0.2
+
+[node name="Castle Wall Torches3" type="Node3D" parent="Maze Walls" unique_id=1238156604]
+transform = Transform3D(-3.5806274e-08, -2.5071824e-08, -1, -0.57357645, 0.81915206, 0, 0.81915206, 0.57357645, -4.371139e-08, -1.5019999, 0.20000005, -5.944257)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Maze Walls/Castle Wall Torches3" unique_id=854372535]
+radius = 0.05
+height = 0.2
+
+[node name="Castle Wall Torches4" type="Node3D" parent="Maze Walls" unique_id=1206381795]
+transform = Transform3D(-3.5806274e-08, -2.5071824e-08, -1, -0.57357645, 0.81915206, 0, 0.81915206, 0.57357645, -4.371139e-08, 0.5, 0.2, -5.94)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Maze Walls/Castle Wall Torches4" unique_id=1298674177]
+radius = 0.05
+height = 0.2
+
 [node name="Castle Interior Walls" type="Node3D" parent="." unique_id=1565131901]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 2, 2.4997835)
 
@@ -309,10 +337,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.016917825, 0)
 light_color = Color(0.8343336, 0.54252225, 1.1551381e-06, 1)
 
 [node name="Dragon Fire" type="Node3D" parent="Particle System" unique_id=838257086]
-
-[node name="Castle Wall Torches" type="Node3D" parent="." unique_id=1373801302]
-transform = Transform3D(0.81915206, 0.57357645, 0, -0.57357645, 0.81915206, 0, 0, 0, 1, 1.5602257, 1.2, 0.5)
-
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Castle Wall Torches" unique_id=346238003]
-radius = 0.05
-height = 0.2
