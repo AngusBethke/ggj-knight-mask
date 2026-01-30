@@ -3,13 +3,23 @@ using System;
 
 public partial class Player : CharacterBody3D
 {
-	public const float Speed = 1.5f;
-	public const float JumpVelocity = 1.3f;
-	public const float Sensitivity = 0.005f;
+	public const float WalkSpeed = 1.5f;
+	public const float SprintSpeed = 2.2f;
+	public const float JumpVelocity = 2.0f;
+	public const float Sensitivity = 0.003f;
+
+	// Bob variables
+	public const float BobFrequency = 8.0f;
+	public const float BobAmplitude = 0.05f;
+
+	private float _bobTime = 0.0f;	
+	private float _speed = WalkSpeed;
 
 	protected Node3D Head => GetNode<Node3D>("Head");
 	protected Camera3D Camera => GetNode<Node3D>("Head")
             .GetNode<Camera3D>("Camera3D");
+
+	protected Vector3 Gravity => GetGravity() * 0.66f;
 	
 	public override void _Ready()
 	{
@@ -38,7 +48,7 @@ public partial class Player : CharacterBody3D
 		// Add the gravity.
 		if (!IsOnFloor())
 		{
-			velocity += GetGravity() * (float)delta;
+			velocity += Gravity * (float)delta;
 		}
 
 		// Handle Jump.
@@ -47,22 +57,55 @@ public partial class Player : CharacterBody3D
 			velocity.Y = JumpVelocity;
 		}
 
+		if( Input.IsActionPressed("sprint"))
+		{
+			_speed = SprintSpeed;
+		}
+		else
+		{
+			_speed = WalkSpeed;
+		}
+
 		// Get the input direction and handle the movement/deceleration.
 		// As good practice, you should replace UI actions with custom gameplay actions.
 		Vector2 inputDir = Input.GetVector("left", "right", "forward", "back");
 		Vector3 direction = (Head.Transform.Basis * new Vector3(inputDir.X, 0, inputDir.Y)).Normalized();
 		if (direction != Vector3.Zero)
 		{
-			velocity.X = direction.X * Speed;
-			velocity.Z = direction.Z * Speed;
+			velocity.X = direction.X * _speed;
+			velocity.Z = direction.Z * _speed;
 		}
 		else
 		{
-			velocity.X = Mathf.MoveToward(Velocity.X, 0, Speed);
-			velocity.Z = Mathf.MoveToward(Velocity.Z, 0, Speed);
+			velocity.X = Mathf.MoveToward(Velocity.X, 0, _speed);
+			velocity.Z = Mathf.MoveToward(Velocity.Z, 0, _speed);
 		}
 
 		Velocity = velocity;
+
+		float isOnFloor = IsOnFloor() ? 1 : 0;
+
+		var velocityLength = velocity.Length();
+        if(velocityLength > 0 && isOnFloor > 0)
+		{
+			_bobTime += (float)delta * velocityLength * isOnFloor;
+		}
+		
+	
+
+		Transform3D lookTransform = Camera.Transform;
+		lookTransform.Origin = HeadBob(_bobTime);
+		Camera.Transform = lookTransform;
+
 		MoveAndSlide();
+
+	}
+
+	private static Vector3 HeadBob(float time)
+	{
+		var pos = Vector3.Zero;
+		pos.Y = Mathf.Sin(time * BobFrequency) * BobAmplitude;
+		pos.X = Mathf.Cos(time * BobFrequency / 2) * BobAmplitude;
+		return pos;
 	}
 }
