@@ -1,0 +1,249 @@
+[gd_scene format=3 uid="uid://68avu4uvsd05"]
+
+[ext_resource type="Material" uid="uid://ciarlg67u1wne" path="res://Castle_Maze_Blocker.tres" id="1_3ga38"]
+[ext_resource type="Material" uid="uid://jo8jjdsqm83" path="res://Castle_Interior_Wall.tres" id="2_7e7f2"]
+[ext_resource type="Material" uid="uid://balj71yfouxvd" path="res://Castle_Turret_Wall.tres" id="3_qynta"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2dftf"]
+albedo_color = Color(0, 0.8862745, 0.13725491, 1)
+metallic_specular = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bcbcq"]
+albedo_color = Color(0.51383567, 0.0021119774, 0.75869745, 1)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_tlwt5"]
+lifetime_randomness = 0.54
+direction = Vector3(0, 1, 0)
+spread = 15.0
+flatness = 1.0
+initial_velocity_min = 0.5
+initial_velocity_max = 1.0
+gravity = Vector3(0, 0, 0)
+turbulence_noise_speed_random = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aqk2v"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 0, 0, 1)
+emission_enabled = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_036b0"]
+material = SubResource("StandardMaterial3D_aqk2v")
+size = Vector3(0.01, 0.01, 0.01)
+
+[node name="Jono_World" type="Node3D" unique_id=1672319449]
+
+[node name="Floor" type="CSGBox3D" parent="." unique_id=1866095345]
+material_override = SubResource("StandardMaterial3D_2dftf")
+use_collision = true
+size = Vector3(50, 1, 50)
+
+[node name="Maze Walls" type="Node3D" parent="." unique_id=1737450442]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, 6.9997835)
+
+[node name="6m-Wall" type="CSGBox3D" parent="Maze Walls" unique_id=1619031827]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.004572153, -0.0017104149, -0.007300377)
+use_collision = true
+size = Vector3(6, 1, 0.1)
+
+[node name="7m-Wall" type="CSGBox3D" parent="Maze Walls" unique_id=1902461783]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.99542785, -0.0017104149, -0.5073004)
+use_collision = true
+size = Vector3(7, 1, 0.1)
+
+[node name="1m-EndZoneWall" type="CSGBox3D" parent="Maze Walls" unique_id=1718473473]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49142784, -0.0017104149, -13.0073)
+use_collision = true
+size = Vector3(1, 1, 0.1)
+material = SubResource("StandardMaterial3D_bcbcq")
+
+[node name="2m-Wall" type="CSGBox3D" parent="Maze Walls" unique_id=346460473]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.9954278, -0.0017104149, -3.0073004)
+use_collision = true
+size = Vector3(2, 1, 0.1)
+
+[node name="1m-Wall" type="CSGBox3D" parent="Maze Walls" unique_id=1662442491]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 1.9954278, -0.0017104149, -4.5073004)
+use_collision = true
+size = Vector3(1, 1, 0.1)
+
+[node name="5m-Wall3" type="CSGBox3D" parent="Maze Walls" unique_id=605187493]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.9954278, -0.0017104149, -5.5074835)
+use_collision = true
+size = Vector3(5.000366, 1, 0.1)
+
+[node name="5m-Wall" type="CSGBox3D" parent="Maze Walls" unique_id=1676604787]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.0045722, -0.0017104149, -5.5073004)
+use_collision = true
+size = Vector3(5, 1, 0.1)
+
+[node name="2m-Wall2" type="CSGBox3D" parent="Maze Walls" unique_id=1574475687]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, -1.0045722, -0.0017104149, -3.0073004)
+use_collision = true
+size = Vector3(2, 1, 0.1)
+
+[node name="2m-Wall3" type="CSGBox3D" parent="Maze Walls" unique_id=504380589]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 0.99542785, -0.0017104149, -5.0073004)
+use_collision = true
+size = Vector3(2, 1, 0.1)
+
+[node name="1m-Wall2" type="CSGBox3D" parent="Maze Walls" unique_id=319162508]
+transform = Transform3D(-4.3711385e-08, 0, 0.9999999, 0, 1, 0, -0.9999999, 0, -4.3711385e-08, -0.008572161, -0.0017104149, -4.5073004)
+use_collision = true
+size = Vector3(1, 1, 0.1)
+
+[node name="1m-Wall3" type="CSGBox3D" parent="Maze Walls" unique_id=727944840]
+transform = Transform3D(-0.99999976, 0, -8.742276e-08, 0, 1, 0, 8.742276e-08, 0, -0.99999976, -0.50457215, -0.0017104149, -4.0033007)
+use_collision = true
+size = Vector3(1, 1, 0.1)
+
+[node name="1m-Wall4" type="CSGBox3D" parent="Maze Walls" unique_id=1600456350]
+transform = Transform3D(-4.3711378e-08, 0, -0.99999976, 0, 1, 0, 0.99999976, 0, -4.3711378e-08, -1.0045722, -0.0017104149, -4.5073004)
+use_collision = true
+size = Vector3(1, 1, 0.1)
+
+[node name="1m-BlockerWall2" type="CSGBox3D" parent="Maze Walls" unique_id=248633500]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.004572153, -0.0017104149, -3.5073004)
+use_collision = true
+size = Vector3(1, 1, 0.1)
+material = ExtResource("1_3ga38")
+
+[node name="1m-Wall5" type="CSGBox3D" parent="Maze Walls" unique_id=1852490132]
+transform = Transform3D(0.00017471706, 0, -0.99999976, 0, 1, 0, 0.99999976, 0, 0.00017471706, -1.0097911, -0.0017104149, -6.506691)
+use_collision = true
+size = Vector3(1, 1, 0.1)
+
+[node name="1m-Wall6" type="CSGBox3D" parent="Maze Walls" unique_id=1816396891]
+transform = Transform3D(0.99999964, 0, 0.00017464155, 0, 1, 0, -0.00017464155, 0, 0.99999964, -1.5045722, -0.0017104149, -6.0073004)
+use_collision = true
+size = Vector3(1, 1, 0.1)
+
+[node name="1m-Wall7" type="CSGBox3D" parent="Maze Walls" unique_id=729839526]
+transform = Transform3D(-0.00017456606, 0, 0.99999964, 0, 1, 0, -0.99999964, 0, -0.00017456606, -0.013790846, -0.0017104149, -6.5068655)
+use_collision = true
+size = Vector3(1, 1, 0.1)
+
+[node name="1m-Wall8" type="CSGBox3D" parent="Maze Walls" unique_id=1343497743]
+transform = Transform3D(0.99999964, 0, 0.00017464155, 0, 1, 0, -0.00017464155, 0, 0.99999964, 0.4941522, -0.0017104149, -6.0073004)
+use_collision = true
+size = Vector3(1, 1, 0.1)
+
+[node name="1m-Wall9" type="CSGBox3D" parent="Maze Walls" unique_id=1879066214]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 0.99542785, -0.0017104149, -5.5073004)
+use_collision = true
+size = Vector3(1, 1, 0.1)
+
+[node name="1m-Wall10" type="CSGBox3D" parent="Maze Walls" unique_id=1991295010]
+transform = Transform3D(0.99999964, 0, 0.00017464155, 0, 1, 0, -0.00017464155, 0, 0.99999964, 0.49442786, -0.0017104149, -7.0073004)
+use_collision = true
+size = Vector3(1, 1, 0.1)
+
+[node name="1m-Wall11" type="CSGBox3D" parent="Maze Walls" unique_id=1348361662]
+transform = Transform3D(-0.00017456606, 0, 0.99999964, 0, 1, 0, -0.99999964, 0, -0.00017456606, 0.99542785, -0.0017104149, -6.5073004)
+use_collision = true
+size = Vector3(1, 1, 0.1)
+
+[node name="2m-Wall4" type="CSGBox3D" parent="Maze Walls" unique_id=2057015467]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, -1.0045722, -0.0017104149, -8.0073)
+use_collision = true
+size = Vector3(2, 1, 0.1)
+
+[node name="1m-Wall12" type="CSGBox3D" parent="Maze Walls" unique_id=741080667]
+transform = Transform3D(0.99999964, 0, 0.00017464155, 0, 1, 0, -0.00017464155, 0, 0.99999964, 1.4954278, -0.0017104149, -6.0073004)
+use_collision = true
+size = Vector3(1, 1, 0.1)
+
+[node name="1m-Wall13" type="CSGBox3D" parent="Maze Walls" unique_id=1580643457]
+transform = Transform3D(-0.00017456606, 0, 0.99999964, 0, 1, 0, -0.99999964, 0, -0.00017456606, 1.9954278, -0.0017104149, -6.5073004)
+use_collision = true
+size = Vector3(1, 1, 0.1)
+
+[node name="2m-Wall5" type="CSGBox3D" parent="Maze Walls" unique_id=600870774]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 1.9954278, -0.0017104149, -8.0073)
+use_collision = true
+size = Vector3(2, 1, 0.1)
+
+[node name="6m-Wall2" type="CSGBox3D" parent="Maze Walls" unique_id=889250995]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.99542785, -0.0017104149, -10.0073)
+use_collision = true
+size = Vector3(6, 1, 0.1)
+
+[node name="5m-Wall4" type="CSGBox3D" parent="Maze Walls" unique_id=1453237576]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.004572153, -0.0017104149, -10.501198)
+use_collision = true
+size = Vector3(5.000366, 1, 0.1)
+
+[node name="Castle Interior Walls" type="Node3D" parent="." unique_id=1565131901]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 2, 2.4997835)
+
+[node name="5m-Wall" type="CSGBox3D" parent="Castle Interior Walls" unique_id=955354084]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.0038194656, -0.0029160976, -0.004352331)
+use_collision = true
+size = Vector3(2.9935913, 1, 0.1)
+material = ExtResource("2_7e7f2")
+
+[node name="2m-Wall2" type="CSGBox3D" parent="Castle Interior Walls" unique_id=1097741085]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 0.99618053, -0.0029160976, 1.4924433)
+use_collision = true
+size = Vector3(2, 1, 0.1)
+material = ExtResource("2_7e7f2")
+
+[node name="2m-Wall4" type="CSGBox3D" parent="Castle Interior Walls" unique_id=1863915178]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 0.99618053, -0.0029160976, -1.5075567)
+use_collision = true
+size = Vector3(2, 1, 0.1)
+material = ExtResource("2_7e7f2")
+
+[node name="5m-Wall2" type="CSGBox3D" parent="Castle Interior Walls" unique_id=367368329]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.9961805, -0.0029160976, 0.49209428)
+use_collision = true
+size = Vector3(2.00029, 1, 0.1)
+material = ExtResource("2_7e7f2")
+
+[node name="5m-Wall3" type="CSGBox3D" parent="Castle Interior Walls" unique_id=1100263349]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.9961805, -0.0029160976, -0.99955726)
+use_collision = true
+size = Vector3(1, 1, 0.1)
+material = ExtResource("2_7e7f2")
+
+[node name="5m-Wall4" type="CSGBox3D" parent="Castle Interior Walls" unique_id=285269962]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4961805, -0.0029160976, -0.5075567)
+use_collision = true
+size = Vector3(1, 1, 0.1)
+material = ExtResource("2_7e7f2")
+
+[node name="5m-Wall5" type="CSGBox3D" parent="Castle Interior Walls" unique_id=2123982950]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4961805, -0.0029160976, -1.5075567)
+use_collision = true
+size = Vector3(1, 1, 0.1)
+material = ExtResource("2_7e7f2")
+
+[node name="Castle Turret Walls" type="Node3D" parent="." unique_id=163007957]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -0.00021648407)
+
+[node name="5m-Wall6" type="CSGBox3D" parent="Castle Turret Walls" unique_id=2095305407]
+use_collision = true
+size = Vector3(1, 1, 0.1)
+material = ExtResource("3_qynta")
+
+[node name="5m-Wall7" type="CSGBox3D" parent="Castle Turret Walls" unique_id=1358265184]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.5, 0, 0.5)
+use_collision = true
+size = Vector3(1, 1, 0.1)
+material = ExtResource("3_qynta")
+
+[node name="5m-Wall8" type="CSGBox3D" parent="Castle Turret Walls" unique_id=1214286658]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.5, 0, 0.5)
+use_collision = true
+size = Vector3(1, 1, 0.1)
+material = ExtResource("3_qynta")
+
+[node name="Node3D" type="Node3D" parent="." unique_id=1832953457]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9061136, 2.8784256, 0)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Node3D" unique_id=43027351]
+amount = 56
+lifetime = 0.060000000000000005
+speed_scale = 0.1
+randomness = 0.77
+process_material = SubResource("ParticleProcessMaterial_tlwt5")
+draw_pass_1 = SubResource("BoxMesh_036b0")
