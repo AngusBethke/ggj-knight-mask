@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://duj1x0q1jcxih" path="res://scenes/Assets/castle_wall_door_closed.tscn" id="14_bn47f"]
 [ext_resource type="PackedScene" uid="uid://2ukhi1jgksr1" path="res://scenes/Assets/castle_wall_door_open.tscn" id="14_cv2qq"]
 [ext_resource type="PackedScene" uid="uid://d0tdrdv40c73v" path="res://scenes/Assets/castle_window_unlit.tscn" id="15_6a55o"]
-[ext_resource type="ArrayMesh" uid="uid://bw4p2788oy2ot" path="res://assets/sconce/sconce.obj" id="16_6a55o"]
+[ext_resource type="PackedScene" uid="uid://bj0rjb1x8hwfr" path="res://scenes/Assets/castle_window_orange_glow.tscn" id="15_ylhbm"]
 [ext_resource type="PackedScene" uid="uid://nqfrh2nyo6a4" path="res://scenes/Assets/castle_window.tscn" id="17_ylhbm"]
 [ext_resource type="PackedScene" uid="uid://5ae8vw3w0e8f" path="res://scenes/Building/light_fixtures.tscn" id="18_aheo6"]
 
@@ -27,9 +27,6 @@ script = ExtResource("6_7u0we")
 
 [node name="CastleWall9" parent="BaseCastle" unique_id=1900536914 instance=ExtResource("7_w03x8")]
 transform = Transform3D(-1, 0, -6.119594e-07, 0, 1, 0, 6.119594e-07, 0, -1, 4.000001, 0, -3.9999995)
-
-[node name="CastleWall9" parent="BaseCastle/CastleWall9" unique_id=195966187 instance=ExtResource("7_w03x8")]
-transform = Transform3D(-1, 0, -6.119594e-07, 0, 1, 0, 6.119594e-07, 0, -1, -1.7500057, 0, 5.999997)
 
 [node name="CastleWall23" parent="BaseCastle" unique_id=448451022 instance=ExtResource("7_w03x8")]
 transform = Transform3D(1.0971557e-05, 0, -1, 0, 1, 0, 1, 0, 1.0971557e-05, -1.0000458, 0, -13.00005)
@@ -468,17 +465,11 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2, 0
 [node name="CastleWindowUnlit13" parent="BaseCastle" unique_id=568920153 instance=ExtResource("15_6a55o")]
 transform = Transform3D(1, 0, -5.2453663e-07, 0, 1, 0, 5.2453663e-07, 0, 1, -1.9999992, 2, 4.7683716e-07)
 
-[node name="CastleWindowUnlit12" parent="BaseCastle" unique_id=1435384017 instance=ExtResource("15_6a55o")]
-transform = Transform3D(1, 0, -3.496911e-07, 0, 1, 0, 3.496911e-07, 0, 1, 4.61936e-07, 4, -1.9999998)
-
 [node name="CastleWindowUnlit17" parent="BaseCastle" unique_id=354766736 instance=ExtResource("15_6a55o")]
 transform = Transform3D(-7.4309355e-07, 0, -1, 0, 1, 0, 1, 0, -7.4309355e-07, 1.0000005, 2, 3.000001)
 
 [node name="CastleWindowUnlit16" parent="BaseCastle" unique_id=2123093138 instance=ExtResource("15_6a55o")]
 transform = Transform3D(-5.68248e-07, 0, -1, 0, 1, 0, 1, 0, -5.68248e-07, 1.0000007, 2, -0.99999964)
-
-[node name="CastleWindowUnlit15" parent="BaseCastle" unique_id=508796488 instance=ExtResource("15_6a55o")]
-transform = Transform3D(-3.934025e-07, 0, -1, 0, 1, 0, 1, 0, -3.934025e-07, 1.000001, 4, -1)
 
 [node name="CastleWindowUnlit14" parent="BaseCastle" unique_id=843233781 instance=ExtResource("15_6a55o")]
 transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 1.1920929e-07, 2, -2)
@@ -507,14 +498,12 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.99
 [node name="CastleWindow" parent="BaseCastle" unique_id=925311521 instance=ExtResource("17_ylhbm")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1, 0, -7)
 
+[node name="CastleWindowOrangeGlow" parent="BaseCastle" unique_id=204871536 instance=ExtResource("15_ylhbm")]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 1, 4, -1)
+
+[node name="CastleWindowOrangeGlow2" parent="BaseCastle" unique_id=195966187 instance=ExtResource("15_ylhbm")]
+transform = Transform3D(1, 0, 5.563627e-08, 0, 1, 0, -5.563627e-08, 0, 1, 0, 4, -2)
+
 [node name="Light Fixtures" parent="." unique_id=2014373685 instance=ExtResource("18_aheo6")]
 
 [node name="BuildingLighting" type="Node3D" parent="." unique_id=1863458945]
-
-[node name="Sconce" type="MeshInstance3D" parent="BuildingLighting" unique_id=1749779120]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9690785, -2.3841858e-07, 2.8368263)
-mesh = ExtResource("16_6a55o")
-
-[node name="Sconce2" type="MeshInstance3D" parent="BuildingLighting" unique_id=439293352]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3761225, -4.7683716e-07, 1.9283271)
-mesh = ExtResource("16_6a55o")

@@ -37,10 +37,12 @@ vertex_color_use_as_albedo = true
 material = SubResource("StandardMaterial3D_8irxy")
 size = Vector3(0.05, 0.05, 0.05)
 
-[sub_resource type="Gradient" id="Gradient_0ifks"]
+[sub_resource type="Curve" id="Curve_xgoli"]
+_data = [Vector2(0.35135138, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_t306i"]
-gradient = SubResource("Gradient_0ifks")
+[sub_resource type="CurveTexture" id="CurveTexture_ad567"]
+curve = SubResource("Curve_xgoli")
 
 [sub_resource type="Curve" id="Curve_nf77o"]
 _data = [Vector2(0, 0.06741583), 0.0, 0.0, 0, 0, Vector2(0.35135138, 0.73033714), 0.0, 0.0, 0, 0, Vector2(0.76351357, 0.3595506), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -58,19 +60,18 @@ gravity = Vector3(0, 0, 0)
 scale_min = 0.5
 scale_max = 0.7
 scale_curve = SubResource("CurveTexture_b4otg")
-color = Color(0.007999355, 0.17202824, 0.46751368, 1)
-color_ramp = SubResource("GradientTexture1D_t306i")
+alpha_curve = SubResource("CurveTexture_ad567")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3y8rl"]
 render_priority = -1
 transparency = 1
-blend_mode = 3
 vertex_color_use_as_albedo = true
+albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_h7l4t"]
 material = SubResource("StandardMaterial3D_3y8rl")
-radius = 0.02
-height = 0.1
+radius = 0.007
+height = 0.05
 
 [node name="Sconce" type="Node3D" unique_id=1807942481]
 
@@ -88,6 +89,7 @@ shape = SubResource("ConvexPolygonShape3D_btffa")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0028235912, 1.5238525, -0.25523442)
 
 [node name="Torch-Fire" type="GPUParticles3D" parent="Torch" unique_id=1774837778]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0077452958)
 amount = 500
 lifetime = 2.0
 speed_scale = 2.0
@@ -96,6 +98,7 @@ process_material = SubResource("ParticleProcessMaterial_xgoli")
 draw_pass_1 = SubResource("BoxMesh_ad567")
 
 [node name="Torch-Smoke" type="GPUParticles3D" parent="Torch" unique_id=6158241]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.091465, 0.0077452958)
 amount = 25
 lifetime = 2.5
 speed_scale = 2.0
@@ -103,6 +106,6 @@ process_material = SubResource("ParticleProcessMaterial_mfndg")
 draw_pass_1 = SubResource("SphereMesh_h7l4t")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Torch" unique_id=492286901]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.016917825, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07723081, 0)
 light_color = Color(0.8343336, 0.54252225, 1.1551381e-06, 1)
 shadow_enabled = true

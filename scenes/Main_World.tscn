@@ -28,7 +28,7 @@ fog_light_color = Color(0.18371075, 0.20317361, 0.2334575, 1)
 fog_light_energy = 0.0
 fog_density = 1.0
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.0615
+volumetric_fog_density = 0.015
 volumetric_fog_length = 256.0
 
 [node name="Main" type="Node3D" unique_id=917817897]

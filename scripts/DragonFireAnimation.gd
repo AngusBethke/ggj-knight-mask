@@ -1,5 +1,7 @@
 extends GPUParticles3D
 
+@export var light: SpotLight3D
+
 var move_start: Vector3
 @export var move_end: Vector3 = Vector3(endingX, endingY, endingZ)
 @export_range (0.0, 5.0, 0.1) var move_duration: float
@@ -18,6 +20,7 @@ var endingZ: float
 func _ready() -> void:
 	emitting = false
 	move_start = position
+	light.spot_range = 0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -27,9 +30,10 @@ func _process(delta: float) -> void:
 	if self.position == move_end:
 		position = move_start
 		emitting = false
+		light.spot_range = 0
 
 func _attackmove() -> void:
-	
+	light.spot_range = 7
 	emitting = true
 	var tween := create_tween()
 	tween.set_trans(Tween.TRANS_SINE)
