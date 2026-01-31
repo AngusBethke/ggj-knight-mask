@@ -3,7 +3,15 @@ using System;
 
 public partial class MainWorld : Node3D
 {
+	#region Nodes
 	private PauseMenu _pauseMenu => GetNode<PauseMenu>("PauseMenu");
+
+	private Node3D _playerScene => GetNode<Node3D>("Player");
+	private Player _player => _playerScene.GetNode<Player>("Player");
+
+	private JonoWorld _jonoWorld => GetNode<JonoWorld>("Jono_World");
+	private MazeWalls _mazeWalls => _jonoWorld.GetNode<MazeWalls>("MazeWalls");
+	#endregion
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -19,6 +27,17 @@ public partial class MainWorld : Node3D
 		{
 			LoadPauseMenu();
 		}
+
+		#region Objective Walls Logic
+		if(_player.IsWearingMask())
+		{
+			_mazeWalls.EnableObjectiveWalls();
+		}
+		else
+		{
+			_mazeWalls.DisableObjectiveWalls();
+		}
+		#endregion
 	}
 
 	private void LoadPauseMenu()

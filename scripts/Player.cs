@@ -19,7 +19,7 @@ public partial class Player : CharacterBody3D
 	public const float FOVChange = 1.5f;
 	#endregion
 
-    #region Variables
+	#region Variables
 	private float _bobTime = 0.0f;
 	private float _speed = WalkSpeed;
 
@@ -36,7 +36,7 @@ public partial class Player : CharacterBody3D
 	#region Nodes
 	protected Node3D Head => GetNode<Node3D>("Head");
 	protected Camera3D Camera => GetNode<Node3D>("Head")
-            .GetNode<Camera3D>("Camera3D");
+			.GetNode<Camera3D>("Camera3D");
 
 	protected Vector3 Gravity => GetGravity() * 0.66f;
 
@@ -57,8 +57,8 @@ public partial class Player : CharacterBody3D
 		
 	}
 
-    public override void _UnhandledInput(InputEvent @event)
-    {
+	public override void _UnhandledInput(InputEvent @event)
+	{
 		 base._UnhandledInput(@event);
 		if (@event is InputEventMouseMotion mouseMotionEvent)
 		{
@@ -71,7 +71,7 @@ public partial class Player : CharacterBody3D
 				Camera.Rotation = new Vector3(cameraRotationX, cameraRotationY, Camera.Rotation.Z);
 			}
 		}
-    }
+	}
 
 	public override void _PhysicsProcess(double delta)
 	{
@@ -177,6 +177,8 @@ public partial class Player : CharacterBody3D
 
 	}
 
+
+	#region Helper Methods
 	private static Vector3 HeadBob(float time)
 	{
 		var pos = Vector3.Zero;
@@ -185,7 +187,7 @@ public partial class Player : CharacterBody3D
 		return pos;
 	}
 
-	private  void HandleInteraction(Node selectedObj)
+	private void HandleInteraction(Node selectedObj)
 	{
 		// remove from scene
 		if (!_isHoldingObject)
@@ -200,7 +202,7 @@ public partial class Player : CharacterBody3D
 		else
 		{
 			// drop mask in front of player
-			Vector3 dropPosition = Head.GlobalTransform.Origin + -Head.GlobalTransform.Basis.Z ;
+			Vector3 dropPosition = Head.GlobalTransform.Origin + -Head.GlobalTransform.Basis.Z;
 			Node3D maskObject = (Node3D)_heldObject;
 			maskObject.GlobalTransform = new Transform3D(maskObject.GlobalTransform.Basis, dropPosition);
 			GetTree().CurrentScene.AddChild(maskObject);
@@ -210,4 +212,13 @@ public partial class Player : CharacterBody3D
 			_maskOverlay.Visible = false;
 		}
 	}
+	#endregion
+
+	#region Getters
+	public bool IsWearingMask()
+	{
+		return _isHoldingObject;
+	}
+
+	#endregion
 }
