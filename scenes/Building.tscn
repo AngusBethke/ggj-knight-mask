@@ -28,7 +28,10 @@ script = ExtResource("6_7u0we")
 [node name="CastleWall9" parent="BaseCastle" unique_id=1900536914 instance=ExtResource("7_w03x8")]
 transform = Transform3D(-1, 0, -6.119594e-07, 0, 1, 0, 6.119594e-07, 0, -1, 4.000001, 0, -3.9999995)
 
-[node name="CastleWall23" parent="BaseCastle" unique_id=195966187 instance=ExtResource("7_w03x8")]
+[node name="CastleWall9" parent="BaseCastle/CastleWall9" unique_id=195966187 instance=ExtResource("7_w03x8")]
+transform = Transform3D(-1, 0, -6.119594e-07, 0, 1, 0, 6.119594e-07, 0, -1, -1.7500057, 0, 5.999997)
+
+[node name="CastleWall23" parent="BaseCastle" unique_id=448451022 instance=ExtResource("7_w03x8")]
 transform = Transform3D(1.0971557e-05, 0, -1, 0, 1, 0, 1, 0, 1.0971557e-05, -1.0000458, 0, -13.00005)
 
 [node name="CastleWall20" parent="BaseCastle" unique_id=995907628 instance=ExtResource("7_w03x8")]
