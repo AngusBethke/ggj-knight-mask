@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b0xv7hodkk234" path="res://scripts/MainMenu.cs" id="1_wugcc"]
 [ext_resource type="Texture2D" uid="uid://q5yucu025ala" path="res://ui/assets/logo.png" id="2_i8ogv"]
 [ext_resource type="Texture2D" uid="uid://bha1ohrp7hlde" path="res://ui/assets/mask.png" id="3_epfls"]
+[ext_resource type="AudioStream" uid="uid://bexs8fb5plpt2" path="res://audio/music/MedievalGame_MainMenu_Loop_combined.wav" id="4_xoyda"]
 
 [node name="MainMenu" type="Node2D" unique_id=525812452]
 script = ExtResource("1_wugcc")
@@ -54,3 +55,7 @@ texture = ExtResource("2_i8ogv")
 position = Vector2(1530.9999, 384)
 scale = Vector2(0.69196427, 0.69196427)
 texture = ExtResource("3_epfls")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=740001519]
+stream = ExtResource("4_xoyda")
+autoplay = true
