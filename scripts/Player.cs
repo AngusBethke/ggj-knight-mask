@@ -22,6 +22,14 @@ public partial class Player : CharacterBody3D
     #region Variables
 	private float _bobTime = 0.0f;
 	private float _speed = WalkSpeed;
+
+	// interaction variables
+	private RayCast3D _interactionRayCast => GetNode<Node3D>("Head").GetNode<Camera3D>("Camera3D").GetNode<RayCast3D>("RayCast3D");
+	private Node3D _hand => GetNode<Node3D>("Head").GetNode<Node3D>("Hand");
+
+	private bool _isHoldingObject = false;
+
+	private Node _heldObject = null;
 	#endregion
 
 
@@ -36,6 +44,9 @@ public partial class Player : CharacterBody3D
 	public override void _Ready()
 	{
 		Input.MouseMode = Input.MouseModeEnum.Captured;
+
+		
+		
 	}
 
     public override void _UnhandledInput(InputEvent @event)
@@ -128,6 +139,26 @@ public partial class Player : CharacterBody3D
 		// Move the character.
 		MoveAndSlide();
 
+		#region Interaction
+		// object interaction
+		var interactionObject = _interactionRayCast.GetCollider();
+		if (_interactionRayCast.IsColliding() && interactionObject is Node selectedObj && selectedObj.IsInGroup("pickable"))
+		{
+			// if interaction key pressed
+			if (Input.IsActionJustPressed("interaction"))
+			{
+				HandleInteraction(selectedObj);
+			}
+
+		}
+
+		// drop action
+		if(Input.IsActionJustPressed("drop") && _isHoldingObject)
+		{
+			HandleInteraction(_heldObject);
+		}
+		#endregion
+
 	}
 
 	private static Vector3 HeadBob(float time)
@@ -136,5 +167,26 @@ public partial class Player : CharacterBody3D
 		pos.Y = Mathf.Sin(time * BobFrequency) * BobAmplitude;
 		pos.X = Mathf.Cos(time * BobFrequency / 2) * BobAmplitude;
 		return pos;
+	}
+
+	private  void HandleInteraction(Node selectedObj)
+	{
+		// remove from scene
+		if (!_isHoldingObject)
+		{
+			_heldObject = selectedObj;
+			selectedObj.GetParent().RemoveChild(selectedObj);
+			_isHoldingObject = true;
+		}
+		else
+		{
+			// drop mask in front of player
+			Vector3 dropPosition = Head.GlobalTransform.Origin + -Head.GlobalTransform.Basis.Z ;
+			Node3D maskObject = (Node3D)_heldObject;
+			maskObject.GlobalTransform = new Transform3D(maskObject.GlobalTransform.Basis, dropPosition);
+			GetTree().CurrentScene.AddChild(maskObject);
+			_isHoldingObject = false;
+			_heldObject = null;
+		}
 	}
 }
