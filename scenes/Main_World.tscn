@@ -36,8 +36,6 @@ script = ExtResource("1_7vp6s")
 
 [node name="Building" parent="." unique_id=1672319449 instance=ExtResource("2_7vp6s")]
 
-[node name="PauseMenu" parent="." unique_id=525812452 instance=ExtResource("4_35ipm")]
-
 [node name="ParticleSystem" parent="." unique_id=429567959 instance=ExtResource("5_xk5sm")]
 
 [node name="Player" parent="." unique_id=680051660 instance=ExtResource("5_68uxw")]
@@ -59,3 +57,5 @@ shadow_enabled = true
 [node name="Areas" parent="." unique_id=2018402989 instance=ExtResource("8_uds4v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10908508, 0.9813757, -6.477106)
 script = ExtResource("9_vw1ok")
+
+[node name="PauseMenu" parent="." unique_id=525812452 instance=ExtResource("4_35ipm")]

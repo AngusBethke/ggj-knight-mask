@@ -63,6 +63,8 @@ public partial class MainWorld : Node3D
 		// SHOW THE PAUSE MENU
 		_pauseMenu.Visible = true;
 
+		
+
 		// PAUSE THE GAME
 		Pause(true);
 	}
