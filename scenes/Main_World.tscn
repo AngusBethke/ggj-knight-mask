@@ -35,12 +35,12 @@ volumetric_fog_length = 256.0
 script = ExtResource("1_7vp6s")
 
 [node name="Building" parent="." unique_id=1672319449 instance=ExtResource("2_7vp6s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3325811, 1.0684772, -1.2657847)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.33234197, 1.0741528, -1.2684388)
 
 [node name="ParticleSystem" parent="." unique_id=429567959 instance=ExtResource("5_xk5sm")]
 
 [node name="Player" parent="." unique_id=680051660 instance=ExtResource("5_68uxw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.009116352, 0.3746891, 16.582796)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.009116352, 1.1329429, 16.254225)
 
 [node name="Mask" parent="." unique_id=2048324369 instance=ExtResource("6_68uxw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.047816, 3.8958807)
