@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://b2ipv4wq2e28d"]
+
+[ext_resource type="Script" uid="uid://btlrhbhiq3yb4" path="res://scripts/EndScreen.cs" id="1_ybww2"]
+
+[node name="EndScreen" type="Node2D" unique_id=335169843]
+script = ExtResource("1_ybww2")
+
+[node name="ButtonManager" type="Control" parent="." unique_id=1762115577]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="ButtonManager" unique_id=1768922107]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.043137256, 0.7647059, 0.83137256, 1)
+
+[node name="PlayAgain" type="Button" parent="ButtonManager" unique_id=1410330534]
+layout_mode = 0
+offset_left = 760.0
+offset_top = 376.0
+offset_right = 1160.0
+offset_bottom = 446.0
+text = "PLAY AGAIN
+"
+
+[node name="MainMenu" type="Button" parent="ButtonManager" unique_id=110803451]
+layout_mode = 0
+offset_left = 760.0
+offset_top = 476.0
+offset_right = 1160.0
+offset_bottom = 546.0
+text = "MAIN MENU"
+
+[node name="Quit" type="Button" parent="ButtonManager" unique_id=1464855980]
+layout_mode = 0
+offset_left = 760.0
+offset_top = 576.0
+offset_right = 1160.0
+offset_bottom = 646.0
+text = "QUIT"
+
+[node name="Label" type="Label" parent="." unique_id=1079505725]
+offset_left = 462.0
+offset_top = -26.0
+offset_right = 1448.0
+offset_bottom = 516.0
+text = "YOU WON!!"
+horizontal_alignment = 1
+vertical_alignment = 1

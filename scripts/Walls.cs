@@ -9,10 +9,15 @@ public partial class Walls : Node3D
 
 	private CsgBox3D _level1ObjectiveWalls2 => GetNode<CsgBox3D>("1m-ObjectiveWall2");
 
+	private CsgBox3D _endZoneWall => GetNode<CsgBox3D>("1m-EndZoneWall");
+
+	private CsgBox3D _endZoneObjectiveWall => GetNode<CsgBox3D>("1m-EndZoneObjectiveWall");
+
 	#endregion
 	public override void _Ready()
 	{
 		_level1ObjectiveWalls2.UseCollision = false;
+		_endZoneObjectiveWall.UseCollision = false;
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -27,6 +32,10 @@ public partial class Walls : Node3D
 		_level1CollisionWalls2.UseCollision = false;
 		_level1CollisionWalls2.Hide();
 		_level1ObjectiveWalls2.Show();
+
+		_endZoneWall.UseCollision = false;
+		_endZoneWall.Hide();
+		_endZoneObjectiveWall.Show();
 		
 	}
 
@@ -35,6 +44,10 @@ public partial class Walls : Node3D
 		_level1CollisionWalls2.UseCollision = true;
 		_level1CollisionWalls2.Show();
 		_level1ObjectiveWalls2.Hide();
+
+		_endZoneWall.UseCollision = true;
+		_endZoneWall.Show();
+		_endZoneObjectiveWall.Hide();
 	}
 
 

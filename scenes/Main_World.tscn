@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://bqc56qogdgoji" path="res://scenes/ParticleSystem.tscn" id="5_xk5sm"]
 [ext_resource type="PackedScene" uid="uid://bjnvv4otaornb" path="res://scenes/Mask.tscn" id="6_68uxw"]
 [ext_resource type="Texture2D" uid="uid://bejjccqnx8hlu" path="res://assets/NightSky HRD/qwantani_moon_noon_puresky_4k.exr" id="7_05n7d"]
-[ext_resource type="PackedScene" uid="uid://s7fc88rdob6t" path="res://scenes/QuestObjects.tscn" id="8_uds4v"]
-[ext_resource type="Script" uid="uid://dwsmc2ag5rdw4" path="res://scripts/QuestObjects.cs" id="9_vw1ok"]
+[ext_resource type="PackedScene" uid="uid://c5rnm55i7qhub" path="res://scenes/Areas.tscn" id="8_uds4v"]
+[ext_resource type="Script" uid="uid://jmfkq1x2tjdy" path="res://scripts/Areas.cs" id="9_vw1ok"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_uds4v"]
 panorama = ExtResource("7_05n7d")
@@ -36,8 +36,6 @@ script = ExtResource("1_7vp6s")
 
 [node name="Building" parent="." unique_id=1672319449 instance=ExtResource("2_7vp6s")]
 
-[node name="PauseMenu" parent="." unique_id=525812452 instance=ExtResource("4_35ipm")]
-
 [node name="ParticleSystem" parent="." unique_id=429567959 instance=ExtResource("5_xk5sm")]
 
 [node name="Player" parent="." unique_id=680051660 instance=ExtResource("5_68uxw")]
@@ -56,6 +54,8 @@ light_color = Color(0.15170373, 0.15170373, 0.58383155, 1)
 light_energy = 0.2
 shadow_enabled = true
 
-[node name="QuestObjects" parent="." unique_id=1441537882 instance=ExtResource("8_uds4v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49436998, 0.9508128, 3.4985962)
+[node name="Areas" parent="." unique_id=2018402989 instance=ExtResource("8_uds4v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10908508, 0.9813757, -6.477106)
 script = ExtResource("9_vw1ok")
+
+[node name="PauseMenu" parent="." unique_id=525812452 instance=ExtResource("4_35ipm")]

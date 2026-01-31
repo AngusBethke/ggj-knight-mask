@@ -4,13 +4,12 @@
 [ext_resource type="Material" uid="uid://jo8jjdsqm83" path="res://Castle_Interior_Wall.tres" id="2_7e7f2"]
 [ext_resource type="Script" uid="uid://bt06e3dyrnmd" path="res://scripts/MazeWalls.cs" id="2_rcjqu"]
 [ext_resource type="Material" uid="uid://balj71yfouxvd" path="res://Castle_Turret_Wall.tres" id="3_qynta"]
+[ext_resource type="PackedScene" uid="uid://s7fc88rdob6t" path="res://scenes/QuestObjects.tscn" id="5_h7ars"]
+[ext_resource type="Script" uid="uid://dwsmc2ag5rdw4" path="res://scripts/QuestObjects.cs" id="6_7u0we"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2dftf"]
 albedo_color = Color(0, 0.8862745, 0.13725491, 1)
 metallic_specular = 0.0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bcbcq"]
-albedo_color = Color(0.51383567, 0.0021119774, 0.75869745, 1)
 
 [node name="Building" type="Node3D" unique_id=1672319449]
 script = ExtResource("1_1ej2i")
@@ -33,12 +32,6 @@ size = Vector3(6, 1, 0.1)
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.99542785, -0.0017104149, -0.5073004)
 use_collision = true
 size = Vector3(7, 1, 0.1)
-
-[node name="1m-EndZoneWall" type="CSGBox3D" parent="MazeWalls" unique_id=1718473473]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49142784, -0.0017104149, -13.0073)
-use_collision = true
-size = Vector3(1, 1, 0.1)
-material = SubResource("StandardMaterial3D_bcbcq")
 
 [node name="2m-Wall" type="CSGBox3D" parent="MazeWalls" unique_id=346460473]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.9954278, -0.0017104149, -3.0073004)
@@ -258,3 +251,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.5
 use_collision = true
 size = Vector3(1, 1, 0.1)
 material = ExtResource("3_qynta")
+
+[node name="QuestObjects" parent="." unique_id=1441537882 instance=ExtResource("5_h7ars")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49436998, 0.9508128, 3.4985962)
+script = ExtResource("6_7u0we")
