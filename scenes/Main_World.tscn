@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://je5p61wucbhh"]
+
+[ext_resource type="PackedScene" uid="uid://68avu4uvsd05" path="res://scenes/Tillies_World.tscn" id="1_nqsif"]
+[ext_resource type="PackedScene" uid="uid://ckoc585df5s5t" path="res://scenes/Jono_World.tscn" id="2_7vp6s"]
+
+[node name="Main" type="Node3D" unique_id=917817897]
+
+[node name="TillyWorld" parent="." unique_id=680051660 instance=ExtResource("1_nqsif")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5809543, 13.357012)
+
+[node name="Jono_World" parent="." unique_id=1672319449 instance=ExtResource("2_7vp6s")]
