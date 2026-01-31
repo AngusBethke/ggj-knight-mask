@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bqc56qogdgoji"]
 
-[ext_resource type="Script" uid="uid://dhofapjldtay0" path="res://scripts/DragonFireAnimation.gd" id="1_fy0p7"]
+[ext_resource type="Script" uid="uid://dwtkchyhauvit" path="res://scripts/ParticleSystem.cs" id="1_ln80l"]
+[ext_resource type="Script" uid="uid://x0o6og6ecwc0" path="res://scripts/DragonFireAnimationPorted.cs" id="2_ln80l"]
 [ext_resource type="PackedScene" uid="uid://cvwi5wkk64err" path="res://scenes/Assets/sconce.tscn" id="2_5ksqe"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_de0tk"]
@@ -63,6 +64,9 @@ emission_energy_multiplier = 5.6
 [sub_resource type="BoxMesh" id="BoxMesh_tki21"]
 material = SubResource("StandardMaterial3D_ev1ll")
 size = Vector3(0.05, 0.05, 0.05)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ln80l"]
+size = Vector3(2.4803467, 1, 11.528259)
 
 [sub_resource type="Gradient" id="Gradient_fy0p7"]
 colors = PackedColorArray(0.98039216, 0, 0.38039216, 1, 0.02745098, 0.34117648, 0.60784316, 1)
@@ -193,6 +197,7 @@ emission = Color(1, 0.3254902, 0.16470589, 1)
 material = SubResource("StandardMaterial3D_gs0tm")
 
 [node name="ParticleSystem" type="Node3D" unique_id=429567959]
+script = ExtResource("1_ln80l")
 
 [node name="Particles" type="Node3D" parent="." unique_id=2109279952]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6245925, 1.2910198, 0.49932235)
@@ -205,21 +210,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7261589, -6.729476)
 gi_mode = 2
 amount = 5000
 sub_emitter = NodePath("DragonBurning-on-floorParticleEngine")
-lifetime = 15.0
+lifetime = 8.0
 collision_base_size = 0.2
 process_material = SubResource("ParticleProcessMaterial_de0tk")
 draw_pass_1 = SubResource("BoxMesh_ny1of")
-script = ExtResource("1_fy0p7")
-light = NodePath("SpotLight3D")
-move_end = Vector3(0, 1.666, 10)
-move_duration = 1.5
+script = ExtResource("2_ln80l")
 
 [node name="DragonBurning-on-floorParticleEngine" type="GPUParticles3D" parent="Particles/DragonFire/DragonBreathParticleEngine" unique_id=1425487605]
 gi_mode = 2
 emitting = false
 amount = 5000
 amount_ratio = 0.3271
-lifetime = 8.0
+lifetime = 0.2
 preprocess = 1.15
 randomness = 1.0
 process_material = SubResource("ParticleProcessMaterial_l6coy")
@@ -273,6 +275,13 @@ transform = Transform3D(1.0000001, -8.742898e-08, -8.7422784e-08, -8.7422784e-08
 layers = 7
 size = Vector3(0.24079704, 0.41186523, 0.70088243)
 
+[node name="DragonArea" type="Area3D" parent="Particles/DragonFire" unique_id=314100945]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6957624, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Particles/DragonFire/DragonArea" unique_id=1685668678]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8081579, -1.3236436, 1.5215201)
+shape = SubResource("BoxShape3D_ln80l")
+
 [node name="MagicDoor" type="Node3D" parent="Particles" unique_id=833351059]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8062947, -0.37947452, 4.971014)
 
@@ -293,6 +302,29 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0054016113, 0, -1.4945693)
 size = Vector3(0.29412842, 2, 0.08984375)
 
 [node name="GPUParticlesCollisionBox3D3" type="GPUParticlesCollisionBox3D" parent="Particles/MagicDoor" unique_id=1676028466]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0054016113, 1.0691881, -0.5035305)
+size = Vector3(0.29412842, 0.2055664, 2.1358032)
+
+[node name="MagicDoorEnd" type="Node3D" parent="Particles" unique_id=1558090402]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.7560406, 0, -14.550792)
+
+[node name="MagicDoorParticleEngine" type="GPUParticles3D" parent="Particles/MagicDoorEnd" unique_id=1229671935]
+transform = Transform3D(-4.3711385e-08, -0.99999994, 4.371139e-08, 0, -4.3711385e-08, -1, 0.99999994, -4.3711385e-08, 1.9106855e-15, 0, -0.024337292, -0.4424243)
+amount = 200
+collision_base_size = 0.02
+process_material = SubResource("ParticleProcessMaterial_sl8xs")
+draw_pass_1 = SubResource("BoxMesh_4wb6m")
+draw_skin = SubResource("Skin_6g2cy")
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="Particles/MagicDoorEnd" unique_id=1035871128]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0054016113, 0, 0.4798603)
+size = Vector3(0.29412842, 2, 0.08984375)
+
+[node name="GPUParticlesCollisionBox3D2" type="GPUParticlesCollisionBox3D" parent="Particles/MagicDoorEnd" unique_id=703032019]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0054016113, 0, -1.4945693)
+size = Vector3(0.29412842, 2, 0.08984375)
+
+[node name="GPUParticlesCollisionBox3D3" type="GPUParticlesCollisionBox3D" parent="Particles/MagicDoorEnd" unique_id=921264477]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0054016113, 1.0691881, -0.5035305)
 size = Vector3(0.29412842, 0.2055664, 2.1358032)
 
