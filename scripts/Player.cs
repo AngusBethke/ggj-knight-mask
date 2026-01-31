@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Threading.Tasks;
 
 public partial class Player : CharacterBody3D
 {
@@ -202,7 +203,7 @@ public partial class Player : CharacterBody3D
 			_interactionHint.Visible = false;
 
 			// shake player
-			CameraShakeAsync(magnitude: 0.05f, period: 1f);
+			Shake(magnitude: 0.05f, period: 1f);
 		}
 		else
 		{
@@ -229,9 +230,12 @@ public partial class Player : CharacterBody3D
 
 	#region Shake Methods
 	
+	public void Shake(float magnitude = 0.1f, float period = 2f)
+	{
+		CameraShakeAsync(magnitude, period);
+	}
 
-
-	 private async void CameraShakeAsync(float magnitude = 0.1f, float period = 2f)
+	 private async Task CameraShakeAsync(float magnitude = 0.1f, float period = 2f)
     {
         Transform3D initial_transform = this.Transform;
         float elapsed_time = 0.0f;
