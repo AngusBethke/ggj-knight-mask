@@ -1,12 +1,13 @@
 using Godot;
 using System;
+using System.Threading.Tasks;
 
 public partial class Player : CharacterBody3D
 {
 	#region Constants
 	// Movement consts
-	public const float WalkSpeed = 1.5f;
-	public const float SprintSpeed = 2.2f;
+	public const float WalkSpeed = 1.8f;
+	public const float SprintSpeed = 2.4f;
 	public const float JumpVelocity = 2.0f;
 	public const float Sensitivity = 0.003f;
 
@@ -30,6 +31,7 @@ public partial class Player : CharacterBody3D
 	private bool _isHoldingObject = false;
 
 	private Node _heldObject = null;
+
 	#endregion
 
 
@@ -169,11 +171,12 @@ public partial class Player : CharacterBody3D
 		}
 
 		// drop action
-		if(Input.IsActionJustPressed("drop") && _isHoldingObject)
+		if (Input.IsActionJustPressed("drop") && _isHoldingObject)
 		{
 			HandleInteraction(_heldObject);
 		}
 		#endregion
+		
 
 	}
 
@@ -198,6 +201,9 @@ public partial class Player : CharacterBody3D
 
 			_maskOverlay.Visible = true;
 			_interactionHint.Visible = false;
+
+			// shake player
+			Shake(magnitude: 0.05f, period: 1f);
 		}
 		else
 		{
@@ -220,5 +226,45 @@ public partial class Player : CharacterBody3D
 		return _isHoldingObject;
 	}
 
+	#endregion
+
+	#region Shake Methods
+	
+	public void Shake(float magnitude = 0.1f, float period = 2f)
+	{
+		CameraShakeAsync(magnitude, period);
+	}
+
+	 private async Task CameraShakeAsync(float magnitude = 0.1f, float period = 2f)
+	{
+		Transform3D initial_transform = this.Transform;
+		float elapsed_time = 0.0f;
+		var tracker = 2;
+		while(elapsed_time < period)
+		{
+			if(tracker % 2 != 0)
+			{
+				tracker++;	
+				continue;
+			}
+			var offset = new Vector3(
+				(float)GD.RandRange(-magnitude, magnitude),
+				(float)GD.RandRange(-magnitude, magnitude),
+				0.0f
+			);
+
+			Transform3D new_transform = initial_transform;
+			new_transform.Origin += offset;
+			Transform = new_transform;
+
+			elapsed_time += (float)GetProcessDeltaTime();
+
+
+			await ToSignal(GetTree(), "process_frame");
+			tracker++;	
+		}
+
+		Transform = initial_transform;
+	}
 	#endregion
 }
