@@ -47,9 +47,9 @@ public partial class MainWorld : Node3D
 		Areas areas = GetNode<Areas>("Areas");
 		if (areas.isPlayerInEndZone(_player))
 		{
-			GD.Print("Player is in end zone");
+		
 			Input.MouseMode = Input.MouseModeEnum.Visible;
-			GetTree().ChangeSceneToFile("res://ui/menus/Main_Menu.tscn");
+			GetTree().ChangeSceneToFile("res://ui/menus/End_Screen.tscn");
 
 		}
 		#endregion
