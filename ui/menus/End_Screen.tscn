@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://b2ipv4wq2e28d"]
 
 [ext_resource type="Script" uid="uid://btlrhbhiq3yb4" path="res://scripts/EndScreen.cs" id="1_ybww2"]
+[ext_resource type="Texture2D" uid="uid://bha1ohrp7hlde" path="res://ui/assets/mask.png" id="2_k064j"]
+[ext_resource type="Texture2D" uid="uid://ga1ngxtcd1ey" path="res://ui/assets/winner.png" id="3_dsgr5"]
 
 [node name="EndScreen" type="Node2D" unique_id=335169843]
 script = ExtResource("1_ybww2")
@@ -44,11 +46,12 @@ offset_right = 1160.0
 offset_bottom = 646.0
 text = "QUIT"
 
-[node name="Label" type="Label" parent="." unique_id=1079505725]
-offset_left = 462.0
-offset_top = -26.0
-offset_right = 1448.0
-offset_bottom = 516.0
-text = "YOU WON!!"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="Mask" type="Sprite2D" parent="." unique_id=324383885]
+position = Vector2(1404, 621)
+scale = Vector2(0.7125, 0.7125)
+texture = ExtResource("2_k064j")
+
+[node name="Winner" type="Sprite2D" parent="." unique_id=1808518011]
+position = Vector2(412, 264)
+scale = Vector2(0.4642857, 0.4642857)
+texture = ExtResource("3_dsgr5")

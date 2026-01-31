@@ -255,7 +255,6 @@ size = Vector3(1, 1, 0.1)
 material = ExtResource("3_qynta")
 
 [node name="QuestObjects" parent="." unique_id=1441537882 instance=ExtResource("5_h7ars")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49436998, 0.9508128, 3.4985962)
 script = ExtResource("6_7u0we")
 
 [node name="BaseCastle" type="Node3D" parent="." unique_id=892410147]
@@ -657,9 +656,6 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.9
 
 [node name="CastleWallDoorClosed5" parent="BaseCastle" unique_id=924246062 instance=ExtResource("14_bn47f")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4.9999995, 0, 3)
-
-[node name="CastleWallDoorClosed8" parent="BaseCastle" unique_id=860807723 instance=ExtResource("14_bn47f")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, -14)
 
 [node name="CastleWallDoorClosed9" parent="BaseCastle" unique_id=527851373 instance=ExtResource("14_bn47f")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.9999995, 0, -9)
