@@ -6,6 +6,8 @@ public partial class MainMenu : Node2D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		Button playButton = GetNode<Button>("VBoxContainer/PlayButton");
+		playButton.Pressed += _Play;
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -15,7 +17,7 @@ public partial class MainMenu : Node2D
 	
 	private void _Play()
 	{
-		GetTree().ChangeSceneToFile("res://Main_World.tscn");
+		GetTree().ChangeSceneToFile("res://scenes/Main_World.tscn");
 	}
 	
 }
