@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cosvl4ali0m5f"]
+
+[ext_resource type="ArrayMesh" uid="uid://dfkbtm7mf4hic" path="res://assets/wall half/CastleWall_Half.obj" id="1_p6kyx"]
+[ext_resource type="Material" uid="uid://btbe86cl8ixas" path="res://assets/wall half/CastleWall_Half.tres" id="2_gjmer"]
+
+[node name="CastleWallHalf" type="Node3D" unique_id=813976872]
+
+[node name="Base" type="MeshInstance3D" parent="." unique_id=95049677]
+transform = Transform3D(0, 0, -1.0000001, 0, 1, 0, 1.0000001, 0, 0, 0, 0, 0)
+mesh = ExtResource("1_p6kyx")
+surface_material_override/0 = ExtResource("2_gjmer")
