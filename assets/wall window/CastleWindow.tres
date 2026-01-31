@@ -8,6 +8,7 @@
 diffuse_mode = 3
 albedo_texture = ExtResource("1_iiem6")
 emission_enabled = true
+emission_energy_multiplier = 3.11
 emission_texture = ExtResource("2_03vdy")
 normal_enabled = true
 normal_texture = ExtResource("3_8f46y")
