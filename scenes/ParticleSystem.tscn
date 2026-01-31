@@ -490,6 +490,29 @@ size = Vector3(0.29412842, 2, 0.08984375)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0054016113, 1.0691881, -0.5035305)
 size = Vector3(0.29412842, 0.2055664, 2.1358032)
 
+[node name="MagicDoorEnd" type="Node3D" parent="Particles" unique_id=1558090402]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.7560406, 0, -14.550792)
+
+[node name="MagicDoorParticleEngine" type="GPUParticles3D" parent="Particles/MagicDoorEnd" unique_id=1229671935]
+transform = Transform3D(-4.3711385e-08, -0.99999994, 4.371139e-08, 0, -4.3711385e-08, -1, 0.99999994, -4.3711385e-08, 1.9106855e-15, 0, -0.024337292, -0.4424243)
+amount = 200
+collision_base_size = 0.02
+process_material = SubResource("ParticleProcessMaterial_sl8xs")
+draw_pass_1 = SubResource("BoxMesh_4wb6m")
+draw_skin = SubResource("Skin_6g2cy")
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="Particles/MagicDoorEnd" unique_id=1035871128]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0054016113, 0, 0.4798603)
+size = Vector3(0.29412842, 2, 0.08984375)
+
+[node name="GPUParticlesCollisionBox3D2" type="GPUParticlesCollisionBox3D" parent="Particles/MagicDoorEnd" unique_id=703032019]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0054016113, 0, -1.4945693)
+size = Vector3(0.29412842, 2, 0.08984375)
+
+[node name="GPUParticlesCollisionBox3D3" type="GPUParticlesCollisionBox3D" parent="Particles/MagicDoorEnd" unique_id=921264477]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0054016113, 1.0691881, -0.5035305)
+size = Vector3(0.29412842, 0.2055664, 2.1358032)
+
 [node name="Falling fire" type="Node3D" parent="Particles" unique_id=2106879818]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.835924, 7.6639657, 0)
 
