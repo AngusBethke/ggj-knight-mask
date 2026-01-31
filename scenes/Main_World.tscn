@@ -1,19 +1,18 @@
 [gd_scene format=3 uid="uid://je5p61wucbhh"]
 
 [ext_resource type="Script" uid="uid://cw332jq4kn55a" path="res://scripts/MainWorld.cs" id="1_7vp6s"]
-[ext_resource type="PackedScene" uid="uid://68avu4uvsd05" path="res://scenes/Tillies_World.tscn" id="1_nqsif"]
 [ext_resource type="PackedScene" uid="uid://ckoc585df5s5t" path="res://scenes/Jono_World.tscn" id="2_7vp6s"]
 [ext_resource type="PackedScene" uid="uid://bjal6negb6rdc" path="res://ui/menus/Pause_Menu.tscn" id="4_35ipm"]
+[ext_resource type="PackedScene" uid="uid://68avu4uvsd05" path="res://scenes/Player.tscn" id="5_68uxw"]
 [ext_resource type="PackedScene" uid="uid://bqc56qogdgoji" path="res://scenes/ParticleSystem.tscn" id="5_xk5sm"]
 
 [node name="Main" type="Node3D" unique_id=917817897]
 script = ExtResource("1_7vp6s")
-
-[node name="TillyWorld" parent="." unique_id=680051660 instance=ExtResource("1_nqsif")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5809543, 13.357012)
 
 [node name="Jono_World" parent="." unique_id=1672319449 instance=ExtResource("2_7vp6s")]
 
 [node name="PauseMenu" parent="." unique_id=525812452 instance=ExtResource("4_35ipm")]
 
 [node name="ParticleSystem" parent="." unique_id=429567959 instance=ExtResource("5_xk5sm")]
+
+[node name="Player" parent="." unique_id=680051660 instance=ExtResource("5_68uxw")]
