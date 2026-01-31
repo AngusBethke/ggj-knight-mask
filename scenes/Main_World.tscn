@@ -1,20 +1,55 @@
 [gd_scene format=3 uid="uid://je5p61wucbhh"]
 
 [ext_resource type="Script" uid="uid://cw332jq4kn55a" path="res://scripts/MainWorld.cs" id="1_7vp6s"]
-[ext_resource type="PackedScene" uid="uid://68avu4uvsd05" path="res://scenes/Player.tscn" id="1_nqsif"]
-[ext_resource type="PackedScene" uid="uid://ckoc585df5s5t" path="res://scenes/Jono_World.tscn" id="2_7vp6s"]
+[ext_resource type="PackedScene" uid="uid://ckoc585df5s5t" path="res://scenes/Building.tscn" id="2_7vp6s"]
 [ext_resource type="PackedScene" uid="uid://bjal6negb6rdc" path="res://ui/menus/Pause_Menu.tscn" id="4_35ipm"]
-[ext_resource type="PackedScene" uid="uid://bjnvv4otaornb" path="res://scenes/Mask.tscn" id="5_xk5sm"]
+[ext_resource type="PackedScene" uid="uid://68avu4uvsd05" path="res://scenes/Player.tscn" id="5_68uxw"]
+[ext_resource type="PackedScene" uid="uid://bqc56qogdgoji" path="res://scenes/ParticleSystem.tscn" id="5_xk5sm"]
+[ext_resource type="PackedScene" uid="uid://bjnvv4otaornb" path="res://scenes/Mask.tscn" id="6_68uxw"]
+[ext_resource type="Texture2D" uid="uid://bejjccqnx8hlu" path="res://assets/NightSky HRD/qwantani_moon_noon_puresky_4k.exr" id="7_05n7d"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_uds4v"]
+panorama = ExtResource("7_05n7d")
+
+[sub_resource type="Sky" id="Sky_s51gr"]
+sky_material = SubResource("PanoramaSkyMaterial_uds4v")
+
+[sub_resource type="Environment" id="Environment_vw1ok"]
+background_mode = 2
+sky = SubResource("Sky_s51gr")
+ambient_light_source = 3
+ambient_light_color = Color(0, 0, 0.27450982, 1)
+ambient_light_sky_contribution = 0.1
+tonemap_mode = 1
+fog_mode = 1
+fog_light_color = Color(0.18371075, 0.20317361, 0.2334575, 1)
+fog_light_energy = 0.0
+fog_density = 1.0
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.01
+volumetric_fog_length = 256.0
 
 [node name="Main" type="Node3D" unique_id=917817897]
 script = ExtResource("1_7vp6s")
 
-[node name="Jono_World" parent="." unique_id=1672319449 instance=ExtResource("2_7vp6s")]
+[node name="Building" parent="." unique_id=1672319449 instance=ExtResource("2_7vp6s")]
 
 [node name="PauseMenu" parent="." unique_id=525812452 instance=ExtResource("4_35ipm")]
 
-[node name="Mask" parent="." unique_id=2048324369 instance=ExtResource("5_xk5sm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.089265585, 0.72450733, 10.998328)
+[node name="ParticleSystem" parent="." unique_id=429567959 instance=ExtResource("5_xk5sm")]
 
-[node name="Player" parent="." unique_id=680051660 instance=ExtResource("1_nqsif")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.022171974, 0.7075834, 9.731933)
+[node name="Player" parent="." unique_id=680051660 instance=ExtResource("5_68uxw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0934718, 7.410579)
+
+[node name="Mask" parent="." unique_id=2048324369 instance=ExtResource("6_68uxw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.047816, 3.8958807)
+
+[node name="World Lighting" type="Node3D" parent="." unique_id=379688612]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="World Lighting" unique_id=2080410684]
+environment = SubResource("Environment_vw1ok")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="World Lighting" unique_id=664258060]
+light_color = Color(0.15170373, 0.15170373, 0.58383155, 1)
+light_energy = 0.2
+shadow_enabled = true

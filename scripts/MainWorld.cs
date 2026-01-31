@@ -9,7 +9,7 @@ public partial class MainWorld : Node3D
 	private Node3D _playerScene => GetNode<Node3D>("Player");
 	private Player _player => _playerScene.GetNode<Player>("Player");
 
-	private JonoWorld _jonoWorld => GetNode<JonoWorld>("Jono_World");
+	private Node3D _jonoWorld => GetNode<Node3D>("Building");
 	private MazeWalls _mazeWalls => _jonoWorld.GetNode<MazeWalls>("MazeWalls");
 	#endregion
 
