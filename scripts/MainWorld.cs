@@ -9,8 +9,10 @@ public partial class MainWorld : Node3D
 	private Node3D _playerScene => GetNode<Node3D>("Player");
 	private Player _player => _playerScene.GetNode<Player>("Player");
 
-	private Node3D _jonoWorld => GetNode<Node3D>("Building");
-	private MazeWalls _mazeWalls => _jonoWorld.GetNode<MazeWalls>("MazeWalls");
+	private QuestObjects _questObjects => GetNode<QuestObjects>("QuestObjects");
+	private Level1 _level1 => _questObjects.GetNode<Level1>("Level1");
+
+	private Walls _walls => _level1.GetNode<Walls>("Walls");
 	#endregion
 
 	// Called when the node enters the scene tree for the first time.
@@ -31,11 +33,11 @@ public partial class MainWorld : Node3D
 		#region Objective Walls Logic
 		if(_player.IsWearingMask())
 		{
-			_mazeWalls.EnableObjectiveWalls();
+			_walls.EnableObjectiveWalls();
 		}
 		else
 		{
-			_mazeWalls.DisableObjectiveWalls();
+			_walls.DisableObjectiveWalls();
 		}
 		#endregion
 	}
