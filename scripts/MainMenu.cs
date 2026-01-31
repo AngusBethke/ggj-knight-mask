@@ -12,4 +12,10 @@ public partial class MainMenu : Node2D
 	public override void _Process(double delta)
 	{
 	}
+	
+	private void _Play()
+	{
+		GetTree().ChangeSceneToFile("res://Main_World.tscn");
+	}
+	
 }
