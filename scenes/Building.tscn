@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ckoc585df5s5t"]
 
-[ext_resource type="Script" uid="uid://dk6w76igavruf" path="res://scripts/JonoWorld.cs" id="1_1ej2i"]
+[ext_resource type="Script" uid="uid://dk6w76igavruf" path="res://scripts/Building.cs" id="1_1ej2i"]
 [ext_resource type="Material" uid="uid://ciarlg67u1wne" path="res://Castle_Maze_Blocker.tres" id="1_3ga38"]
 [ext_resource type="Material" uid="uid://jo8jjdsqm83" path="res://Castle_Interior_Wall.tres" id="2_7e7f2"]
 [ext_resource type="Script" uid="uid://bt06e3dyrnmd" path="res://scripts/MazeWalls.cs" id="2_rcjqu"]
