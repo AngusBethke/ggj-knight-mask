@@ -79,7 +79,7 @@ public partial class DragonFireAnimationPorted : GpuParticles3D
 		
 		var timeDifference =  _initalCooldown - _actionCooldown;
 
-		return timeDifference > 1.2f &&  timeDifference < 8f;
+		return timeDifference > 1.8f &&  timeDifference < 8f;
 		
 	}
 }
