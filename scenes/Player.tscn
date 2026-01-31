@@ -13,7 +13,7 @@ points = PackedVector3Array(-0.12520654, -0.532801, -0.4805069, 0.022783129, 0.4
 
 [node name="Player" type="Node3D" unique_id=680051660]
 
-[node name="Player" type="CharacterBody3D" parent="." unique_id=1950089087]
+[node name="Player" type="CharacterBody3D" parent="." unique_id=1950089087 groups=["player"]]
 transform = Transform3D(0.3, 6.0488073e-05, -3.765313e-05, -6.0483926e-05, 0.3, 3.304548e-05, 3.7659793e-05, -3.3037886e-05, 0.3, 0, 0, 0)
 script = ExtResource("5_rkt7w")
 

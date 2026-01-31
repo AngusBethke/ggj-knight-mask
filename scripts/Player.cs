@@ -93,11 +93,11 @@ public partial class Player : CharacterBody3D
 
 		if (Input.IsActionPressed("sprint"))
 		{
-			_speed = SprintSpeed;
+			_speed = _isHoldingObject ? SprintSpeed * 0.75f : SprintSpeed;
 		}
 		else
 		{
-			_speed = WalkSpeed;
+			_speed = _isHoldingObject ? WalkSpeed * 0.75f : WalkSpeed;
 		}
 		
 

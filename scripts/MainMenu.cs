@@ -6,6 +6,7 @@ public partial class MainMenu : Node2D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		
 		// PLAY BUTTON
 		Button playButton = GetNode<Control>("ButtonManager").GetNode<Button>("Play");
 		playButton.Pressed += Play;

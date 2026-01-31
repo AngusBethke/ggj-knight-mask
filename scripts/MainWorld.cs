@@ -33,13 +33,24 @@ public partial class MainWorld : Node3D
 		}
 
 		#region Objective Walls Logic
-		if(_player.IsWearingMask())
+		if (_player.IsWearingMask())
 		{
 			_walls.EnableObjectiveWalls();
 		}
 		else
 		{
 			_walls.DisableObjectiveWalls();
+		}
+		#endregion
+
+		#region End Zone Logic
+		Areas areas = GetNode<Areas>("Areas");
+		if (areas.isPlayerInEndZone(_player))
+		{
+			GD.Print("Player is in end zone");
+			Input.MouseMode = Input.MouseModeEnum.Visible;
+			GetTree().ChangeSceneToFile("res://ui/menus/Main_Menu.tscn");
+
 		}
 		#endregion
 	}
@@ -56,8 +67,8 @@ public partial class MainWorld : Node3D
 		Pause(true);
 	}
 
-	private void Pause( bool pause)
+	private void Pause(bool pause)
 	{
-		GetTree().Paused = pause;	
+		GetTree().Paused = pause;
 	}
 }
