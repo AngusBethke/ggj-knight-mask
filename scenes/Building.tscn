@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cpvd1e1i3jpfj" path="res://scenes/Assets/castle_ceiling.tscn" id="11_cv2qq"]
 [ext_resource type="PackedScene" uid="uid://cqn441r4edgn5" path="res://scenes/Assets/castle_wall_bottom_a.tscn" id="12_bn47f"]
 [ext_resource type="PackedScene" uid="uid://dojty84iyumr" path="res://scenes/Assets/castle_wall_bottom_b.tscn" id="13_6a55o"]
+[ext_resource type="PackedScene" uid="uid://2ukhi1jgksr1" path="res://scenes/Assets/castle_wall_door_open.tscn" id="14_cv2qq"]
 
 [node name="Building" type="Node3D" unique_id=1672319449]
 script = ExtResource("1_1ej2i")
@@ -665,3 +666,6 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1, 4
 
 [node name="CastleWallBottomB" parent="BaseCastle" unique_id=1455469559 instance=ExtResource("13_6a55o")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5, 0, 1)
+
+[node name="CastleWallDoorOpen" parent="." unique_id=21956929 instance=ExtResource("14_cv2qq")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1, 0, 3)
