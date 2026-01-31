@@ -9,7 +9,9 @@ public partial class MainWorld : Node3D
 	private Node3D _playerScene => GetNode<Node3D>("Player");
 	private Player _player => _playerScene.GetNode<Player>("Player");
 
-	private QuestObjects _questObjects => GetNode<QuestObjects>("QuestObjects");
+
+	private Building _building => GetNode<Building>("Building");
+	private QuestObjects _questObjects => _building.GetNode<QuestObjects>("QuestObjects");
 	private Level1 _level1 => _questObjects.GetNode<Level1>("Level1");
 
 	private Walls _walls => _level1.GetNode<Walls>("Walls");
