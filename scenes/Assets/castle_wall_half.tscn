@@ -13,6 +13,7 @@ transform = Transform3D(0, 0, -1.0000001, 0, 1, 0, 1.0000001, 0, 0, 0, 0, 0)
 mesh = ExtResource("1_p6kyx")
 surface_material_override/0 = ExtResource("2_gjmer")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=420402540]
-transform = Transform3D(0, 0, -1.0000001, 0, 1, 0, 1.0000001, 0, 0, 0, 0, 0)
+[node name="StaticBody3D" type="StaticBody3D" parent="Base" unique_id=1622252560]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Base/StaticBody3D" unique_id=360445290]
 shape = SubResource("ConcavePolygonShape3D_p6kyx")
