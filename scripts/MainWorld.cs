@@ -58,6 +58,13 @@ public partial class MainWorld : Node3D
 
 		#region Particle System Logic
 		_particleSystem.ToggleDoorParticles(_player.IsWearingMask());
+
+		// check if player is in dragon fire
+		if (_particleSystem.IsPlayerInDragonFire(_player))
+		{
+			Input.MouseMode = Input.MouseModeEnum.Visible;
+			GetTree().ChangeSceneToFile("res://ui/menus/End_Screen.tscn");
+		}
 		#endregion
 	}
 
