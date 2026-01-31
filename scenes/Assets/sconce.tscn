@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://cvwi5wkk64err"]
+
+[ext_resource type="ArrayMesh" uid="uid://bw4p2788oy2ot" path="res://assets/sconce/sconce.obj" id="1_a7ski"]
+[ext_resource type="Material" uid="uid://cgnwn8kycooxm" path="res://assets/sconce/sconce.tres" id="2_btffa"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_btffa"]
+points = PackedVector3Array(0.0035254955, 1.5442631, -0.1433972, -0.019123387, 1.5439699, -0.1433972, 0.02609694, 1.5438966, -0.1433972, 0.003731981, 1.580947, -0.20455316, -0.029796109, 1.5735075, -0.21184304, -0.039049238, 1.5713454, -0.21873748, -0.056174632, 1.5635395, -0.24796581, -0.05840726, 1.5224578, -0.22038803, -0.058665365, 1.4955221, -0.21167111, -0.019587979, 1.4965849, -0.1433972, 0.0631611, 1.5204057, -0.2229842, 0.052785195, 1.5709423, -0.23058355, 0.04557111, 1.5738741, -0.22179785, 0.015372604, 1.5803974, -0.20589422, 0.025632352, 1.4965116, -0.1433972, 0.06290298, 1.4934698, -0.21425009, -0.008050602, 1.5506396, -0.3055628, -0.048366897, 1.5523621, -0.2917739, -0.05762003, 1.5599847, -0.25903818, -0.062459536, 1.5187199, -0.23206216, -0.06271764, 1.4917841, -0.22332805, -0.0012623891, 1.206558, -0.14616528, 0.06659392, 1.5165577, -0.23479587, 0.062012516, 1.5606444, -0.2624424, 0.043441728, 1.5498334, -0.30293223, 0.0010476708, 1.5502, -0.30661157, 0.0663229, 1.4896219, -0.22607896, 0.0007250309, 1.5461687, -0.319025, -0.010915589, 1.5467184, -0.31768394, -0.041152813, 1.5494304, -0.30054238, -0.045966506, 1.5001397, -0.28891984, -0.053890385, 1.503328, -0.2792573, -0.059684888, 1.5069561, -0.26830527, -0.0631048, 1.510804, -0.2564764, -0.06404689, 1.5147619, -0.24423489, -0.064305, 1.4878261, -0.23551798, -0.063375816, 1.4838682, -0.24775949, -0.059942994, 1.4800203, -0.25957116, -0.054148495, 1.4763923, -0.2705232, -0.04622461, 1.4732039, -0.28018573, -0.036455266, 1.4705286, -0.28818053, -0.025240522, 1.4684398, -0.29421532, -0.012993347, 1.4670838, -0.2980322, -0.00019124895, 1.4664974, -0.2995108, 0.012675382, 1.4666806, -0.29858238, 0.025116138, 1.4675969, -0.2952813, 0.036640607, 1.4692826, -0.28974512, 0.046822928, 1.4716647, -0.28216293, 0.055250116, 1.4745965, -0.27286145, 0.061625354, 1.477968, -0.26216733, 0.065677635, 1.4817061, -0.2504932, 0.067265, 1.485664, -0.23832047, 0.067536004, 1.5125997, -0.24703738, 0.06056712, 1.5570896, -0.27353197, 0.03418859, 1.5477079, -0.3098095, 0.061883457, 1.5049038, -0.27088425, 0.055508226, 1.5015323, -0.28157836, 0.04708103, 1.4985639, -0.29089704, 0.025374241, 1.4945326, -0.3039982, 0.012933493, 1.4936165, -0.3072993, 6.686151e-05, 1.4934332, -0.30822772, -0.01273524, 1.4940195, -0.3067663, -0.024982415, 1.4953755, -0.30293223, -0.036197156, 1.4974644, -0.29691464, 0.036898717, 1.4962184, -0.29846203, 0.06593574, 1.5086418, -0.2592273)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3ga38"]
+
+[sub_resource type="Curve" id="Curve_btffa"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.1554054, 0.9887641), 0.48909432, 0.48909432, 0, 0, Vector2(0.5472973, 0.64044946), -1.0452648, -1.0452648, 0, 0, Vector2(1, 0), -1.7402669, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_qynta"]
+curve = SubResource("Curve_btffa")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xgoli"]
+angle_min = -720.0
+angle_max = 487.7
+direction = Vector3(0, 1, 0)
+spread = 5.0
+initial_velocity_min = 0.099999994
+initial_velocity_max = 0.099999994
+gravity = Vector3(0, 0, 0)
+scale_min = 0.099999994
+scale_curve = SubResource("CurveTexture_qynta")
+color = Color(1, 0.3764706, 0, 1)
+color_ramp = SubResource("GradientTexture1D_3ga38")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8irxy"]
+transparency = 1
+blend_mode = 1
+vertex_color_use_as_albedo = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_ad567"]
+material = SubResource("StandardMaterial3D_8irxy")
+size = Vector3(0.05, 0.05, 0.05)
+
+[sub_resource type="Gradient" id="Gradient_0ifks"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_t306i"]
+gradient = SubResource("Gradient_0ifks")
+
+[sub_resource type="Curve" id="Curve_nf77o"]
+_data = [Vector2(0, 0.06741583), 0.0, 0.0, 0, 0, Vector2(0.35135138, 0.73033714), 0.0, 0.0, 0, 0, Vector2(0.76351357, 0.3595506), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_b4otg"]
+curve = SubResource("Curve_nf77o")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_mfndg"]
+direction = Vector3(0, 1, 0)
+spread = 0.8
+initial_velocity_min = 0.099999994
+initial_velocity_max = 0.099999994
+gravity = Vector3(0, 0, 0)
+scale_min = 0.5
+scale_max = 0.7
+scale_curve = SubResource("CurveTexture_b4otg")
+color = Color(0.007999355, 0.17202824, 0.46751368, 1)
+color_ramp = SubResource("GradientTexture1D_t306i")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3y8rl"]
+render_priority = -1
+transparency = 1
+blend_mode = 3
+vertex_color_use_as_albedo = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_h7l4t"]
+material = SubResource("StandardMaterial3D_3y8rl")
+radius = 0.02
+height = 0.1
+
+[node name="Sconce" type="Node3D" unique_id=1807942481]
+
+[node name="Sconce" type="MeshInstance3D" parent="." unique_id=2028295084]
+mesh = ExtResource("1_a7ski")
+surface_material_override/0 = ExtResource("2_btffa")
+surface_material_override/1 = ExtResource("2_btffa")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sconce" unique_id=342576256]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sconce/StaticBody3D" unique_id=283973213]
+shape = SubResource("ConvexPolygonShape3D_btffa")
+
+[node name="Torch" type="Node3D" parent="." unique_id=1556529895]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0028235912, 1.5238525, -0.25523442)
+
+[node name="Torch-Fire" type="GPUParticles3D" parent="Torch" unique_id=1774837778]
+amount = 500
+lifetime = 2.0
+speed_scale = 2.0
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_xgoli")
+draw_pass_1 = SubResource("BoxMesh_ad567")
+
+[node name="Torch-Smoke" type="GPUParticles3D" parent="Torch" unique_id=6158241]
+amount = 25
+lifetime = 2.5
+speed_scale = 2.0
+process_material = SubResource("ParticleProcessMaterial_mfndg")
+draw_pass_1 = SubResource("SphereMesh_h7l4t")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Torch" unique_id=492286901]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.016917825, 0)
+light_color = Color(0.8343336, 0.54252225, 1.1551381e-06, 1)
+shadow_enabled = true
