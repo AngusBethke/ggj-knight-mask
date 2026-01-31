@@ -3,6 +3,7 @@
 [ext_resource type="Material" uid="uid://ciarlg67u1wne" path="res://Castle_Maze_Blocker.tres" id="1_3ga38"]
 [ext_resource type="Material" uid="uid://jo8jjdsqm83" path="res://Castle_Interior_Wall.tres" id="2_7e7f2"]
 [ext_resource type="Material" uid="uid://balj71yfouxvd" path="res://Castle_Turret_Wall.tres" id="3_qynta"]
+[ext_resource type="Texture2D" uid="uid://bejjccqnx8hlu" path="res://assets/NightSky HRD/qwantani_moon_noon_puresky_4k.exr" id="4_1ej2i"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2dftf"]
 albedo_color = Color(0, 0.8862745, 0.13725491, 1)
@@ -11,71 +12,26 @@ metallic_specular = 0.0
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bcbcq"]
 albedo_color = Color(0.51383567, 0.0021119774, 0.75869745, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_3ga38"]
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ackv3"]
+panorama = ExtResource("4_1ej2i")
 
-[sub_resource type="Curve" id="Curve_7e7f2"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.1554054, 0.9887641), 0.48909432, 0.48909432, 0, 0, Vector2(0.5472973, 0.64044946), -1.0452648, -1.0452648, 0, 0, Vector2(1, 0), -1.7402669, 0.0, 0, 0]
-point_count = 4
+[sub_resource type="Sky" id="Sky_s51gr"]
+sky_material = SubResource("PanoramaSkyMaterial_ackv3")
 
-[sub_resource type="CurveTexture" id="CurveTexture_qynta"]
-curve = SubResource("Curve_7e7f2")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_km2i6"]
-angle_min = -720.0
-angle_max = 487.7
-direction = Vector3(0, 1, 0)
-spread = 5.0
-initial_velocity_min = 0.099999994
-initial_velocity_max = 0.099999994
-gravity = Vector3(0, 0, 0)
-scale_min = 0.099999994
-scale_curve = SubResource("CurveTexture_qynta")
-color = Color(1, 0.3764706, 0, 1)
-color_ramp = SubResource("GradientTexture1D_3ga38")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8irxy"]
-transparency = 1
-blend_mode = 1
-vertex_color_use_as_albedo = true
-
-[sub_resource type="BoxMesh" id="BoxMesh_6h23g"]
-material = SubResource("StandardMaterial3D_8irxy")
-size = Vector3(0.05, 0.05, 0.05)
-
-[sub_resource type="Gradient" id="Gradient_s7pub"]
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_t306i"]
-gradient = SubResource("Gradient_s7pub")
-
-[sub_resource type="Curve" id="Curve_4dwsv"]
-_data = [Vector2(0, 0.06741583), 0.0, 0.0, 0, 0, Vector2(0.35135138, 0.73033714), 0.0, 0.0, 0, 0, Vector2(0.76351357, 0.3595506), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 4
-
-[sub_resource type="CurveTexture" id="CurveTexture_b4otg"]
-curve = SubResource("Curve_4dwsv")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_l4m7b"]
-direction = Vector3(0, 1, 0)
-spread = 0.8
-initial_velocity_min = 0.099999994
-initial_velocity_max = 0.099999994
-gravity = Vector3(0, 0, 0)
-scale_min = 0.5
-scale_max = 0.7
-scale_curve = SubResource("CurveTexture_b4otg")
-color = Color(0.007999355, 0.17202824, 0.46751368, 1)
-color_ramp = SubResource("GradientTexture1D_t306i")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3y8rl"]
-render_priority = -1
-transparency = 1
-blend_mode = 3
-vertex_color_use_as_albedo = true
-
-[sub_resource type="SphereMesh" id="SphereMesh_ok3q7"]
-material = SubResource("StandardMaterial3D_3y8rl")
-radius = 0.02
-height = 0.1
+[sub_resource type="Environment" id="Environment_u8p0f"]
+background_mode = 2
+sky = SubResource("Sky_s51gr")
+ambient_light_source = 3
+ambient_light_color = Color(0, 0, 0.27450982, 1)
+ambient_light_sky_contribution = 0.1
+tonemap_mode = 1
+fog_mode = 1
+fog_light_color = Color(0.18371075, 0.20317361, 0.2334575, 1)
+fog_light_energy = 0.0
+fog_density = 1.0
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.01
+volumetric_fog_length = 256.0
 
 [node name="Jono_World" type="Node3D" unique_id=1672319449]
 
@@ -115,6 +71,7 @@ size = Vector3(1, 1, 0.1)
 
 [node name="5m-Wall3" type="CSGBox3D" parent="Maze Walls" unique_id=605187493]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.9954278, -0.0017104149, -5.5074835)
+visible = false
 use_collision = true
 size = Vector3(5.000366, 1, 0.1)
 
@@ -169,7 +126,7 @@ use_collision = true
 size = Vector3(1, 1, 0.1)
 
 [node name="1m-Wall8" type="CSGBox3D" parent="Maze Walls" unique_id=1343497743]
-transform = Transform3D(0.99999964, 0, 0.00017464155, 0, 1, 0, -0.00017464155, 0, 0.99999964, 0.4941522, -0.0017104149, -6.0073004)
+transform = Transform3D(0.99999964, 0, 0.00017464155, 0, 1, 0, -0.00017464155, 0, 0.99999964, 0.5, -0.002, -6.007)
 use_collision = true
 size = Vector3(1, 1, 0.1)
 
@@ -233,16 +190,31 @@ radius = 0.05
 height = 0.2
 
 [node name="Castle Wall Torches3" type="Node3D" parent="Maze Walls" unique_id=1238156604]
-transform = Transform3D(-3.5806274e-08, -2.5071824e-08, -1, -0.57357645, 0.81915206, 0, 0.81915206, 0.57357645, -4.371139e-08, -1.5019999, 0.20000005, -5.944257)
+transform = Transform3D(-3.5806274e-08, -2.5071824e-08, -1, -0.57357645, 0.81915206, 0, 0.81915206, 0.57357645, -4.371139e-08, -1.5019999, 0.20000005, -5.9481487)
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="Maze Walls/Castle Wall Torches3" unique_id=854372535]
 radius = 0.05
 height = 0.2
 
 [node name="Castle Wall Torches4" type="Node3D" parent="Maze Walls" unique_id=1206381795]
-transform = Transform3D(-3.5806274e-08, -2.5071824e-08, -1, -0.57357645, 0.81915206, 0, 0.81915206, 0.57357645, -4.371139e-08, 0.5, 0.2, -5.94)
+transform = Transform3D(-3.5806274e-08, -2.5071824e-08, -1, -0.57357645, 0.81915206, 0, 0.81915206, 0.57357645, -4.371139e-08, 0.5, 0.20000005, -5.947035)
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="Maze Walls/Castle Wall Torches4" unique_id=1298674177]
+radius = 0.05
+height = 0.2
+
+[node name="Castle Wall Torches5" type="Node3D" parent="Maze Walls" unique_id=500272475]
+transform = Transform3D(-3.5806274e-08, -2.5071824e-08, -1, -0.57357645, 0.81915206, 0, 0.81915206, 0.57357645, -4.371139e-08, -0.5030569, 0.20000005, -7.94659)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Maze Walls/Castle Wall Torches5" unique_id=1492128970]
+radius = 0.05
+height = 0.2
+
+[node name="Castle Wall Torches6" type="Node3D" parent="Maze Walls" unique_id=352814434]
+transform = Transform3D(-3.5806274e-08, -2.5071824e-08, 1, -0.57357645, 0.81915206, 0, -0.81915206, -0.57357645, -4.371139e-08, -0.5030569, 0.20000005, -4.0672235)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Maze Walls/Castle Wall Torches6" unique_id=1133875848]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 radius = 0.05
 height = 0.2
 
@@ -311,29 +283,12 @@ use_collision = true
 size = Vector3(1, 1, 0.1)
 material = ExtResource("3_qynta")
 
-[node name="Particle System" type="Node3D" parent="." unique_id=1832953457]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6245925, 1.2910198, 0.49932235)
+[node name="World Lighting" type="Node3D" parent="." unique_id=1803637819]
 
-[node name="Torch" type="Node3D" parent="Particle System" unique_id=1176736981]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.026147604, 0)
+[node name="WorldEnvironment" type="WorldEnvironment" parent="World Lighting" unique_id=812532529]
+environment = SubResource("Environment_u8p0f")
 
-[node name="Torch-Fire" type="GPUParticles3D" parent="Particle System/Torch" unique_id=1921586870]
-amount = 500
-lifetime = 2.0
-speed_scale = 2.0
-randomness = 1.0
-process_material = SubResource("ParticleProcessMaterial_km2i6")
-draw_pass_1 = SubResource("BoxMesh_6h23g")
-
-[node name="Torch-Smoke" type="GPUParticles3D" parent="Particle System/Torch" unique_id=188217752]
-amount = 25
-lifetime = 2.5
-speed_scale = 2.0
-process_material = SubResource("ParticleProcessMaterial_l4m7b")
-draw_pass_1 = SubResource("SphereMesh_ok3q7")
-
-[node name="OmniLight3D" type="OmniLight3D" parent="Particle System/Torch" unique_id=1387630843]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.016917825, 0)
-light_color = Color(0.8343336, 0.54252225, 1.1551381e-06, 1)
-
-[node name="Dragon Fire" type="Node3D" parent="Particle System" unique_id=838257086]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="World Lighting" unique_id=1984257707]
+light_color = Color(0.15170373, 0.15170373, 0.58383155, 1)
+light_energy = 0.2
+shadow_enabled = true
