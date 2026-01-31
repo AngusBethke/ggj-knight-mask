@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://b5ux3emxexwc6"]
+
+[ext_resource type="Script" uid="uid://b0xv7hodkk234" path="res://MainMenu.cs" id="1_wugcc"]
+[ext_resource type="PackedScene" uid="uid://ckoc585df5s5t" path="res://Jono_World.tscn" id="2_gtid3"]
+
+[node name="MainMenu" type="Node2D" unique_id=525812452]
+script = ExtResource("1_wugcc")
+
+[node name="Jono_World" parent="." unique_id=1672319449 instance=ExtResource("2_gtid3")]
+
+[node name="ButtonManager" type="Control" parent="." unique_id=113823937]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Start" type="Button" parent="ButtonManager" unique_id=1921657390]
+layout_mode = 0
+offset_left = -200.0
+offset_top = -200.0
+offset_right = 200.0
+offset_bottom = -130.0
+
+[node name="Options" type="Button" parent="ButtonManager" unique_id=208897741]
+layout_mode = 0
+offset_left = -200.0
+offset_top = -100.0
+offset_right = 200.0
+offset_bottom = -30.0
+
+[node name="Quit" type="Button" parent="ButtonManager" unique_id=810043555]
+layout_mode = 0
+offset_left = -200.0
+offset_right = 200.0
+offset_bottom = 70.0
