@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b3bq38hjw281h"]
+
+[ext_resource type="Texture2D" uid="uid://cee0q8t8k4iym" path="res://assets/barrel/textures/wooden_barrel_low_DefaultMaterial_BaseColor.png" id="1_ctxf2"]
+[ext_resource type="Texture2D" uid="uid://dr3phi2krcgd1" path="res://assets/barrel/textures/wooden_barrel_low_DefaultMaterial_Normal.png" id="2_16a37"]
+
+[resource]
+diffuse_mode = 3
+albedo_texture = ExtResource("1_ctxf2")
+normal_enabled = true
+normal_texture = ExtResource("2_16a37")
