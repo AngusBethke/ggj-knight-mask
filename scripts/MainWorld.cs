@@ -30,7 +30,7 @@ public partial class MainWorld : Node3D
 		_pauseMenu.Visible = true;
 
 		// PAUSE THE GAME
-        Pause(true);
+		Pause(true);
 	}
 
 	private void Pause( bool pause)
