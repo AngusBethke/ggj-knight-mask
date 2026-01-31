@@ -15,6 +15,8 @@ public partial class MainWorld : Node3D
 	private Level1 _level1 => _questObjects.GetNode<Level1>("Level1");
 
 	private Walls _walls => _level1.GetNode<Walls>("Walls");
+
+	private ParticleSystem _particleSystem => GetNode<ParticleSystem>("ParticleSystem");
 	#endregion
 
 	// Called when the node enters the scene tree for the first time.
@@ -52,6 +54,10 @@ public partial class MainWorld : Node3D
 			GetTree().ChangeSceneToFile("res://ui/menus/End_Screen.tscn");
 
 		}
+		#endregion
+
+		#region Particle System Logic
+		_particleSystem.ToggleDoorParticles(_player.IsWearingMask());
 		#endregion
 	}
 

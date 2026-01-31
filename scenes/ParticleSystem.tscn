@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bqc56qogdgoji"]
 
 [ext_resource type="Script" uid="uid://dhofapjldtay0" path="res://scripts/DragonFireAnimation.gd" id="1_fy0p7"]
+[ext_resource type="Script" uid="uid://dwtkchyhauvit" path="res://scripts/ParticleSystem.cs" id="1_ln80l"]
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_3ga38"]
 
@@ -258,6 +259,7 @@ emission = Color(1, 0.3254902, 0.16470589, 1)
 material = SubResource("StandardMaterial3D_gs0tm")
 
 [node name="ParticleSystem" type="Node3D" unique_id=429567959]
+script = ExtResource("1_ln80l")
 
 [node name="Particles" type="Node3D" parent="." unique_id=2109279952]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6245925, 1.2910198, 0.49932235)
