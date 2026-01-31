@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bqc56qogdgoji"]
 
 [ext_resource type="Script" uid="uid://dwtkchyhauvit" path="res://scripts/ParticleSystem.cs" id="1_ln80l"]
-[ext_resource type="Script" uid="uid://x0o6og6ecwc0" path="res://scripts/DragonFireAnimationPorted.cs" id="2_ln80l"]
 [ext_resource type="PackedScene" uid="uid://cvwi5wkk64err" path="res://scenes/Assets/sconce.tscn" id="2_5ksqe"]
+[ext_resource type="Script" uid="uid://x0o6og6ecwc0" path="res://scripts/DragonFireAnimationPorted.cs" id="2_ln80l"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_de0tk"]
 direction = Vector3(0, -1, 0)
@@ -24,7 +24,7 @@ vertex_color_use_as_albedo = true
 albedo_color = Color(0, 1, 1, 1)
 emission_enabled = true
 emission = Color(0, 0.7509483, 1, 1)
-emission_energy_multiplier = 12.59
+emission_energy_multiplier = 16.0
 disable_receive_shadows = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_ny1of"]
@@ -58,8 +58,9 @@ transparency = 1
 blend_mode = 1
 vertex_color_use_as_albedo = true
 albedo_color = Color(0, 1, 1, 1)
+emission_enabled = true
 emission = Color(0, 1, 1, 1)
-emission_energy_multiplier = 5.6
+emission_energy_multiplier = 16.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_tki21"]
 material = SubResource("StandardMaterial3D_ev1ll")
@@ -205,7 +206,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6245925, 1.2910198, 0.49932
 [node name="DragonFire" type="Node3D" parent="Particles" unique_id=1199306746]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3228192, -0.3402363, -0.6424222)
 
-[node name="DragonBreathParticleEngine" type="GPUParticles3D" parent="Particles/DragonFire" unique_id=131187047 node_paths=PackedStringArray("light")]
+[node name="DragonBreathParticleEngine" type="GPUParticles3D" parent="Particles/DragonFire" unique_id=131187047]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7261589, -6.729476)
 gi_mode = 2
 amount = 5000
