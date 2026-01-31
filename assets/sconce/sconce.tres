@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cgnwn8kycooxm"]
+
+[ext_resource type="Texture2D" uid="uid://dpeqjmmueypfy" path="res://assets/sconce/textures/sconce_low_DefaultMaterial_BaseColor.png" id="1_lvrn7"]
+[ext_resource type="Texture2D" uid="uid://ccvdca68t6xgd" path="res://assets/sconce/textures/sconce_low_DefaultMaterial_Emissive.png" id="2_8opxo"]
+[ext_resource type="Texture2D" uid="uid://d1w3g41al22q4" path="res://assets/sconce/textures/sconce_low_DefaultMaterial_Normal.png" id="3_3ijes"]
+
+[resource]
+diffuse_mode = 3
+albedo_texture = ExtResource("1_lvrn7")
+emission_enabled = true
+emission_texture = ExtResource("2_8opxo")
+normal_enabled = true
+normal_texture = ExtResource("3_3ijes")
