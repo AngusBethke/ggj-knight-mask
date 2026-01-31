@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://de8xh8m4oi3sq"]
+
+[node name="MaskOverlay" type="Node2D" unique_id=1442896171]
+
+[node name="MainMask" type="ColorRect" parent="." unique_id=920337622]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(1, 1, 1, 0)
+
+[node name="Bottom" type="ColorRect" parent="MainMask" unique_id=1523905773]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 300.0
+color = Color(0, 0, 0, 1)
+
+[node name="Top" type="ColorRect" parent="MainMask" unique_id=1229772932]
+layout_mode = 0
+offset_top = 780.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)

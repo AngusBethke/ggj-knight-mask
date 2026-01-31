@@ -1,5 +1,9 @@
 [gd_scene format=3 uid="uid://68avu4uvsd05"]
 
+[ext_resource type="PackedScene" uid="uid://de8xh8m4oi3sq" path="res://ui/overlays/Mask_Overlay.tscn" id="2_3li8b"]
+[ext_resource type="Script" uid="uid://bdwwvfvgodhio" path="res://scripts/MaskOverlay.cs" id="3_mdl7e"]
+[ext_resource type="PackedScene" uid="uid://dv8frnonek74m" path="res://ui/overlays/Interaction_Hint.tscn" id="4_mdl7e"]
+[ext_resource type="Script" uid="uid://c8662437yiu7u" path="res://scripts/InteractionHint.cs" id="5_qu4a1"]
 [ext_resource type="Script" uid="uid://c8mf2a1xa7uyf" path="res://scripts/Player.cs" id="5_rkt7w"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_v7774"]
@@ -12,6 +16,9 @@ points = PackedVector3Array(-0.12520654, -0.532801, -0.4805069, 0.022783129, 0.4
 [node name="Player" type="CharacterBody3D" parent="." unique_id=1950089087]
 transform = Transform3D(0.3, 6.0488073e-05, -3.765313e-05, -6.0483926e-05, 0.3, 3.304548e-05, 3.7659793e-05, -3.3037886e-05, 0.3, 0, 0, 0)
 script = ExtResource("5_rkt7w")
+
+[node name="MaskOverlay" parent="Player" unique_id=1442896171 instance=ExtResource("2_3li8b")]
+script = ExtResource("3_mdl7e")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player" unique_id=1158525261]
 transform = Transform3D(1, -2.741718e-11, 2.910383e-11, 2.6631142e-11, 1, -2.910383e-11, 2.910383e-11, 1.4551915e-11, 1, -0.00018368941, 0.9110524, 0.0001001358)
@@ -36,3 +43,6 @@ transform = Transform3D(0.99999994, -1.1990409e-13, 1.4551915e-11, 1.4429347e-11
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player/Head/Hand" unique_id=622259195]
 transform = Transform3D(1, -1.4432899e-11, 1.4551914e-11, 1.4432899e-11, 1, -1.4551915e-11, -1.4551915e-11, 1.4551917e-11, 0.99999994, 2.5818037e-05, -2.2649765e-05, 0.20566821)
+
+[node name="InteractionHint" parent="Player" unique_id=464639353 instance=ExtResource("4_mdl7e")]
+script = ExtResource("5_qu4a1")

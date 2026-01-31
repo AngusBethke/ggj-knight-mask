@@ -39,13 +39,16 @@ public partial class Player : CharacterBody3D
             .GetNode<Camera3D>("Camera3D");
 
 	protected Vector3 Gravity => GetGravity() * 0.66f;
+
+	// mask nodes
+	private MaskOverlay _maskOverlay => GetNode<MaskOverlay>("MaskOverlay");
 	#endregion
 	
 	public override void _Ready()
 	{
 		Input.MouseMode = Input.MouseModeEnum.Captured;
 
-		
+		_maskOverlay.Visible = false;
 		
 	}
 
@@ -177,6 +180,8 @@ public partial class Player : CharacterBody3D
 			_heldObject = selectedObj;
 			selectedObj.GetParent().RemoveChild(selectedObj);
 			_isHoldingObject = true;
+
+			_maskOverlay.Visible = true;
 		}
 		else
 		{
@@ -187,6 +192,8 @@ public partial class Player : CharacterBody3D
 			GetTree().CurrentScene.AddChild(maskObject);
 			_isHoldingObject = false;
 			_heldObject = null;
+
+			_maskOverlay.Visible = false;
 		}
 	}
 }
