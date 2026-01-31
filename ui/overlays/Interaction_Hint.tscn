@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dv8frnonek74m"]
+
+[node name="InteractionHint" type="Node2D" unique_id=464639353]
+
+[node name="InteractionMain" type="ColorRect" parent="." unique_id=1776578284]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(1, 1, 1, 0)
+
+[node name="Label" type="Label" parent="InteractionMain" unique_id=187756827]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+text = "E to interact"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://b5ux3emxexwc6"]
+
+[ext_resource type="Script" uid="uid://b0xv7hodkk234" path="res://scripts/MainMenu.cs" id="1_wugcc"]
+
+[node name="MainMenu" type="Node2D" unique_id=525812452]
+script = ExtResource("1_wugcc")
+
+[node name="ButtonManager" type="Control" parent="." unique_id=113823937]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="ButtonManager" unique_id=1367843131]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.5882353, 0.7921569, 0.1764706, 1)
+
+[node name="Play" type="Button" parent="ButtonManager" unique_id=1921657390]
+layout_mode = 0
+offset_left = 760.0
+offset_top = 376.0
+offset_right = 1160.0
+offset_bottom = 446.0
+text = "PLAY"
+
+[node name="Options" type="Button" parent="ButtonManager" unique_id=208897741]
+layout_mode = 0
+offset_left = 760.0
+offset_top = 476.0
+offset_right = 1160.0
+offset_bottom = 546.0
+text = "SETTINGS"
+
+[node name="Quit" type="Button" parent="ButtonManager" unique_id=810043555]
+layout_mode = 0
+offset_left = 760.0
+offset_top = 576.0
+offset_right = 1160.0
+offset_bottom = 646.0
+text = "QUIT"
