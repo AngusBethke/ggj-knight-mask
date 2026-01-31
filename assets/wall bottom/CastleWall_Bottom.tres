@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://fq72o784yuiq"]
+
+[ext_resource type="Texture2D" uid="uid://cwa6foabh2v1k" path="res://assets/wall bottom/textures/CastleWall_Bottom_BaseColor.png" id="1_lmsbk"]
+[ext_resource type="Texture2D" uid="uid://bf8f3yfr0s3dj" path="res://assets/wall bottom/textures/CastleWall_Bottom_Normal.png" id="2_bmejp"]
+
+[resource]
+diffuse_mode = 3
+albedo_texture = ExtResource("1_lmsbk")
+normal_enabled = true
+normal_scale = -1.0
+normal_texture = ExtResource("2_bmejp")
