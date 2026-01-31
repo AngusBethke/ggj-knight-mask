@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://85ol7ecs5jy0"]
+
+[ext_resource type="ArrayMesh" uid="uid://csijqsstfrh86" path="res://assets/wall/CastleWall.obj" id="1_4ebm2"]
+[ext_resource type="Material" uid="uid://cxxxjdvmnicxx" path="res://assets/wall/CastleWall.tres" id="2_llwa0"]
+
+[node name="CastleWall" type="Node3D" unique_id=195966187]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Base" type="MeshInstance3D" parent="." unique_id=209931705]
+mesh = ExtResource("1_4ebm2")
+surface_material_override/0 = ExtResource("2_llwa0")
+
+[node name="ShadowCaster" type="CSGBox3D" parent="." unique_id=1094619522]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+size = Vector3(2.1, 2.1, 0.1)

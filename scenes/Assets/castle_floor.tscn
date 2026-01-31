@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://5undtrekbkf1"]
+
+[ext_resource type="ArrayMesh" uid="uid://btkjjkd0r1k8l" path="res://assets/floor/CastleFloor.obj" id="1_ldrj4"]
+[ext_resource type="Material" uid="uid://ca0b3qpu7fcno" path="res://assets/floor/CastleFloor.tres" id="2_ed6lc"]
+
+[node name="CastleFloor" type="Node3D" unique_id=1754251654]
+
+[node name="Base" type="MeshInstance3D" parent="." unique_id=1795541481]
+mesh = ExtResource("1_ldrj4")
+surface_material_override/0 = ExtResource("2_ed6lc")

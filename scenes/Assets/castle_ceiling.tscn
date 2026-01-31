@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cpvd1e1i3jpfj"]
+
+[ext_resource type="ArrayMesh" uid="uid://csijqsstfrh86" path="res://assets/wall/CastleWall.obj" id="1_0frgs"]
+[ext_resource type="Material" uid="uid://cxxxjdvmnicxx" path="res://assets/wall/CastleWall.tres" id="2_u1dvy"]
+
+[node name="CastleCeiling" type="Node3D" unique_id=195966187]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Base" type="MeshInstance3D" parent="." unique_id=209931705]
+transform = Transform3D(1, 4.371139e-08, 4.371139e-08, -4.371139e-08, -4.371139e-08, 1, 4.371139e-08, -1, -4.3711385e-08, 0, 2, 0)
+mesh = ExtResource("1_0frgs")
+surface_material_override/0 = ExtResource("2_u1dvy")
+
+[node name="ShadowCaster" type="CSGBox3D" parent="." unique_id=1094619522]
+transform = Transform3D(1, 4.371139e-08, 4.371139e-08, -4.371139e-08, -4.371139e-08, 1, 4.371139e-08, -1, -4.3711385e-08, 4.371139e-08, 2, -1)
+size = Vector3(2.1, 2.1, 0.1)
