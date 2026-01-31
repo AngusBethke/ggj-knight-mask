@@ -6,8 +6,8 @@ public partial class Player : CharacterBody3D
 {
 	#region Constants
 	// Movement consts
-	public const float WalkSpeed = 1.5f;
-	public const float SprintSpeed = 2.2f;
+	public const float WalkSpeed = 1.8f;
+	public const float SprintSpeed = 2.4f;
 	public const float JumpVelocity = 2.0f;
 	public const float Sensitivity = 0.003f;
 
