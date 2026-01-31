@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://d1df2xrux7icl"]
+
+[ext_resource type="Script" uid="uid://b6cud2lvhqicv" path="res://scripts/Level1.cs" id="1_chfst"]
+[ext_resource type="Material" uid="uid://ciarlg67u1wne" path="res://Castle_Maze_Blocker.tres" id="1_sfwvo"]
+[ext_resource type="Script" uid="uid://cleljbsnml0v0" path="res://scripts/Walls.cs" id="2_jk6ti"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yu04l"]
+transparency = 1
+albedo_color = Color(0.5137255, 0.003921569, 0.75686276, 0.7647059)
+
+[node name="Level1" type="Node3D" unique_id=1094496197]
+script = ExtResource("1_chfst")
+
+[node name="Walls" type="Node3D" parent="." unique_id=1728109174]
+script = ExtResource("2_jk6ti")
+
+[node name="1m-BlockerWall2" type="CSGBox3D" parent="Walls" unique_id=1745547944]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+use_collision = true
+size = Vector3(1, 1, 0.1)
+material = ExtResource("1_sfwvo")
+
+[node name="1m-ObjectiveWall2" type="CSGBox3D" parent="Walls" unique_id=1939845599]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+size = Vector3(1, 1, 0.1)
+material = SubResource("StandardMaterial3D_yu04l")
