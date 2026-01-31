@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://0i4suvkffa71"]
+
+[ext_resource type="ArrayMesh" uid="uid://ca6jan0xpyqum" path="res://assets/carpet straight/carpet_straight.obj" id="1_l01ec"]
+[ext_resource type="Material" uid="uid://rsd4vfmspqsi" path="res://assets/carpet straight/carpet_straight.tres" id="2_dthvg"]
+
+[node name="CarpetStraight" type="Node3D" unique_id=2089508110]
+
+[node name="CarpetStraight" type="MeshInstance3D" parent="." unique_id=1233761482]
+mesh = ExtResource("1_l01ec")
+surface_material_override/0 = ExtResource("2_dthvg")

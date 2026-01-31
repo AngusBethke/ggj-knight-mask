@@ -16,7 +16,11 @@
 [ext_resource type="PackedScene" uid="uid://bj0rjb1x8hwfr" path="res://scenes/Assets/castle_window_orange_glow.tscn" id="15_ylhbm"]
 [ext_resource type="PackedScene" uid="uid://di1g54mkffk0w" path="res://scenes/Assets/barrel.tscn" id="17_aheo6"]
 [ext_resource type="PackedScene" uid="uid://nqfrh2nyo6a4" path="res://scenes/Assets/castle_window.tscn" id="17_ylhbm"]
+[ext_resource type="PackedScene" uid="uid://db5i3wjjjfqou" path="res://scenes/Assets/carpet_corner.tscn" id="18_1fch3"]
 [ext_resource type="PackedScene" uid="uid://5ae8vw3w0e8f" path="res://scenes/Building/light_fixtures.tscn" id="18_aheo6"]
+[ext_resource type="PackedScene" uid="uid://0i4suvkffa71" path="res://scenes/Assets/carpet_straight.tscn" id="19_ea8jt"]
+[ext_resource type="PackedScene" uid="uid://ck7mnddlj15dv" path="res://scenes/Assets/carpet_t_junc.tscn" id="20_ea8jt"]
+[ext_resource type="PackedScene" uid="uid://dppxd30u7i0gs" path="res://scenes/Assets/carpet_cross.tscn" id="21_j1hpf"]
 
 [node name="Building" type="Node3D" unique_id=1672319449]
 script = ExtResource("1_1ej2i")
@@ -509,5 +513,114 @@ transform = Transform3D(1, 0, 5.563627e-08, 0, 1, 0, -5.563627e-08, 0, 1, 0, 4, 
 
 [node name="BuildingLighting" type="Node3D" parent="." unique_id=1863458945]
 
-[node name="Barrel" parent="." unique_id=1262328313 instance=ExtResource("17_aheo6")]
+[node name="Scenery" type="Node3D" parent="." unique_id=373410371]
+
+[node name="Barrel" parent="Scenery" unique_id=1262328313 instance=ExtResource("17_aheo6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -0.5)
+
+[node name="Carpets" type="Node3D" parent="." unique_id=1695965315]
+
+[node name="CarpetCorner7" parent="Carpets" unique_id=674731258 instance=ExtResource("18_1fch3")]
+transform = Transform3D(1.0053618e-06, 0, -1, 0, 1, 0, 1, 0, 1.0053618e-06, 3.0000024, 0, -1.0000007)
+
+[node name="CarpetCorner9" parent="Carpets" unique_id=1637200925 instance=ExtResource("18_1fch3")]
+transform = Transform3D(3.1035077e-06, 0, -1, 0, 1, 0, 1, 0, 3.1035077e-06, 0.9999993, 0, -2.999997)
+
+[node name="CarpetCorner8" parent="Carpets" unique_id=562491160 instance=ExtResource("18_1fch3")]
+transform = Transform3D(2.2292802e-06, 0, -1, 0, 1, 0, 1, 0, 2.2292802e-06, -3, 0, -0.99999356)
+
+[node name="CarpetCorner8" parent="Carpets/CarpetCorner8" unique_id=761387873 instance=ExtResource("18_1fch3")]
+transform = Transform3D(-1, 0, -2.185569e-06, 0, 1, 0, 2.185569e-06, 0, -1, 1.9999933, 0, 2.000018)
+
+[node name="CarpetCorner8" parent="Carpets/CarpetCorner8/CarpetCorner8" unique_id=2046870792 instance=ExtResource("18_1fch3")]
+transform = Transform3D(-2.1418577e-06, 0, 1, 0, 1, 0, -1, 0, -2.1418577e-06, -5.000002, 0, 0.9999862)
+
+[node name="CarpetCorner10" parent="Carpets" unique_id=640289981 instance=ExtResource("18_1fch3")]
+transform = Transform3D(-1.4424754e-06, 0, 1, 0, 1, 0, -1, 0, -1.4424754e-06, -4.999999, 0, -2.9999986)
+
+[node name="CarpetCorner6" parent="Carpets" unique_id=2075695088 instance=ExtResource("18_1fch3")]
+transform = Transform3D(-7.4309344e-07, 0, 1, 0, 1, 0, -1, 0, -7.4309344e-07, 1.0000014, 0, -2.9999995)
+
+[node name="CarpetCorner5" parent="Carpets" unique_id=1568560746 instance=ExtResource("18_1fch3")]
+transform = Transform3D(1, 0, 5.245366e-07, 0, 1, 0, -5.245366e-07, 0, 1, 4.0000005, 0, -4)
+
+[node name="CarpetCorner4" parent="Carpets" unique_id=705443094 instance=ExtResource("18_1fch3")]
+transform = Transform3D(3.0597968e-07, 0, -1, 0, 1, 0, 1, 0, 3.0597968e-07, 4.999999, 0, 5)
+
+[node name="CarpetCorner3" parent="Carpets" unique_id=1410061088 instance=ExtResource("18_1fch3")]
+transform = Transform3D(-1, 0, -2.6226832e-07, 0, 1, 0, 2.6226832e-07, 0, -1, 2.0000005, 0, 5.9999995)
+
+[node name="CarpetCorner2" parent="Carpets" unique_id=1512980109 instance=ExtResource("18_1fch3")]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 2, 0, 1.9999999)
+
+[node name="CarpetCorner" parent="Carpets" unique_id=154951163 instance=ExtResource("18_1fch3")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1, 0, 3)
+
+[node name="CarpetStraight7" parent="Carpets" unique_id=2089508110 instance=ExtResource("19_ea8jt")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.99999964, 0, 17)
+
+[node name="CarpetStraight6" parent="Carpets" unique_id=958445332 instance=ExtResource("19_ea8jt")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.9999997, 0, 15)
+
+[node name="CarpetStraight5" parent="Carpets" unique_id=342083670 instance=ExtResource("19_ea8jt")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.99999976, 0, 13)
+
+[node name="CarpetStraight3" parent="Carpets" unique_id=1286064801 instance=ExtResource("19_ea8jt")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.9999999, 0, 9)
+
+[node name="CarpetStraight2" parent="Carpets" unique_id=340091738 instance=ExtResource("19_ea8jt")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.99999994, 0, 7)
+
+[node name="CarpetStraight18" parent="Carpets" unique_id=1893403257 instance=ExtResource("19_ea8jt")]
+transform = Transform3D(1.5298979e-06, 0, -1, 0, 1, 0, 1, 0, 1.5298979e-06, 1.0000057, 0, -12.999974)
+
+[node name="CarpetStraight17" parent="Carpets" unique_id=279799118 instance=ExtResource("19_ea8jt")]
+transform = Transform3D(1.3550524e-06, 0, -1, 0, 1, 0, 1, 0, 1.3550524e-06, 1.0000063, 0, -10.999981)
+
+[node name="CarpetStraight16" parent="Carpets" unique_id=367747276 instance=ExtResource("19_ea8jt")]
+transform = Transform3D(1.1802069e-06, 0, -1, 0, 1, 0, 1, 0, 1.1802069e-06, 1.0000066, 0, -8.999988)
+
+[node name="CarpetStraight15" parent="Carpets" unique_id=296933776 instance=ExtResource("19_ea8jt")]
+transform = Transform3D(1.0053615e-06, 0, -1, 0, 1, 0, 1, 0, 1.0053615e-06, 1.0000064, 0, -6.9999943)
+
+[node name="CarpetStraight14" parent="Carpets" unique_id=192232539 instance=ExtResource("19_ea8jt")]
+transform = Transform3D(8.30516e-07, 0, -1, 0, 1, 0, 1, 0, 8.30516e-07, 1.000006, 0, -5.000001)
+
+[node name="CarpetStraight13" parent="Carpets" unique_id=1986598839 instance=ExtResource("19_ea8jt")]
+transform = Transform3D(-5.682478e-07, 0, 1, 0, 1, 0, -1, 0, -5.682478e-07, -2.9999945, 0, -0.99999523)
+
+[node name="CarpetStraight12" parent="Carpets" unique_id=42725392 instance=ExtResource("19_ea8jt")]
+transform = Transform3D(3.059796e-07, 0, -1, 0, 1, 0, 1, 0, 3.059796e-07, -0.99999523, 0, 2.999999)
+
+[node name="CarpetStraight12" parent="Carpets/CarpetStraight12" unique_id=1043859972 instance=ExtResource("19_ea8jt")]
+transform = Transform3D(3.059796e-07, 0, -1, 0, 1, 0, 1, 0, 3.059796e-07, 3.0000055, 0, 1.0000002)
+
+[node name="CarpetStraight11" parent="Carpets" unique_id=887925566 instance=ExtResource("19_ea8jt")]
+transform = Transform3D(1, 0, 1.748455e-07, 0, 1, 0, -1.748455e-07, 0, 1, 2.3841858e-06, 0, -4.7683693e-07)
+
+[node name="CarpetStraight10" parent="Carpets" unique_id=2081011582 instance=ExtResource("19_ea8jt")]
+transform = Transform3D(1, 0, 1.7484551e-07, 0, 1, 0, -1.7484551e-07, 0, 1, 2.0000017, 0, 7.1525574e-07)
+
+[node name="CarpetStraight9" parent="Carpets" unique_id=2087256577 instance=ExtResource("19_ea8jt")]
+transform = Transform3D(1.3113414e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113414e-07, 5.0000005, 0, -0.99999976)
+
+[node name="CarpetStraight8" parent="Carpets" unique_id=1778896587 instance=ExtResource("19_ea8jt")]
+transform = Transform3D(-4.3711395e-08, 0, -1, 0, 1, 0, 1, 0, -4.3711395e-08, 5, 0, 3)
+
+[node name="CarpetStraight" parent="Carpets" unique_id=1719898102 instance=ExtResource("19_ea8jt")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1, 0, 5)
+
+[node name="CarpetTJunc2" parent="Carpets" unique_id=1527573250 instance=ExtResource("20_ea8jt")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3, 0, -3)
+
+[node name="CarpetTJunc2" parent="Carpets/CarpetTJunc2" unique_id=2009910016 instance=ExtResource("20_ea8jt")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -5, 0, -1.0000002)
+
+[node name="CarpetTJunc2" parent="Carpets/CarpetTJunc2/CarpetTJunc2" unique_id=1382352146 instance=ExtResource("20_ea8jt")]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 3.9999988, 0, 8.000002)
+
+[node name="CarpetTJunc" parent="Carpets" unique_id=1308526727 instance=ExtResource("20_ea8jt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="CarpetCross" parent="Carpets" unique_id=436944839 instance=ExtResource("21_j1hpf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
