@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://j7vpw1eudysw"]
+
+[ext_resource type="Texture2D" uid="uid://c2uu82vlm7qsm" path="res://assets/door/textures/CastleDoor_low_Door_BaseColor.png" id="1_nreuk"]
+[ext_resource type="Texture2D" uid="uid://btofa1ue3ruyw" path="res://assets/door/textures/CastleDoor_low_Door_Normal.png" id="2_c6pgn"]
+
+[resource]
+diffuse_mode = 3
+albedo_texture = ExtResource("1_nreuk")
+normal_enabled = true
+normal_scale = -1.0
+normal_texture = ExtResource("2_c6pgn")
