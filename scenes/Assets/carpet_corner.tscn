@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://db5i3wjjjfqou"]
+
+[ext_resource type="ArrayMesh" uid="uid://blhyorevsxq84" path="res://assets/carpet corner/carpet_corner.obj" id="1_71x1s"]
+[ext_resource type="Material" uid="uid://b88r5ptc40t0s" path="res://assets/carpet corner/carpet_corner.tres" id="2_c3vdi"]
+
+[node name="CarpetCorner" type="Node3D" unique_id=1637200925]
+
+[node name="CarpetCorner" type="MeshInstance3D" parent="." unique_id=811576861]
+mesh = ExtResource("1_71x1s")
+surface_material_override/0 = ExtResource("2_c3vdi")
