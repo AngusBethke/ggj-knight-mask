@@ -130,15 +130,18 @@ emission_energy_multiplier = 5.6
 material = SubResource("StandardMaterial3D_ev1ll")
 size = Vector3(0.05, 0.05, 0.05)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fy0p7"]
+albedo_color = Color(0, 0.47058824, 0, 1)
+
 [node name="ParticleSystem" type="Node3D" unique_id=429567959]
 
-[node name="Particle System" type="Node3D" parent="." unique_id=2109279952]
+[node name="Particles" type="Node3D" parent="." unique_id=2109279952]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6245925, 1.2910198, 0.49932235)
 
-[node name="Torch" type="Node3D" parent="Particle System" unique_id=1471001473]
+[node name="Torch" type="Node3D" parent="Particles" unique_id=1471001473]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.026147604, 0)
 
-[node name="Torch-Fire" type="GPUParticles3D" parent="Particle System/Torch" unique_id=1331604187]
+[node name="Torch-Fire" type="GPUParticles3D" parent="Particles/Torch" unique_id=1331604187]
 amount = 500
 lifetime = 2.0
 speed_scale = 2.0
@@ -146,21 +149,21 @@ randomness = 1.0
 process_material = SubResource("ParticleProcessMaterial_5ksqe")
 draw_pass_1 = SubResource("BoxMesh_k6atw")
 
-[node name="Torch-Smoke" type="GPUParticles3D" parent="Particle System/Torch" unique_id=1164736095]
+[node name="Torch-Smoke" type="GPUParticles3D" parent="Particles/Torch" unique_id=1164736095]
 amount = 25
 lifetime = 2.5
 speed_scale = 2.0
 process_material = SubResource("ParticleProcessMaterial_4wb6m")
 draw_pass_1 = SubResource("SphereMesh_6g2cy")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Particle System/Torch" unique_id=593195475]
+[node name="OmniLight3D" type="OmniLight3D" parent="Particles/Torch" unique_id=593195475]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.016917825, 0)
 light_color = Color(0.8343336, 0.54252225, 1.1551381e-06, 1)
 
-[node name="Torch2" type="Node3D" parent="Particle System" unique_id=560045383]
+[node name="Torch2" type="Node3D" parent="Particles" unique_id=560045383]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0043064356, -0.026147604, 1.9997697)
 
-[node name="Torch-Fire" type="GPUParticles3D" parent="Particle System/Torch2" unique_id=1470136785]
+[node name="Torch-Fire" type="GPUParticles3D" parent="Particles/Torch2" unique_id=1470136785]
 amount = 500
 lifetime = 2.0
 speed_scale = 2.0
@@ -168,21 +171,21 @@ randomness = 1.0
 process_material = SubResource("ParticleProcessMaterial_5ksqe")
 draw_pass_1 = SubResource("BoxMesh_k6atw")
 
-[node name="Torch-Smoke" type="GPUParticles3D" parent="Particle System/Torch2" unique_id=1220930076]
+[node name="Torch-Smoke" type="GPUParticles3D" parent="Particles/Torch2" unique_id=1220930076]
 amount = 25
 lifetime = 2.5
 speed_scale = 2.0
 process_material = SubResource("ParticleProcessMaterial_4wb6m")
 draw_pass_1 = SubResource("SphereMesh_6g2cy")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Particle System/Torch2" unique_id=1371323252]
+[node name="OmniLight3D" type="OmniLight3D" parent="Particles/Torch2" unique_id=1371323252]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.016917825, 0)
 light_color = Color(0.8343336, 0.54252225, 1.1551381e-06, 1)
 
-[node name="Torch3" type="Node3D" parent="Particle System" unique_id=1715126297]
+[node name="Torch3" type="Node3D" parent="Particles" unique_id=1715126297]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6232738, -0.026147604, 2.36805)
 
-[node name="Torch-Fire" type="GPUParticles3D" parent="Particle System/Torch3" unique_id=250981197]
+[node name="Torch-Fire" type="GPUParticles3D" parent="Particles/Torch3" unique_id=250981197]
 amount = 500
 lifetime = 2.0
 speed_scale = 2.0
@@ -190,21 +193,21 @@ randomness = 1.0
 process_material = SubResource("ParticleProcessMaterial_5ksqe")
 draw_pass_1 = SubResource("BoxMesh_k6atw")
 
-[node name="Torch-Smoke" type="GPUParticles3D" parent="Particle System/Torch3" unique_id=23772724]
+[node name="Torch-Smoke" type="GPUParticles3D" parent="Particles/Torch3" unique_id=23772724]
 amount = 25
 lifetime = 2.5
 speed_scale = 2.0
 process_material = SubResource("ParticleProcessMaterial_4wb6m")
 draw_pass_1 = SubResource("SphereMesh_6g2cy")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Particle System/Torch3" unique_id=1019406802]
+[node name="OmniLight3D" type="OmniLight3D" parent="Particles/Torch3" unique_id=1019406802]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.016917825, 0)
 light_color = Color(0.8343336, 0.54252225, 1.1551381e-06, 1)
 
-[node name="Torch4" type="Node3D" parent="Particle System" unique_id=2140370513]
+[node name="Torch4" type="Node3D" parent="Particles" unique_id=2140370513]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.625, -0.01999998, 0.6139278)
 
-[node name="Torch-Fire" type="GPUParticles3D" parent="Particle System/Torch4" unique_id=725947725]
+[node name="Torch-Fire" type="GPUParticles3D" parent="Particles/Torch4" unique_id=725947725]
 amount = 500
 lifetime = 2.0
 speed_scale = 2.0
@@ -212,21 +215,21 @@ randomness = 1.0
 process_material = SubResource("ParticleProcessMaterial_5ksqe")
 draw_pass_1 = SubResource("BoxMesh_k6atw")
 
-[node name="Torch-Smoke" type="GPUParticles3D" parent="Particle System/Torch4" unique_id=365282778]
+[node name="Torch-Smoke" type="GPUParticles3D" parent="Particles/Torch4" unique_id=365282778]
 amount = 25
 lifetime = 2.5
 speed_scale = 2.0
 process_material = SubResource("ParticleProcessMaterial_4wb6m")
 draw_pass_1 = SubResource("SphereMesh_6g2cy")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Particle System/Torch4" unique_id=692964607]
+[node name="OmniLight3D" type="OmniLight3D" parent="Particles/Torch4" unique_id=692964607]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.016917825, 0)
 light_color = Color(0.8343336, 0.54252225, 1.1551381e-06, 1)
 
-[node name="Torch5" type="Node3D" parent="Particle System" unique_id=201185540]
+[node name="Torch5" type="Node3D" parent="Particles" unique_id=201185540]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.627, -0.026, 0.614)
 
-[node name="Torch-Fire" type="GPUParticles3D" parent="Particle System/Torch5" unique_id=228143032]
+[node name="Torch-Fire" type="GPUParticles3D" parent="Particles/Torch5" unique_id=228143032]
 amount = 500
 lifetime = 2.0
 speed_scale = 2.0
@@ -234,21 +237,21 @@ randomness = 1.0
 process_material = SubResource("ParticleProcessMaterial_5ksqe")
 draw_pass_1 = SubResource("BoxMesh_k6atw")
 
-[node name="Torch-Smoke" type="GPUParticles3D" parent="Particle System/Torch5" unique_id=815451192]
+[node name="Torch-Smoke" type="GPUParticles3D" parent="Particles/Torch5" unique_id=815451192]
 amount = 25
 lifetime = 2.5
 speed_scale = 2.0
 process_material = SubResource("ParticleProcessMaterial_4wb6m")
 draw_pass_1 = SubResource("SphereMesh_6g2cy")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Particle System/Torch5" unique_id=97215133]
+[node name="OmniLight3D" type="OmniLight3D" parent="Particles/Torch5" unique_id=97215133]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.016917825, 0)
 light_color = Color(0.8343336, 0.54252225, 1.1551381e-06, 1)
 
-[node name="Torch6" type="Node3D" parent="Particle System" unique_id=2135533034]
+[node name="Torch6" type="Node3D" parent="Particles" unique_id=2135533034]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6284575, -0.026147604, -1.3777959)
 
-[node name="Torch-Fire" type="GPUParticles3D" parent="Particle System/Torch6" unique_id=527413839]
+[node name="Torch-Fire" type="GPUParticles3D" parent="Particles/Torch6" unique_id=527413839]
 amount = 500
 lifetime = 2.0
 speed_scale = 2.0
@@ -256,41 +259,42 @@ randomness = 1.0
 process_material = SubResource("ParticleProcessMaterial_5ksqe")
 draw_pass_1 = SubResource("BoxMesh_k6atw")
 
-[node name="Torch-Smoke" type="GPUParticles3D" parent="Particle System/Torch6" unique_id=1237005438]
+[node name="Torch-Smoke" type="GPUParticles3D" parent="Particles/Torch6" unique_id=1237005438]
 amount = 25
 lifetime = 2.5
 speed_scale = 2.0
 process_material = SubResource("ParticleProcessMaterial_4wb6m")
 draw_pass_1 = SubResource("SphereMesh_6g2cy")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Particle System/Torch6" unique_id=1086329897]
+[node name="OmniLight3D" type="OmniLight3D" parent="Particles/Torch6" unique_id=1086329897]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.016917825, 0)
 light_color = Color(0.8343336, 0.54252225, 1.1551381e-06, 1)
 
-[node name="Dragon Fire" type="Node3D" parent="Particle System" unique_id=1199306746]
+[node name="DragonFire" type="Node3D" parent="Particles" unique_id=1199306746]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.37337732, 0, 1.0841866)
 
-[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="Particle System/Dragon Fire" unique_id=1566665024]
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="Particles/DragonFire" unique_id=1566665024]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013323188, -0.9768393, -0.048783183)
 size = Vector3(1.0820313, 0.41186523, 5.07959)
 
-[node name="GPUParticlesAttractorBox3D" type="GPUParticlesAttractorBox3D" parent="Particle System/Dragon Fire" unique_id=1888286508]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7550766, -0.5025635, -0.18455505)
-size = Vector3(1.1116028, 0.48266602, 5.244049)
-
-[node name="Dragon Breath Particle Engine" type="GPUParticles3D" parent="Particle System/Dragon Fire" unique_id=131187047]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6656233, -3.6323023)
+[node name="DragonBreathParticleEngine" type="GPUParticles3D" parent="Particles/DragonFire" unique_id=131187047]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6656233, -4.555833)
 amount = 5000
-sub_emitter = NodePath("../Dragon Burning-on-floor Particle Engine")
+sub_emitter = NodePath("../DragonBurning-on-floorParticleEngine")
 lifetime = 15.0
 process_material = SubResource("ParticleProcessMaterial_de0tk")
 draw_pass_1 = SubResource("BoxMesh_ny1of")
 script = ExtResource("1_fy0p7")
 
-[node name="Dragon Burning-on-floor Particle Engine" type="GPUParticles3D" parent="Particle System/Dragon Fire" unique_id=1425487605]
+[node name="DragonBurning-on-floorParticleEngine" type="GPUParticles3D" parent="Particles/DragonFire" unique_id=1425487605]
 amount = 5000
 amount_ratio = 0.3738
 lifetime = 3.0
 randomness = 1.0
 process_material = SubResource("ParticleProcessMaterial_l6coy")
 draw_pass_1 = SubResource("BoxMesh_tki21")
+
+[node name="Floor" type="CSGBox3D" parent="." unique_id=830837726]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25219727, 0)
+size = Vector3(50, 0.5, 50)
+material = SubResource("StandardMaterial3D_fy0p7")
