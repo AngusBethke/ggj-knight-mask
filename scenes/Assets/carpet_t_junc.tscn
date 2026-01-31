@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://ck7mnddlj15dv"]
+
+[ext_resource type="ArrayMesh" uid="uid://chkfxo25ho43c" path="res://assets/carpet tjunc/carpet_tjunction.obj" id="1_k75vg"]
+[ext_resource type="Material" uid="uid://bm4fc75hwqj1s" path="res://assets/carpet tjunc/carpet_tjunction.tres" id="2_mesjx"]
+
+[node name="CarpetTJunc" type="Node3D" unique_id=1527573250]
+
+[node name="CarpetTjunction" type="MeshInstance3D" parent="." unique_id=645319252]
+mesh = ExtResource("1_k75vg")
+surface_material_override/0 = ExtResource("2_mesjx")

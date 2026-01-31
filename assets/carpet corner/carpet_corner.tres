@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b88r5ptc40t0s"]
+
+[ext_resource type="Texture2D" uid="uid://dyofs5fupkndh" path="res://assets/carpet corner/textures/carpet_corner_low_Carpet_BaseColor.png" id="1_7ni4c"]
+[ext_resource type="Texture2D" uid="uid://de5xkvew5rtox" path="res://assets/carpet corner/textures/carpet_corner_low_Carpet_Normal.png" id="2_m21e8"]
+
+[resource]
+diffuse_mode = 3
+albedo_texture = ExtResource("1_7ni4c")
+normal_enabled = true
+normal_texture = ExtResource("2_m21e8")
