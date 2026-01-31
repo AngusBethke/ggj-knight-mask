@@ -223,6 +223,40 @@ material = SubResource("StandardMaterial3D_4wb6m")
 radius = 0.01
 height = 0.05
 
+[sub_resource type="Gradient" id="Gradient_ln80l"]
+offsets = PackedFloat32Array(0, 0.40983605, 1)
+colors = PackedColorArray(1, 0.92941177, 0.70980394, 1, 0.96355826, 0.398544, 0, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5ksqe"]
+gradient = SubResource("Gradient_ln80l")
+
+[sub_resource type="Curve" id="Curve_k6atw"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.4256757, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_sl8xs"]
+curve = SubResource("Curve_k6atw")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6g2cy"]
+direction = Vector3(0, 1, 0)
+spread = 4.235
+initial_velocity_min = 1.0
+initial_velocity_max = 1.0
+gravity = Vector3(0, 0, 0)
+radial_accel_min = 2.9999976
+radial_accel_max = 2.9999976
+scale_curve = SubResource("CurveTexture_sl8xs")
+color_ramp = SubResource("GradientTexture1D_5ksqe")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gs0tm"]
+blend_mode = 1
+vertex_color_use_as_albedo = true
+emission_enabled = true
+emission = Color(1, 0.3254902, 0.16470589, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_de0tk"]
+material = SubResource("StandardMaterial3D_gs0tm")
+
 [node name="ParticleSystem" type="Node3D" unique_id=429567959]
 
 [node name="Particles" type="Node3D" parent="." unique_id=2109279952]
@@ -372,7 +406,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3228192, -0.3402363, -0.642
 [node name="DragonBreathParticleEngine" type="GPUParticles3D" parent="Particles/DragonFire" unique_id=131187047]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7261589, -6.729476)
 gi_mode = 2
-amount = 2500
+amount = 5000
 sub_emitter = NodePath("DragonBurning-on-floorParticleEngine")
 lifetime = 15.0
 collision_base_size = 0.2
@@ -394,9 +428,9 @@ process_material = SubResource("ParticleProcessMaterial_l6coy")
 draw_pass_1 = SubResource("BoxMesh_tki21")
 
 [node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="Particles/DragonFire" unique_id=1566665024]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.033216238, -1.1042699, 2.8254414)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10897279, -1.1042699, 1.1072955)
 layers = 7
-size = Vector3(2.8129272, 0.41186523, 14.061861)
+size = Vector3(2.5285492, 0.41186523, 10.625569)
 
 [node name="GPUParticlesCollisionBox3D2" type="GPUParticlesCollisionBox3D" parent="Particles/DragonFire" unique_id=1301061491]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8405669, 1.158293, -2.973403)
@@ -474,5 +508,25 @@ process_material = SubResource("ParticleProcessMaterial_nndnq")
 draw_pass_1 = SubResource("CapsuleMesh_6g2cy")
 
 [node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="Particles/Falling fire" unique_id=539476869]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.290955, -9.277267, 2.0192056)
-size = Vector3(7.108368, 0.7850342, 14.695042)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.371532, -9.277267, -2.4468658)
+size = Vector3(5.2695236, 0.7850342, 5.0667996)
+
+[node name="GPUParticlesCollisionBox3D2" type="GPUParticlesCollisionBox3D" parent="Particles/Falling fire" unique_id=857864044]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.3747697, -9.277267, -7.484818)
+size = Vector3(1.9383535, 0.7850342, 5.0667996)
+
+[node name="Tower Fire" type="Node3D" parent="Particles" unique_id=1745772408]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5595565, 4.395987, -1.2845879)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Particles/Tower Fire" unique_id=1211508053]
+amount = 100
+lifetime = 1.5
+process_material = SubResource("ParticleProcessMaterial_6g2cy")
+draw_pass_1 = SubResource("SphereMesh_de0tk")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Particles/Tower Fire" unique_id=1918746330]
+transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, -0.99999994, 0, 0.99999994, -4.3711385e-08, 0, 0, 0)
+light_color = Color(0.98039216, 0.29411766, 0.14509805, 1)
+light_energy = 5.911
+spot_range = 3.6831036
+spot_angle = 21.69239

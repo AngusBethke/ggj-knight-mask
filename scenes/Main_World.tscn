@@ -38,6 +38,7 @@ script = ExtResource("1_7vp6s")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.33234197, 1.0741528, -1.2684388)
 
 [node name="ParticleSystem" parent="." unique_id=429567959 instance=ExtResource("5_xk5sm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.47282004, 0.9645462, -1.2865866)
 
 [node name="Player" parent="." unique_id=680051660 instance=ExtResource("5_68uxw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.009116352, 1.1329429, 16.254225)
@@ -51,8 +52,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.047816, 3.8958807)
 environment = SubResource("Environment_vw1ok")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="World Lighting" unique_id=664258060]
+transform = Transform3D(1, 0, 0, 0, 0.005585002, -0.9999844, 0, 0.9999844, 0.005585002, 0, 0, 0)
 light_color = Color(0.15170373, 0.15170373, 0.58383155, 1)
-light_energy = 0.2
+light_energy = 0.042
 shadow_enabled = true
 
 [node name="Areas" parent="." unique_id=2018402989 instance=ExtResource("8_uds4v")]
