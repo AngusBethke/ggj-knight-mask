@@ -9,6 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://bejjccqnx8hlu" path="res://assets/NightSky HRD/qwantani_moon_noon_puresky_4k.exr" id="7_05n7d"]
 [ext_resource type="PackedScene" uid="uid://c5rnm55i7qhub" path="res://scenes/Areas.tscn" id="8_uds4v"]
 [ext_resource type="Script" uid="uid://jmfkq1x2tjdy" path="res://scripts/Areas.cs" id="9_vw1ok"]
+[ext_resource type="ArrayMesh" uid="uid://bw4p2788oy2ot" path="res://assets/sconce/sconce.obj" id="10_j3hfv"]
+[ext_resource type="Texture2D" uid="uid://dpeqjmmueypfy" path="res://assets/sconce/textures/sconce_low_DefaultMaterial_BaseColor.png" id="11_7eq44"]
+[ext_resource type="Texture2D" uid="uid://ccvdca68t6xgd" path="res://assets/sconce/textures/sconce_low_DefaultMaterial_Emissive.png" id="12_isugt"]
+[ext_resource type="Texture2D" uid="uid://d1w3g41al22q4" path="res://assets/sconce/textures/sconce_low_DefaultMaterial_Normal.png" id="13_2j375"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_uds4v"]
 panorama = ExtResource("7_05n7d")
@@ -30,6 +34,16 @@ fog_density = 1.0
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.0615
 volumetric_fog_length = 256.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uadeg"]
+diffuse_mode = 3
+albedo_texture = ExtResource("11_7eq44")
+emission_enabled = true
+emission_texture = ExtResource("12_isugt")
+normal_enabled = true
+normal_texture = ExtResource("13_2j375")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h4b6n"]
 
 [node name="Main" type="Node3D" unique_id=917817897]
 script = ExtResource("1_7vp6s")
@@ -62,3 +76,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3965373, 2.25573, -16.31201
 script = ExtResource("9_vw1ok")
 
 [node name="PauseMenu" parent="." unique_id=525812452 instance=ExtResource("4_35ipm")]
+
+[node name="Sconce" type="MeshInstance3D" parent="." unique_id=1866083325]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.75, 0, 1.75)
+mesh = ExtResource("10_j3hfv")
+surface_material_override/0 = SubResource("StandardMaterial3D_uadeg")
+surface_material_override/1 = SubResource("StandardMaterial3D_h4b6n")
