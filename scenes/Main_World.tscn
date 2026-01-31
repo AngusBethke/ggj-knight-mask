@@ -55,7 +55,7 @@ light_energy = 0.2
 shadow_enabled = true
 
 [node name="Areas" parent="." unique_id=2018402989 instance=ExtResource("8_uds4v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10908508, 0.9813757, -6.477106)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10908508, 0.9813757, -6.6567464)
 script = ExtResource("9_vw1ok")
 
 [node name="PauseMenu" parent="." unique_id=525812452 instance=ExtResource("4_35ipm")]

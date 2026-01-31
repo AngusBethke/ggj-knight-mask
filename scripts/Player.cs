@@ -236,35 +236,35 @@ public partial class Player : CharacterBody3D
 	}
 
 	 private async Task CameraShakeAsync(float magnitude = 0.1f, float period = 2f)
-    {
-        Transform3D initial_transform = this.Transform;
-        float elapsed_time = 0.0f;
+	{
+		Transform3D initial_transform = this.Transform;
+		float elapsed_time = 0.0f;
 		var tracker = 2;
-        while(elapsed_time < period)
-        {
+		while(elapsed_time < period)
+		{
 			if(tracker % 2 != 0)
 			{
 				tracker++;	
 				continue;
 			}
-            var offset = new Vector3(
-                (float)GD.RandRange(-magnitude, magnitude),
-                (float)GD.RandRange(-magnitude, magnitude),
-                0.0f
-            );
+			var offset = new Vector3(
+				(float)GD.RandRange(-magnitude, magnitude),
+				(float)GD.RandRange(-magnitude, magnitude),
+				0.0f
+			);
 
-            Transform3D new_transform = initial_transform;
-            new_transform.Origin += offset;
-            Transform = new_transform;
+			Transform3D new_transform = initial_transform;
+			new_transform.Origin += offset;
+			Transform = new_transform;
 
-            elapsed_time += (float)GetProcessDeltaTime();
+			elapsed_time += (float)GetProcessDeltaTime();
 
 
-            await ToSignal(GetTree(), "process_frame");
+			await ToSignal(GetTree(), "process_frame");
 			tracker++;	
-        }
+		}
 
-        Transform = initial_transform;
-    }
+		Transform = initial_transform;
+	}
 	#endregion
 }
