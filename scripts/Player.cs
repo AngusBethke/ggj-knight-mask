@@ -42,6 +42,10 @@ public partial class Player : CharacterBody3D
 
 	// mask nodes
 	private MaskOverlay _maskOverlay => GetNode<MaskOverlay>("MaskOverlay");
+
+
+	// interaction hints
+	private Node2D _interactionHint => GetNode<Node2D>("InteractionHint");
 	#endregion
 	
 	public override void _Ready()
@@ -49,6 +53,7 @@ public partial class Player : CharacterBody3D
 		Input.MouseMode = Input.MouseModeEnum.Captured;
 
 		_maskOverlay.Visible = false;
+		_interactionHint.Visible = false;
 		
 	}
 
@@ -147,12 +152,20 @@ public partial class Player : CharacterBody3D
 		var interactionObject = _interactionRayCast.GetCollider();
 		if (_interactionRayCast.IsColliding() && interactionObject is Node selectedObj && selectedObj.IsInGroup("pickable"))
 		{
+			// show interaction hint
+			if(!_isHoldingObject)
+			{
+				_interactionHint.Visible = true;
+			}
 			// if interaction key pressed
 			if (Input.IsActionJustPressed("interaction"))
 			{
 				HandleInteraction(selectedObj);
 			}
 
+		} else
+		{
+			_interactionHint.Visible = false;
 		}
 
 		// drop action
@@ -182,6 +195,7 @@ public partial class Player : CharacterBody3D
 			_isHoldingObject = true;
 
 			_maskOverlay.Visible = true;
+			_interactionHint.Visible = false;
 		}
 		else
 		{
