@@ -11,11 +11,11 @@ public partial class PauseMenu : Node2D
 		
 		// CONTINUE BUTTON
 		Button continueButton = GetNode<Control>("ButtonManager").GetNode<Button>("Continue");
-		continueButton.Pressed += _Continue;
+		continueButton.Pressed += Continue;
 
-		// MAIN MENYU BUTTON
+		// MAIN MENU BUTTON
 		Button mainMenuButton = GetNode<Control>("ButtonManager").GetNode<Button>("MainMenu");
-		mainMenuButton.Pressed += _mainMenu;
+		mainMenuButton.Pressed += MainMenu;
 
 		// QUIT BUTTON
 		Button quitButton = GetNode<Control>("ButtonManager").GetNode<Button>("Quit");
@@ -28,14 +28,14 @@ public partial class PauseMenu : Node2D
 	
 	}
 
-	private void _Continue()
+	private void Continue()
 	{
 		Input.MouseMode = Input.MouseModeEnum.Captured;
 		GetTree().Paused = false;
 		Visible = false;
 	}
 	
-	private void _mainMenu()
+	private void MainMenu()
 	{
 		GetTree().Paused = false;
 		GetTree().ChangeSceneToFile("res://ui/menus/Main_Menu.tscn");

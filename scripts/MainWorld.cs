@@ -3,14 +3,12 @@ using System;
 
 public partial class MainWorld : Node3D
 {
-	private PauseMenu PauseMenu => GetNode<PauseMenu>("PauseMenu");
+	private PauseMenu _pauseMenu => GetNode<PauseMenu>("PauseMenu");
 
-	private Node3D _jonoWorld => GetNode<Node3D>("Jono_World");
-	private Node3D _tillyWorld => GetNode<Node3D>("TillyWorld");
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		PauseMenu.Visible = false;
+		_pauseMenu.Visible = false;
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -19,23 +17,24 @@ public partial class MainWorld : Node3D
 		// PAUSE MENU ON ESCAPE
 		if (Input.IsActionPressed("pause_menu"))
 		{
-			_loadPauseMenu();
+			LoadPauseMenu();
 		}
 	}
 
-	private void _loadPauseMenu()
+	private void LoadPauseMenu()
 	{
 		// CHANGE MOUSE POINTER MODE TO VISIBLE
 		Input.MouseMode = Input.MouseModeEnum.Visible;
-		_pause(_jonoWorld, true);
-		_pause(_tillyWorld, true);
-		PauseMenu.Visible = true;
+
+		// SHOW THE PAUSE MENU
+		_pauseMenu.Visible = true;
+
+		// PAUSE THE GAME
+        Pause(true);
 	}
 
-	private void _pause(Node3D world, bool pause)
+	private void Pause( bool pause)
 	{
-		
-		world.GetTree().Paused = pause;
-		
+		GetTree().Paused = pause;	
 	}
 }
