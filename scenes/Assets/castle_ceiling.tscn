@@ -14,8 +14,9 @@ transform = Transform3D(1, 4.371139e-08, 4.371139e-08, -4.371139e-08, -4.371139e
 mesh = ExtResource("1_0frgs")
 surface_material_override/0 = ExtResource("2_u1dvy")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1047696952]
-transform = Transform3D(1, 4.371139e-08, 4.371139e-08, -4.371139e-08, -4.371139e-08, 1, 4.371139e-08, -1, -4.3711385e-08, 0, 2, 0)
+[node name="StaticBody3D" type="StaticBody3D" parent="Base" unique_id=1883426]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Base/StaticBody3D" unique_id=1387184844]
 shape = SubResource("ConcavePolygonShape3D_0frgs")
 
 [node name="ShadowCaster" type="CSGBox3D" parent="." unique_id=1094619522]

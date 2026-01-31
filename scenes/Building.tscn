@@ -271,23 +271,23 @@ transform = Transform3D(7.824337e-06, 0, -1, 0, 1, 0, 1, 0, 7.824337e-06, -1.000
 [node name="CastleWall20" parent="BaseCastle" unique_id=995907628 instance=ExtResource("7_w03x8")]
 transform = Transform3D(6.250728e-06, 0, -1, 0, 1, 0, 1, 0, 6.250728e-06, -0.9999946, 0, -7.000024)
 
+[node name="CastleWall39" parent="BaseCastle" unique_id=565069903 instance=ExtResource("7_w03x8")]
+transform = Transform3D(-2.7955e-05, 0, 1, 0, 1, 0, -1, 0, -2.7955e-05, 0.99992967, 0, -12.999958)
+
+[node name="CastleWall38" parent="BaseCastle" unique_id=2122190934 instance=ExtResource("7_w03x8")]
+transform = Transform3D(-2.3316908e-05, 0, 1, 0, 1, 0, -1, 0, -2.3316908e-05, 0.9999678, 0, -10.999974)
+
+[node name="CastleWall37" parent="BaseCastle" unique_id=205563786 instance=ExtResource("7_w03x8")]
+transform = Transform3D(-1.8678817e-05, 0, 1, 0, 1, 0, -1, 0, -1.8678817e-05, 0.9999967, 0, -8.99999)
+
+[node name="CastleWall36" parent="BaseCastle" unique_id=431096320 instance=ExtResource("7_w03x8")]
+transform = Transform3D(-1.4040725e-05, 0, 1, 0, 1, 0, -1, 0, -1.4040725e-05, 1.0000163, 0, -7.000006)
+
+[node name="CastleWall35" parent="BaseCastle" unique_id=368908034 instance=ExtResource("7_w03x8")]
+transform = Transform3D(-9.402633e-06, 0, 1, 0, 1, 0, -1, 0, -9.402633e-06, 1.0000267, 0, -5.0000224)
+
 [node name="CastleWall19" parent="BaseCastle" unique_id=121343047 instance=ExtResource("7_w03x8")]
 transform = Transform3D(4.677118e-06, 0, -1, 0, 1, 0, 1, 0, 4.677118e-06, -0.9999838, 0, -5.0000153)
-
-[node name="CastleWall19" parent="BaseCastle/CastleWall19" unique_id=368908034 instance=ExtResource("7_w03x8")]
-transform = Transform3D(-1, 0, -4.725515e-06, 0, 1, 0, 4.725515e-06, 0, -1, 2.3841858e-06, 0, -2.0000105)
-
-[node name="CastleWall19" parent="BaseCastle/CastleWall19/CastleWall19" unique_id=431096320 instance=ExtResource("7_w03x8")]
-transform = Transform3D(1, 0, 4.638092e-06, 0, 1, 0, -4.638092e-06, 0, 1, 1.9999838, 0, 8.46386e-06)
-
-[node name="CastleWall19" parent="BaseCastle/CastleWall19/CastleWall19/CastleWall19" unique_id=205563786 instance=ExtResource("7_w03x8")]
-transform = Transform3D(1, 0, 4.638092e-06, 0, 1, 0, -4.638092e-06, 0, 1, 1.9999838, 0, 8.46386e-06)
-
-[node name="CastleWall19" parent="BaseCastle/CastleWall19/CastleWall19/CastleWall19/CastleWall19" unique_id=2122190934 instance=ExtResource("7_w03x8")]
-transform = Transform3D(1, 0, 4.638092e-06, 0, 1, 0, -4.638092e-06, 0, 1, 1.9999838, 0, 8.46386e-06)
-
-[node name="CastleWall19" parent="BaseCastle/CastleWall19/CastleWall19/CastleWall19/CastleWall19/CastleWall19" unique_id=565069903 instance=ExtResource("7_w03x8")]
-transform = Transform3D(1, 0, 4.638092e-06, 0, 1, 0, -4.638092e-06, 0, 1, 1.9999838, 0, 8.46386e-06)
 
 [node name="CastleWall18" parent="BaseCastle" unique_id=1219401940 instance=ExtResource("7_w03x8")]
 transform = Transform3D(-1, 0, -3.0597967e-06, 0, 1, 0, 3.0597967e-06, 0, -1, -1.9999943, 0, -4.0000057)
@@ -298,41 +298,41 @@ transform = Transform3D(-1, 0, -1.486187e-06, 0, 1, 0, 1.486187e-06, 0, -1, -4.0
 [node name="CastleWall12" parent="BaseCastle" unique_id=2050587682 instance=ExtResource("7_w03x8")]
 transform = Transform3D(1.0053618e-06, 0, -1, 0, 1, 0, 1, 0, 1.0053618e-06, -5.000002, 0, -2.9999993)
 
+[node name="CastleWall34" parent="BaseCastle" unique_id=1850389555 instance=ExtResource("7_w03x8")]
+transform = Transform3D(6.250727e-06, 0, -1, 0, 1, 0, 1, 0, 6.250727e-06, -0.9999706, 0, 17.000004)
+
+[node name="CastleWall33" parent="BaseCastle" unique_id=664087025 instance=ExtResource("7_w03x8")]
+transform = Transform3D(5.7261905e-06, 0, -1, 0, 1, 0, 1, 0, 5.7261905e-06, -0.9999791, 0, 15.000003)
+
+[node name="CastleWall32" parent="BaseCastle" unique_id=1837375549 instance=ExtResource("7_w03x8")]
+transform = Transform3D(5.201654e-06, 0, -1, 0, 1, 0, 1, 0, 5.201654e-06, -0.9999865, 0, 13.000002)
+
+[node name="CastleWall31" parent="BaseCastle" unique_id=368939708 instance=ExtResource("7_w03x8")]
+transform = Transform3D(4.6771174e-06, 0, -1, 0, 1, 0, 1, 0, 4.6771174e-06, -0.9999929, 0, 11.000001)
+
+[node name="CastleWall30" parent="BaseCastle" unique_id=1331450085 instance=ExtResource("7_w03x8")]
+transform = Transform3D(4.152581e-06, 0, -1, 0, 1, 0, 1, 0, 4.152581e-06, -0.9999982, 0, 9)
+
+[node name="CastleWall29" parent="BaseCastle" unique_id=833274219 instance=ExtResource("7_w03x8")]
+transform = Transform3D(3.6280444e-06, 0, -1, 0, 1, 0, 1, 0, 3.6280444e-06, -1.0000025, 0, 6.999999)
+
+[node name="CastleWall28" parent="BaseCastle" unique_id=538028137 instance=ExtResource("7_w03x8")]
+transform = Transform3D(1, 0, 3.1472193e-06, 0, 1, 0, -3.1472193e-06, 0, 1, -2.000003, 0, 6.000003)
+
+[node name="CastleWall27" parent="BaseCastle" unique_id=1163089539 instance=ExtResource("7_w03x8")]
+transform = Transform3D(1, 0, 2.6226828e-06, 0, 1, 0, -2.6226828e-06, 0, 1, -4.000004, 0, 6.0000043)
+
+[node name="CastleWall26" parent="BaseCastle" unique_id=1625332039 instance=ExtResource("7_w03x8")]
+transform = Transform3D(2.0544348e-06, 0, -1, 0, 1, 0, 1, 0, 2.0544348e-06, -5.000005, 0, 5.000003)
+
+[node name="CastleWall25" parent="BaseCastle" unique_id=1471427142 instance=ExtResource("7_w03x8")]
+transform = Transform3D(1.5298983e-06, 0, -1, 0, 1, 0, 1, 0, 1.5298983e-06, -5.000004, 0, 3.000002)
+
+[node name="CastleWall24" parent="BaseCastle" unique_id=1028138391 instance=ExtResource("7_w03x8")]
+transform = Transform3D(1.0053618e-06, 0, -1, 0, 1, 0, 1, 0, 1.0053618e-06, -5.000002, 0, 1.0000012)
+
 [node name="CastleWall11" parent="BaseCastle" unique_id=994822812 instance=ExtResource("7_w03x8")]
 transform = Transform3D(4.8082524e-07, 0, -1, 0, 1, 0, 1, 0, 4.8082524e-07, -4.999999, 0, -0.9999995)
-
-[node name="CastleWall11" parent="BaseCastle/CastleWall11" unique_id=1028138391 instance=ExtResource("7_w03x8")]
-transform = Transform3D(1, 0, 5.245366e-07, 0, 1, 0, -5.245366e-07, 0, 1, 2.0000007, 0, 3.8146973e-06)
-
-[node name="CastleWall11" parent="BaseCastle/CastleWall11/CastleWall11" unique_id=1471427142 instance=ExtResource("7_w03x8")]
-transform = Transform3D(1, 0, 5.245366e-07, 0, 1, 0, -5.245366e-07, 0, 1, 2.0000007, 0, 3.8146973e-06)
-
-[node name="CastleWall11" parent="BaseCastle/CastleWall11/CastleWall11/CastleWall11" unique_id=1625332039 instance=ExtResource("7_w03x8")]
-transform = Transform3D(1, 0, 5.245366e-07, 0, 1, 0, -5.245366e-07, 0, 1, 2.0000007, 0, 3.8146973e-06)
-
-[node name="CastleWall11" parent="BaseCastle/CastleWall11/CastleWall11/CastleWall11/CastleWall11" unique_id=1163089539 instance=ExtResource("7_w03x8")]
-transform = Transform3D(-5.6824797e-07, 0, 1, 0, 1, 0, -1, 0, -5.6824797e-07, 1.0000033, 0, -0.99999905)
-
-[node name="CastleWall11" parent="BaseCastle/CastleWall11/CastleWall11/CastleWall11/CastleWall11/CastleWall11" unique_id=538028137 instance=ExtResource("7_w03x8")]
-transform = Transform3D(1, 0, 5.245365e-07, 0, 1, 0, -5.245365e-07, 0, 1, 2.0000007, 0, 3.8146973e-06)
-
-[node name="CastleWall11" parent="BaseCastle/CastleWall11/CastleWall11/CastleWall11/CastleWall11/CastleWall11/CastleWall11" unique_id=833274219 instance=ExtResource("7_w03x8")]
-transform = Transform3D(4.8082507e-07, 0, -1, 0, 1, 0, 1, 0, 4.8082507e-07, 0.9999975, 0, 0.9999995)
-
-[node name="CastleWall11" parent="BaseCastle/CastleWall11/CastleWall11/CastleWall11/CastleWall11/CastleWall11/CastleWall11/CastleWall11" unique_id=1331450085 instance=ExtResource("7_w03x8")]
-transform = Transform3D(1, 0, 5.245365e-07, 0, 1, 0, -5.245365e-07, 0, 1, 2.000001, 0, 2.9802322e-06)
-
-[node name="CastleWall11" parent="BaseCastle/CastleWall11/CastleWall11/CastleWall11/CastleWall11/CastleWall11/CastleWall11/CastleWall11/CastleWall11" unique_id=368939708 instance=ExtResource("7_w03x8")]
-transform = Transform3D(1, 0, 5.245365e-07, 0, 1, 0, -5.245365e-07, 0, 1, 2.000001, 0, 2.9802322e-06)
-
-[node name="CastleWall11" parent="BaseCastle/CastleWall11/CastleWall11/CastleWall11/CastleWall11/CastleWall11/CastleWall11/CastleWall11/CastleWall11/CastleWall11" unique_id=1837375549 instance=ExtResource("7_w03x8")]
-transform = Transform3D(1, 0, 5.245365e-07, 0, 1, 0, -5.245365e-07, 0, 1, 2.000001, 0, 2.9802322e-06)
-
-[node name="CastleWall11" parent="BaseCastle/CastleWall11/CastleWall11/CastleWall11/CastleWall11/CastleWall11/CastleWall11/CastleWall11/CastleWall11/CastleWall11/CastleWall11" unique_id=664087025 instance=ExtResource("7_w03x8")]
-transform = Transform3D(1, 0, 5.245365e-07, 0, 1, 0, -5.245365e-07, 0, 1, 2.000001, 0, 2.9802322e-06)
-
-[node name="CastleWall11" parent="BaseCastle/CastleWall11/CastleWall11/CastleWall11/CastleWall11/CastleWall11/CastleWall11/CastleWall11/CastleWall11/CastleWall11/CastleWall11/CastleWall11" unique_id=1850389555 instance=ExtResource("7_w03x8")]
-transform = Transform3D(1, 0, 5.245365e-07, 0, 1, 0, -5.245365e-07, 0, 1, 2.000001, 0, 2.9802322e-06)
 
 [node name="CastleWall5" parent="BaseCastle" unique_id=1948681811 instance=ExtResource("7_w03x8")]
 transform = Transform3D(-1, 0, -2.6226832e-07, 0, 1, 0, 2.6226832e-07, 0, -1, 2, 0, -4.000001)
@@ -361,20 +361,20 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1, 0
 [node name="CastleWall" parent="BaseCastle" unique_id=1798152892 instance=ExtResource("7_w03x8")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1, 0, 9)
 
+[node name="CastleFloor35" parent="BaseCastle" unique_id=1468661649 instance=ExtResource("8_5b411")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
+
+[node name="CastleFloor34" parent="BaseCastle" unique_id=1291313830 instance=ExtResource("8_5b411")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 14)
+
+[node name="CastleFloor33" parent="BaseCastle" unique_id=1204107831 instance=ExtResource("8_5b411")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+
+[node name="CastleFloor32" parent="BaseCastle" unique_id=802061962 instance=ExtResource("8_5b411")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+
 [node name="CastleFloor" parent="BaseCastle" unique_id=1754251654 instance=ExtResource("8_5b411")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
-
-[node name="CastleFloor" parent="BaseCastle/CastleFloor" unique_id=802061962 instance=ExtResource("8_5b411")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
-
-[node name="CastleFloor" parent="BaseCastle/CastleFloor/CastleFloor" unique_id=1204107831 instance=ExtResource("8_5b411")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
-
-[node name="CastleFloor" parent="BaseCastle/CastleFloor/CastleFloor/CastleFloor" unique_id=1291313830 instance=ExtResource("8_5b411")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
-
-[node name="CastleFloor" parent="BaseCastle/CastleFloor/CastleFloor/CastleFloor/CastleFloor" unique_id=1468661649 instance=ExtResource("8_5b411")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
 
 [node name="CastleFloor8" parent="BaseCastle" unique_id=187867636 instance=ExtResource("8_5b411")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
