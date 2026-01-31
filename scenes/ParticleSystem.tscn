@@ -82,7 +82,7 @@ initial_velocity_min = 3.0
 initial_velocity_max = 3.0
 scale_curve = SubResource("CurveTexture_p0hr8")
 collision_mode = 1
-collision_friction = 0.31
+collision_friction = 1.0
 collision_bounce = 0.0
 sub_emitter_mode = 3
 sub_emitter_amount_at_collision = 1
@@ -117,6 +117,9 @@ initial_velocity_min = 0.099999994
 initial_velocity_max = 0.099999994
 gravity = Vector3(0, 0, 0)
 scale_curve = SubResource("CurveTexture_usbiy")
+collision_mode = 1
+collision_friction = 1.0
+collision_bounce = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ev1ll"]
 transparency = 1
@@ -274,21 +277,25 @@ light_color = Color(0.8343336, 0.54252225, 1.1551381e-06, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.37337732, 0, 1.0841866)
 
 [node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="Particles/DragonFire" unique_id=1566665024]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013323188, -0.9768393, -0.048783183)
-size = Vector3(1.0820313, 0.41186523, 5.07959)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013323188, -1.1042699, -0.09370136)
+layers = 7
+size = Vector3(1.0820313, 0.41186523, 15.40995)
 
 [node name="DragonBreathParticleEngine" type="GPUParticles3D" parent="Particles/DragonFire" unique_id=131187047]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6656233, -4.555833)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6656233, -3.599089)
 amount = 5000
-sub_emitter = NodePath("../DragonBurning-on-floorParticleEngine")
+sub_emitter = NodePath("DragonBurning-on-floorParticleEngine")
 lifetime = 15.0
+collision_base_size = 0.2
 process_material = SubResource("ParticleProcessMaterial_de0tk")
 draw_pass_1 = SubResource("BoxMesh_ny1of")
 script = ExtResource("1_fy0p7")
+move_end = Vector3(0, 1.666, 4.5)
+move_duration = 3.0
 
-[node name="DragonBurning-on-floorParticleEngine" type="GPUParticles3D" parent="Particles/DragonFire" unique_id=1425487605]
-amount = 5000
-amount_ratio = 0.3738
+[node name="DragonBurning-on-floorParticleEngine" type="GPUParticles3D" parent="Particles/DragonFire/DragonBreathParticleEngine" unique_id=1425487605]
+emitting = false
+amount = 1000
 lifetime = 3.0
 randomness = 1.0
 process_material = SubResource("ParticleProcessMaterial_l6coy")
