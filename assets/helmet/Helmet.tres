@@ -1,0 +1,20 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://d3m3i3h1warus"]
+
+[ext_resource type="Texture2D" uid="uid://cl4u4h5wsmasg" path="res://assets/helmet/textures/Helmet_low_Helmet_BaseColor.png" id="1_11c6c"]
+[ext_resource type="Texture2D" uid="uid://dddrm7jdv4s0i" path="res://assets/helmet/textures/Helmet_low_Helmet_Emissive.png" id="2_2frfu"]
+[ext_resource type="Texture2D" uid="uid://dhuvfqsynkypj" path="res://assets/helmet/textures/Helmet_low_Helmet_Metallic.png" id="3_ej5yw"]
+[ext_resource type="Texture2D" uid="uid://c4hmwouraw10a" path="res://assets/helmet/textures/Helmet_low_Helmet_Normal.png" id="4_1hbp0"]
+[ext_resource type="Texture2D" uid="uid://bmrp6n8vjiufw" path="res://assets/helmet/textures/Helmet_low_Helmet_Roughness.png" id="5_3snqq"]
+
+[resource]
+diffuse_mode = 3
+albedo_texture = ExtResource("1_11c6c")
+metallic = 1.0
+metallic_texture = ExtResource("3_ej5yw")
+roughness_texture = ExtResource("5_3snqq")
+emission_enabled = true
+emission_energy_multiplier = 6.3
+emission_texture = ExtResource("2_2frfu")
+normal_enabled = true
+normal_scale = -0.25
+normal_texture = ExtResource("4_1hbp0")
