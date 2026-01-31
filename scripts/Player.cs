@@ -68,8 +68,8 @@ public partial class Player : CharacterBody3D
 			{
 				Head.RotateY(-mouseMotionEvent.Relative.X * Sensitivity);
 				Camera.RotateX(-mouseMotionEvent.Relative.Y * Sensitivity);
-				float cameraRotationX = Mathf.Clamp(Camera.Rotation.X, Mathf.DegToRad(-80), Mathf.DegToRad(80));
-				float cameraRotationY = Mathf.Clamp(Camera.Rotation.Y, Mathf.DegToRad(-80), Mathf.DegToRad(80));
+				float cameraRotationX = Mathf.Clamp(Camera.Rotation.X, Mathf.DegToRad(-70), Mathf.DegToRad(70));
+				float cameraRotationY = Mathf.Clamp(Camera.Rotation.Y, Mathf.DegToRad(-60), Mathf.DegToRad(60));
 				Camera.Rotation = new Vector3(cameraRotationX, cameraRotationY, Camera.Rotation.Z);
 			}
 		}
