@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://2ukhi1jgksr1" path="res://scenes/Assets/castle_wall_door_open.tscn" id="14_cv2qq"]
 [ext_resource type="PackedScene" uid="uid://d0tdrdv40c73v" path="res://scenes/Assets/castle_window_unlit.tscn" id="15_6a55o"]
 [ext_resource type="PackedScene" uid="uid://bj0rjb1x8hwfr" path="res://scenes/Assets/castle_window_orange_glow.tscn" id="15_ylhbm"]
+[ext_resource type="PackedScene" uid="uid://di1g54mkffk0w" path="res://scenes/Assets/barrel.tscn" id="17_aheo6"]
 [ext_resource type="PackedScene" uid="uid://nqfrh2nyo6a4" path="res://scenes/Assets/castle_window.tscn" id="17_ylhbm"]
 [ext_resource type="PackedScene" uid="uid://5ae8vw3w0e8f" path="res://scenes/Building/light_fixtures.tscn" id="18_aheo6"]
 
@@ -507,3 +508,6 @@ transform = Transform3D(1, 0, 5.563627e-08, 0, 1, 0, -5.563627e-08, 0, 1, 0, 4, 
 [node name="Light Fixtures" parent="." unique_id=2014373685 instance=ExtResource("18_aheo6")]
 
 [node name="BuildingLighting" type="Node3D" parent="." unique_id=1863458945]
+
+[node name="Barrel" parent="." unique_id=1262328313 instance=ExtResource("17_aheo6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -0.5)

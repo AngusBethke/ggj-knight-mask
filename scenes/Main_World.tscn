@@ -44,7 +44,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.47282004, 0.9645462, -1.286
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.009116352, 1.1329429, 16.254225)
 
 [node name="Mask" parent="." unique_id=2048324369 instance=ExtResource("6_68uxw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.047816, 3.8958807)
+transform = Transform3D(1, 0, 0, 0, 0.9659258, -0.25881904, 0, 0.25881904, 0.9659258, 2.3397238, 2.0563793, -1.7815126)
 
 [node name="World Lighting" type="Node3D" parent="." unique_id=379688612]
 
