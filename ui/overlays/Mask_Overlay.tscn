@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://de8xh8m4oi3sq"]
 
+[ext_resource type="Texture2D" uid="uid://db1ir2mxj2w46" path="res://ui/assets/drop.png" id="1_21jwv"]
+
 [node name="MaskOverlay" type="Node2D" unique_id=1442896171]
 
 [node name="MainMask" type="ColorRect" parent="." unique_id=920337622]
@@ -9,37 +11,37 @@ color = Color(1, 1, 1, 0)
 
 [node name="Bottom5" type="ColorRect" parent="MainMask" unique_id=1828397180]
 layout_mode = 0
-offset_left = 1699.9999
-offset_top = 1073.0
-offset_right = 2812.4624
-offset_bottom = 1518.7568
+offset_left = 1656.5851
+offset_top = 1197.6703
+offset_right = 3040.4478
+offset_bottom = 1810.2184
 rotation = -1.2356931
 color = Color(0.1254902, 0.09019608, 0.011764706, 1)
 
 [node name="Bottom4" type="ColorRect" parent="MainMask" unique_id=1445008060]
 layout_mode = 0
-offset_left = -179.99994
-offset_top = 1226.0001
-offset_right = 932.46246
-offset_bottom = 1671.7568
+offset_left = -258.44284
+offset_top = 1384.8431
+offset_right = 1089.8171
+offset_bottom = 1958.6396
 rotation = -1.9198622
 color = Color(0.1254902, 0.09019608, 0.011764706, 1)
 
 [node name="Bottom3" type="ColorRect" parent="MainMask" unique_id=1135874386]
 layout_mode = 0
-offset_left = -143.99995
-offset_top = 52.999985
-offset_right = 968.46246
-offset_bottom = 498.75677
+offset_left = -203.96819
+offset_top = -111.7614
+offset_right = 908.4942
+offset_bottom = 509.33075
 rotation = -0.34906584
 color = Color(0.12698519, 0.0905926, 0.011122733, 1)
 
 [node name="Bottom2" type="ColorRect" parent="MainMask" unique_id=970304384]
 layout_mode = 0
-offset_left = 1033.0
-offset_top = -319.0
-offset_right = 2145.4624
-offset_bottom = 126.756775
+offset_left = 1064.313
+offset_top = -405.03165
+offset_right = 2176.7754
+offset_bottom = 132.2781
 rotation = 0.34906584
 color = Color(0.1254902, 0.09019608, 0.011764706, 1)
 
@@ -48,5 +50,10 @@ layout_mode = 0
 offset_left = 11.0
 offset_top = 778.0
 offset_right = 1931.0
-offset_bottom = 1078.0
+offset_bottom = 1179.0
 color = Color(0.1254902, 0.09019608, 0.011764706, 1)
+
+[node name="Drop" type="Sprite2D" parent="." unique_id=801937867]
+position = Vector2(1646, 1004.00006)
+scale = Vector2(0.219213, 0.21921298)
+texture = ExtResource("1_21jwv")
