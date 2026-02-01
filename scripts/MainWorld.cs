@@ -17,6 +17,10 @@ public partial class MainWorld : Node3D
 	private Walls _walls => _level1.GetNode<Walls>("Walls");
 
 	private ParticleSystem _particleSystem => GetNode<ParticleSystem>("ParticleSystem");
+
+	private Room1 _room1 => _building.GetNode<Node3D>("BaseCastle").GetNode<Node3D>("CastleWallDoorClosed6").GetNode<Room1>("Room");
+
+	private Room1 _room2 => _building.GetNode<Node3D>("BaseCastle").GetNode<Node3D>("CastleWallDoorClosed5").GetNode<Room1>("Room");
 	#endregion
 
 	// Called when the node enters the scene tree for the first time.
@@ -65,6 +69,27 @@ public partial class MainWorld : Node3D
 			Input.MouseMode = Input.MouseModeEnum.Visible;
 			GetTree().ChangeSceneToFile("res://ui/menus/Death_Screen.tscn");
 		}
+		#endregion
+
+		#region handle door sounds
+		if (_room1.IsPlayerInRoomArea(_player))
+		{
+			_room1.PlayVoiceLine();
+		}
+		else
+		{
+			_room1.ResetVoiceLineWhenPlayerLeavesArea(_player);
+		}
+
+		if (_room2.IsPlayerInRoomArea(_player))
+		{
+			_room2.PlayVoiceLine();
+		}
+		else
+		{
+			_room2.ResetVoiceLineWhenPlayerLeavesArea(_player);
+		}
+
 		#endregion
 	}
 
