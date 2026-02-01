@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://de6ije0h3v5jd"]
+
+[ext_resource type="Script" uid="uid://dj7my3d6j7a1m" path="res://scripts/DeathScreen.cs" id="1_4d5aa"]
+[ext_resource type="Texture2D" uid="uid://bha1ohrp7hlde" path="res://ui/assets/mask.png" id="2_8talb"]
+[ext_resource type="Texture2D" uid="uid://bxpxv3by7qvea" path="res://ui/assets/Play again.png" id="2_thfex"]
+[ext_resource type="Texture2D" uid="uid://dblwgqtnqryu3" path="res://ui/assets/Menu button.png" id="3_1u846"]
+[ext_resource type="Texture2D" uid="uid://bt22qxtau3msp" path="res://ui/assets/dead.png" id="3_4d5aa"]
+[ext_resource type="AudioStream" uid="uid://bexs8fb5plpt2" path="res://audio/music/MedievalGame_MainMenu_Loop_combined.wav" id="4_8talb"]
+[ext_resource type="Texture2D" uid="uid://bf37dd0hmjasu" path="res://ui/assets/Quit button.png" id="4_qs4dm"]
+
+[node name="DeathScreen" type="Node2D" unique_id=335169843]
+script = ExtResource("1_4d5aa")
+
+[node name="ButtonManager" type="Control" parent="." unique_id=1762115577]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="ButtonManager" unique_id=1768922107]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.8235294, 0.21176471, 0, 1)
+
+[node name="PlayAgain" type="Button" parent="ButtonManager" unique_id=1410330534]
+layout_mode = 0
+offset_left = 700.0
+offset_top = 80.0
+offset_right = 1352.0
+offset_bottom = 439.0
+scale = Vector2(0.8, 0.8)
+text = "
+"
+icon = ExtResource("2_thfex")
+flat = true
+
+[node name="MainMenu" type="Button" parent="ButtonManager" unique_id=110803451]
+layout_mode = 0
+offset_left = 700.0
+offset_top = 395.0
+offset_right = 1348.0
+offset_bottom = 754.0
+scale = Vector2(0.8, 0.8)
+icon = ExtResource("3_1u846")
+flat = true
+
+[node name="Quit" type="Button" parent="ButtonManager" unique_id=1464855980]
+layout_mode = 0
+offset_left = 700.0
+offset_top = 707.0
+offset_right = 1348.0
+offset_bottom = 1066.0
+scale = Vector2(0.8, 0.8)
+icon = ExtResource("4_qs4dm")
+flat = true
+
+[node name="Mask" type="Sprite2D" parent="." unique_id=324383885]
+position = Vector2(1698, 683)
+scale = Vector2(0.7125, 0.7125)
+texture = ExtResource("2_8talb")
+
+[node name="Dead" type="Sprite2D" parent="." unique_id=1392845579]
+position = Vector2(348.00006, 333)
+rotation = -0.58119464
+scale = Vector2(0.32770628, 0.32656252)
+texture = ExtResource("3_4d5aa")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1775178697]
+stream = ExtResource("4_8talb")
+autoplay = true

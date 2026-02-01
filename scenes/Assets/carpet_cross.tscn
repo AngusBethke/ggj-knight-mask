@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dppxd30u7i0gs"]
+
+[ext_resource type="ArrayMesh" uid="uid://cscyw4brvjs6b" path="res://assets/carpet cross/carpet_crossroads.obj" id="1_jfjft"]
+[ext_resource type="Material" uid="uid://b7xfqbvck0h5n" path="res://assets/carpet cross/carpet_crossroads.tres" id="2_ogg3e"]
+
+[node name="CarpetCross" type="Node3D" unique_id=436944839]
+
+[node name="CarpetCrossroads" type="MeshInstance3D" parent="." unique_id=1710544886]
+mesh = ExtResource("1_jfjft")
+surface_material_override/0 = ExtResource("2_ogg3e")

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dv8frnonek74m"]
+
+[ext_resource type="Texture2D" uid="uid://dtvow7og5u1ok" path="res://ui/assets/interact.png" id="1_3bm2m"]
+
+[node name="InteractionHint" type="Node2D" unique_id=464639353]
+
+[node name="InteractionMain" type="ColorRect" parent="." unique_id=1776578284]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(1, 1, 1, 0)
+
+[node name="Interact" type="Sprite2D" parent="." unique_id=806804698]
+position = Vector2(1061, 620.00024)
+scale = Vector2(0.24473383, 0.24473383)
+texture = ExtResource("1_3bm2m")

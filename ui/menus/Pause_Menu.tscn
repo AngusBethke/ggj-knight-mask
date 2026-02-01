@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://bjal6negb6rdc"]
+
+[ext_resource type="Script" uid="uid://da1eh5v3kbof1" path="res://scripts/PauseMenu.cs" id="1_p23gv"]
+[ext_resource type="AudioStream" uid="uid://bexs8fb5plpt2" path="res://audio/music/MedievalGame_MainMenu_Loop_combined.wav" id="2_cx3xc"]
+[ext_resource type="Texture2D" uid="uid://cjif4olcgxbm5" path="res://ui/assets/Continue button.png" id="2_nwyik"]
+[ext_resource type="Texture2D" uid="uid://dblwgqtnqryu3" path="res://ui/assets/Menu button.png" id="3_i8af0"]
+[ext_resource type="Texture2D" uid="uid://bf37dd0hmjasu" path="res://ui/assets/Quit button.png" id="4_j6nch"]
+
+[node name="PauseMenu" type="Node2D" unique_id=525812452]
+script = ExtResource("1_p23gv")
+
+[node name="ButtonManager" type="Control" parent="." unique_id=113823937]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="ButtonManager" unique_id=1367843131]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.5882353, 0.7921569, 0.1764706, 0.54509807)
+
+[node name="Continue" type="Button" parent="ButtonManager" unique_id=1921657390]
+layout_mode = 0
+offset_left = 700.0
+offset_top = 16.0
+offset_right = 1348.0
+offset_bottom = 375.0
+scale = Vector2(0.8, 0.8)
+icon = ExtResource("2_nwyik")
+flat = true
+
+[node name="MainMenu" type="Button" parent="ButtonManager" unique_id=208897741]
+layout_mode = 0
+offset_left = 700.0
+offset_top = 380.0
+offset_right = 1348.0
+offset_bottom = 739.0
+scale = Vector2(0.8, 0.8)
+icon = ExtResource("3_i8af0")
+flat = true
+
+[node name="Quit" type="Button" parent="ButtonManager" unique_id=810043555]
+layout_mode = 0
+offset_left = 700.0
+offset_top = 750.0
+offset_right = 1348.0
+offset_bottom = 1109.0
+scale = Vector2(0.8, 0.8)
+icon = ExtResource("4_j6nch")
+flat = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1291624514]
+stream = ExtResource("2_cx3xc")
+autoplay = true

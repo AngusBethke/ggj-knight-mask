@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dvhnnt2xt2pwm"]
+
+[ext_resource type="Texture2D" uid="uid://bgc3kgclcrk1j" path="res://assets/wall window/textures/CastleWindow_Unlit_BaseColor.png" id="1_3kuke"]
+[ext_resource type="Texture2D" uid="uid://fa3r5nqhbh2k" path="res://assets/wall window/textures/CastleWindow_Emissive.png" id="2_rgdr7"]
+[ext_resource type="Texture2D" uid="uid://d0o6ap4xxjyec" path="res://assets/wall window/textures/CastleWindow_Normal.png" id="3_g8rrj"]
+
+[resource]
+diffuse_mode = 3
+albedo_texture = ExtResource("1_3kuke")
+emission_texture = ExtResource("2_rgdr7")
+normal_enabled = true
+normal_texture = ExtResource("3_g8rrj")

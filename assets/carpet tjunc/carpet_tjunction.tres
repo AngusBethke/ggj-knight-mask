@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bm4fc75hwqj1s"]
+
+[ext_resource type="Texture2D" uid="uid://brp7pfxo537s3" path="res://assets/carpet tjunc/textures/carpet_tjunction_low_Carpet_BaseColor.png" id="1_dcigc"]
+[ext_resource type="Texture2D" uid="uid://bkbt0svq3hv60" path="res://assets/carpet tjunc/textures/carpet_tjunction_low_Carpet_Normal.png" id="2_pb2vl"]
+
+[resource]
+diffuse_mode = 3
+albedo_texture = ExtResource("1_dcigc")
+normal_enabled = true
+normal_texture = ExtResource("2_pb2vl")

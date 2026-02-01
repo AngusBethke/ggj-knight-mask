@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://de8xh8m4oi3sq"]
+
+[ext_resource type="Texture2D" uid="uid://db1ir2mxj2w46" path="res://ui/assets/drop.png" id="1_21jwv"]
+[ext_resource type="Texture2D" uid="uid://ffaoor6rk3qe" path="res://ui/assets/helmet3.png" id="1_goqyt"]
+
+[node name="MaskOverlay" type="Node2D" unique_id=1442896171]
+
+[node name="Helmet3" type="Sprite2D" parent="." unique_id=1547467484]
+position = Vector2(960, 540)
+texture = ExtResource("1_goqyt")
+
+[node name="Drop" type="Sprite2D" parent="." unique_id=801937867]
+position = Vector2(1646, 1004.00006)
+scale = Vector2(0.219213, 0.21921298)
+texture = ExtResource("1_21jwv")

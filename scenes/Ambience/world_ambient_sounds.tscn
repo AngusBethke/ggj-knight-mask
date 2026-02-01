@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://c6qe1k3kftffv"]
+
+[ext_resource type="AudioStream" uid="uid://dsnawtid3xjgy" path="res://audio/ambience/MedievalGame_Ambient_Wind_Fire..lp2.wav" id="1_8x8nh"]
+
+[node name="World Ambient Sounds" type="Node3D" unique_id=1641263436]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=786340705]
+stream = ExtResource("1_8x8nh")
+volume_db = 24.0
+autoplay = true
