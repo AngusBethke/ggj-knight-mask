@@ -153,7 +153,7 @@ public partial class ParticleSystem : Node3D
 			}
 			var tween = CreateTween();
 			_isFadingIn = true;
-			tween.TweenProperty(sound, "volume_db", 1f, 2f);
+			tween.TweenProperty(sound, "volume_db", 80f, 2f);
 			
 		} else {
 			// fade out
