@@ -2,7 +2,10 @@
 
 [ext_resource type="Script" uid="uid://btlrhbhiq3yb4" path="res://scripts/EndScreen.cs" id="1_ybww2"]
 [ext_resource type="Texture2D" uid="uid://bha1ohrp7hlde" path="res://ui/assets/mask.png" id="2_k064j"]
+[ext_resource type="Texture2D" uid="uid://bxpxv3by7qvea" path="res://ui/assets/Play again.png" id="2_nr2e6"]
 [ext_resource type="Texture2D" uid="uid://ga1ngxtcd1ey" path="res://ui/assets/winner.png" id="3_dsgr5"]
+[ext_resource type="Texture2D" uid="uid://dblwgqtnqryu3" path="res://ui/assets/Menu button.png" id="3_oixgd"]
+[ext_resource type="Texture2D" uid="uid://bf37dd0hmjasu" path="res://ui/assets/Quit button.png" id="4_g2ntb"]
 [ext_resource type="AudioStream" uid="uid://bexs8fb5plpt2" path="res://audio/music/MedievalGame_MainMenu_Loop_combined.wav" id="4_weqv3"]
 
 [node name="EndScreen" type="Node2D" unique_id=335169843]
@@ -24,37 +27,44 @@ color = Color(0.043137256, 0.7647059, 0.83137256, 1)
 
 [node name="PlayAgain" type="Button" parent="ButtonManager" unique_id=1410330534]
 layout_mode = 0
-offset_left = 760.0
-offset_top = 376.0
-offset_right = 1160.0
-offset_bottom = 446.0
-text = "PLAY AGAIN
+offset_left = 700.0
+offset_top = 60.0
+offset_right = 1352.0
+offset_bottom = 419.0
+scale = Vector2(0.8, 0.8)
+text = "
 "
+icon = ExtResource("2_nr2e6")
+flat = true
 
 [node name="MainMenu" type="Button" parent="ButtonManager" unique_id=110803451]
 layout_mode = 0
-offset_left = 760.0
-offset_top = 476.0
-offset_right = 1160.0
-offset_bottom = 546.0
-text = "MAIN MENU"
+offset_left = 700.0
+offset_top = 400.0
+offset_right = 1348.0
+offset_bottom = 759.0
+scale = Vector2(0.8, 0.8)
+icon = ExtResource("3_oixgd")
+flat = true
 
 [node name="Quit" type="Button" parent="ButtonManager" unique_id=1464855980]
 layout_mode = 0
-offset_left = 760.0
-offset_top = 576.0
-offset_right = 1160.0
-offset_bottom = 646.0
-text = "QUIT"
+offset_left = 700.0
+offset_top = 738.0
+offset_right = 1348.0
+offset_bottom = 1097.0
+scale = Vector2(0.8, 0.8)
+icon = ExtResource("4_g2ntb")
+flat = true
 
 [node name="Mask" type="Sprite2D" parent="." unique_id=324383885]
-position = Vector2(1404, 621)
+position = Vector2(1697, 529)
 scale = Vector2(0.7125, 0.7125)
 texture = ExtResource("2_k064j")
 
 [node name="Winner" type="Sprite2D" parent="." unique_id=1808518011]
-position = Vector2(412, 264)
-scale = Vector2(0.4642857, 0.4642857)
+position = Vector2(265, 275)
+scale = Vector2(0.32139903, 0.33660716)
 texture = ExtResource("3_dsgr5")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1229487788]
