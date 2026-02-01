@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 
 public partial class MainWorld : Node3D
 {
@@ -17,12 +18,26 @@ public partial class MainWorld : Node3D
 	private Walls _walls => _level1.GetNode<Walls>("Walls");
 
 	private ParticleSystem _particleSystem => GetNode<ParticleSystem>("ParticleSystem");
+
+	private Room1 _room1 => _building.GetNode<Node3D>("BaseCastle").GetNode<Node3D>("CastleWallDoorClosed6").GetNode<Room1>("Room");
+
+	private Room1 _room2 => _building.GetNode<Node3D>("BaseCastle").GetNode<Node3D>("CastleWallDoorClosed5").GetNode<Room1>("Room");
+
+	private Room1 _room3 => _building.GetNode<Node3D>("BaseCastle").GetNode<Node3D>("CastleWallDoorClosed9").GetNode<Room1>("Room");
+
+	private List<Room1> _allRooms => new List<Room1>
+	{
+		_room1, 
+		_room2,
+		_room3
+	};
 	#endregion
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		_pauseMenu.Visible = false;
+		
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -65,6 +80,22 @@ public partial class MainWorld : Node3D
 			Input.MouseMode = Input.MouseModeEnum.Visible;
 			GetTree().ChangeSceneToFile("res://ui/menus/Death_Screen.tscn");
 		}
+		#endregion
+
+		#region handle door sounds
+
+		_allRooms.ForEach((room) =>
+		{
+			if (room.IsPlayerInRoomArea(_player))
+			{
+				room.PlayVoiceLine();
+			}
+			else
+			{
+				room.ResetVoiceLineWhenPlayerLeavesArea(_player);
+			}
+		});
+
 		#endregion
 	}
 

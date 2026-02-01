@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dwtkchyhauvit" path="res://scripts/ParticleSystem.cs" id="1_ln80l"]
 [ext_resource type="PackedScene" uid="uid://cvwi5wkk64err" path="res://scenes/Assets/sconce.tscn" id="2_5ksqe"]
 [ext_resource type="Script" uid="uid://x0o6og6ecwc0" path="res://scripts/DragonFireAnimationPorted.cs" id="2_ln80l"]
+[ext_resource type="Texture2D" uid="uid://htwwsmddoccb" path="res://assets/fire/fire_particle_grayscale.png" id="2_ny1of"]
 [ext_resource type="AudioStream" uid="uid://cec508lapwqs1" path="res://audio/effects/dragon/MedievalGame_Dragon_Wings_1.wav" id="4_gs0tm"]
 [ext_resource type="AudioStream" uid="uid://dc2edf8f8bjiy" path="res://audio/effects/dragon/MedievalGame_Dragon_Wings_2.wav" id="5_de0tk"]
 [ext_resource type="AudioStream" uid="uid://dr0om84g7eq4y" path="res://audio/effects/dragon/MedievalGame_Dragon_Wings_3.wav" id="6_ny1of"]
@@ -11,36 +12,56 @@
 [ext_resource type="AudioStream" uid="uid://cycgu436nwchk" path="res://audio/effects/dragon/MedievalGame_Dragon_Wings_6.wav" id="9_tki21"]
 [ext_resource type="AudioStream" uid="uid://cmcvl11bl5s7l" path="res://audio/effects/dragon/dragon_roar.mp3" id="10_de0tk"]
 
-[sub_resource type="Curve" id="Curve_sl8xs"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.0234942, 0.0, 0, 0]
-point_count = 2
+[sub_resource type="Curve" id="Curve_yei2o"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.8378379, 0.8876405), -0.42760822, -0.42760822, 0, 0, Vector2(0.95945954, 0), -15.797695, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_l6coy"]
+curve = SubResource("Curve_yei2o")
+
+[sub_resource type="Curve" id="Curve_ny1of"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.41216218, 0.9550562), 0.0, 0.0, 0, 0, Vector2(0.8851352, 0.8314607), -0.21457072, -0.21457072, 0, 0, Vector2(1, 0), -5.358303, 0.0, 0, 0]
+point_count = 4
 
 [sub_resource type="CurveTexture" id="CurveTexture_nndnq"]
-curve = SubResource("Curve_sl8xs")
+curve = SubResource("Curve_ny1of")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5ksqe"]
+angle_min = -356.19998
+angle_max = 294.2
 direction = Vector3(0, -1, 0)
 spread = 15.353
 initial_velocity_min = 3.0
 initial_velocity_max = 3.0
+angular_velocity_min = -410.32
+angular_velocity_max = 363.86996
 gravity = Vector3(0, 0, 0)
+scale_min = 2.0
+scale_max = 2.0
 scale_curve = SubResource("CurveTexture_nndnq")
+alpha_curve = SubResource("CurveTexture_l6coy")
 collision_mode = 1
 collision_friction = 0.8
 collision_bounce = 0.0
 sub_emitter_mode = 3
 sub_emitter_amount_at_collision = 1
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6g2cy"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yei2o"]
+transparency = 1
+blend_mode = 1
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.7058824, 0.2784314, 0, 1)
+albedo_color = Color(1, 0.57254905, 0, 1)
+albedo_texture = ExtResource("2_ny1of")
 emission_enabled = true
-emission = Color(1, 0.46666667, 0.19215687, 1)
-emission_energy_multiplier = 12.4
+emission = Color(0.8352941, 0.4117647, 0.14117648, 1)
+emission_energy_multiplier = 4.31
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
 
-[sub_resource type="BoxMesh" id="BoxMesh_gs0tm"]
-material = SubResource("StandardMaterial3D_6g2cy")
-size = Vector3(0.1, 0.1, 0.1)
+[sub_resource type="QuadMesh" id="QuadMesh_l6coy"]
+material = SubResource("StandardMaterial3D_yei2o")
 
 [sub_resource type="Curve" id="Curve_4wb6m"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.0234945, 0.0, 0, 0]
@@ -210,20 +231,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6245925, 1.2910198, 0.49932
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3228192, -0.3402363, -0.6424222)
 
 [node name="DragonBreathParticleEngine" type="GPUParticles3D" parent="Particles/DragonFire" unique_id=131187047]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7261589, -5.4032974)
-amount = 5000
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7261589, -8.574613)
+amount = 2000
 sub_emitter = NodePath("GPUParticles3D")
 lifetime = 8.0
-collision_base_size = 0.02
+collision_base_size = 0.24
 process_material = SubResource("ParticleProcessMaterial_5ksqe")
-draw_pass_1 = SubResource("BoxMesh_gs0tm")
+draw_pass_1 = SubResource("QuadMesh_l6coy")
 script = ExtResource("2_ln80l")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Particles/DragonFire/DragonBreathParticleEngine" unique_id=1006621647]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
 light_color = Color(0.8784314, 0.28235295, 0.22745098, 1)
-light_volumetric_fog_energy = 4.96
-spot_range = 7.0
+light_energy = 5.0
+spot_range = 10.566
+spot_angle = 62.83
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Particles/DragonFire/DragonBreathParticleEngine" unique_id=205721780]
 emitting = false
@@ -234,9 +256,9 @@ process_material = SubResource("ParticleProcessMaterial_gs0tm")
 draw_pass_1 = SubResource("CylinderMesh_ny1of")
 
 [node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="Particles/DragonFire" unique_id=1566665024]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10897279, -0.9830091, 1.1072955)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10897279, -0.9830091, 0.9413617)
 layers = 7
-size = Vector3(2.5285492, 0.41186523, 10.625569)
+size = Vector3(2.5285492, 0.41186523, 22.419514)
 
 [node name="GPUParticlesCollisionBox3D2" type="GPUParticlesCollisionBox3D" parent="Particles/DragonFire" unique_id=1301061491]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8405669, 1.158293, -2.973403)

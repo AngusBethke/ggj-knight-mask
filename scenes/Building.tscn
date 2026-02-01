@@ -8,23 +8,35 @@
 [ext_resource type="PackedScene" uid="uid://0krhkrnbb7hq" path="res://scenes/Assets/castle_wall_two_sided.tscn" id="9_lvt3u"]
 [ext_resource type="PackedScene" uid="uid://cosvl4ali0m5f" path="res://scenes/Assets/castle_wall_half.tscn" id="10_6nmnf"]
 [ext_resource type="PackedScene" uid="uid://cpvd1e1i3jpfj" path="res://scenes/Assets/castle_ceiling.tscn" id="11_cv2qq"]
+[ext_resource type="Script" uid="uid://k5aov1d6rcot" path="res://scripts/rooms/Room1.cs" id="12_5t1hh"]
 [ext_resource type="PackedScene" uid="uid://cqn441r4edgn5" path="res://scenes/Assets/castle_wall_bottom_a.tscn" id="12_bn47f"]
 [ext_resource type="PackedScene" uid="uid://dojty84iyumr" path="res://scenes/Assets/castle_wall_bottom_b.tscn" id="13_6a55o"]
+[ext_resource type="AudioStream" uid="uid://c04q5qoxylhjd" path="res://audio/voiceacting/voiceline1.wav" id="13_yqbje"]
 [ext_resource type="PackedScene" uid="uid://duj1x0q1jcxih" path="res://scenes/Assets/castle_wall_door_closed.tscn" id="14_bn47f"]
 [ext_resource type="PackedScene" uid="uid://2ukhi1jgksr1" path="res://scenes/Assets/castle_wall_door_open.tscn" id="14_cv2qq"]
+[ext_resource type="AudioStream" uid="uid://cycv3h653sgl5" path="res://audio/voiceacting/voiceline2.wav" id="14_e1d2m"]
 [ext_resource type="PackedScene" uid="uid://d0tdrdv40c73v" path="res://scenes/Assets/castle_window_unlit.tscn" id="15_6a55o"]
+[ext_resource type="AudioStream" uid="uid://cays177xiv4db" path="res://audio/voiceacting/voiceline3.wav" id="15_jve3c"]
 [ext_resource type="PackedScene" uid="uid://bj0rjb1x8hwfr" path="res://scenes/Assets/castle_window_orange_glow.tscn" id="15_ylhbm"]
+[ext_resource type="AudioStream" uid="uid://b11qe00r3hsws" path="res://audio/voiceacting/voiceline4.wav" id="16_37naf"]
 [ext_resource type="PackedScene" uid="uid://di1g54mkffk0w" path="res://scenes/Assets/barrel.tscn" id="17_aheo6"]
+[ext_resource type="AudioStream" uid="uid://ubu1ttdyqiae" path="res://audio/voiceacting/voiceline5.wav" id="17_e1d2m"]
 [ext_resource type="PackedScene" uid="uid://nqfrh2nyo6a4" path="res://scenes/Assets/castle_window.tscn" id="17_ylhbm"]
 [ext_resource type="PackedScene" uid="uid://db5i3wjjjfqou" path="res://scenes/Assets/carpet_corner.tscn" id="18_1fch3"]
 [ext_resource type="PackedScene" uid="uid://5ae8vw3w0e8f" path="res://scenes/Building/light_fixtures.tscn" id="18_aheo6"]
 [ext_resource type="PackedScene" uid="uid://ch8m5noq271ey" path="res://scenes/Assets/crate.tscn" id="18_h6wny"]
+[ext_resource type="AudioStream" uid="uid://dc2rx4s4nhau8" path="res://audio/voiceacting/voiceline6.wav" id="18_m3dmy"]
 [ext_resource type="PackedScene" uid="uid://0i4suvkffa71" path="res://scenes/Assets/carpet_straight.tscn" id="19_ea8jt"]
+[ext_resource type="AudioStream" uid="uid://dtdfaxojidpwh" path="res://audio/voiceacting/voiceline7.wav" id="19_qgg1y"]
+[ext_resource type="AudioStream" uid="uid://dwo2lfwtgg7g5" path="res://audio/voiceacting/voiceline8.wav" id="20_4aaa0"]
 [ext_resource type="PackedScene" uid="uid://ck7mnddlj15dv" path="res://scenes/Assets/carpet_t_junc.tscn" id="20_ea8jt"]
+[ext_resource type="AudioStream" uid="uid://ddx7qbam0ao7o" path="res://audio/voiceacting/voiceline9.wav" id="21_2wl2o"]
 [ext_resource type="PackedScene" uid="uid://dppxd30u7i0gs" path="res://scenes/Assets/carpet_cross.tscn" id="21_j1hpf"]
 [ext_resource type="PackedScene" uid="uid://d2pumd2ttkxcl" path="res://scenes/Assets/banner.tscn" id="22_1n5pf"]
 [ext_resource type="PackedScene" uid="uid://2vscnd804lyb" path="res://scenes/Decals/fire_decal.tscn" id="24_oqawt"]
 [ext_resource type="PackedScene" uid="uid://cpkq1w00u8e8g" path="res://scenes/Assets/mountain.tscn" id="25_u1rar"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_u1rar"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u1rar"]
 diffuse_mode = 3
@@ -514,11 +526,119 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4305115e-06, 0, 18)
 [node name="CastleWallDoorClosed6" parent="BaseCastle" unique_id=1823633970 instance=ExtResource("14_bn47f")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.99999905, 0, 11)
 
+[node name="Room" type="Node3D" parent="BaseCastle/CastleWallDoorClosed6" unique_id=1734141379]
+script = ExtResource("12_5t1hh")
+
+[node name="Area" type="Area3D" parent="BaseCastle/CastleWallDoorClosed6/Room" unique_id=1466510217]
+
+[node name="Collision" type="CollisionShape3D" parent="BaseCastle/CastleWallDoorClosed6/Room/Area" unique_id=1485038750]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0, 0)
+shape = SubResource("SphereShape3D_u1rar")
+
+[node name="VL1" type="AudioStreamPlayer3D" parent="BaseCastle/CastleWallDoorClosed6/Room" unique_id=1907682176]
+stream = ExtResource("13_yqbje")
+
+[node name="VL2" type="AudioStreamPlayer3D" parent="BaseCastle/CastleWallDoorClosed6/Room" unique_id=973545743]
+stream = ExtResource("14_e1d2m")
+
+[node name="VL3" type="AudioStreamPlayer3D" parent="BaseCastle/CastleWallDoorClosed6/Room" unique_id=30923931]
+stream = ExtResource("15_jve3c")
+
+[node name="VL4" type="AudioStreamPlayer3D" parent="BaseCastle/CastleWallDoorClosed6/Room" unique_id=1755887549]
+stream = ExtResource("16_37naf")
+
+[node name="VL5" type="AudioStreamPlayer3D" parent="BaseCastle/CastleWallDoorClosed6/Room" unique_id=1042249304]
+stream = ExtResource("17_e1d2m")
+
+[node name="VL6" type="AudioStreamPlayer3D" parent="BaseCastle/CastleWallDoorClosed6/Room" unique_id=1198580474]
+stream = ExtResource("18_m3dmy")
+
+[node name="VL7" type="AudioStreamPlayer3D" parent="BaseCastle/CastleWallDoorClosed6/Room" unique_id=25830239]
+stream = ExtResource("19_qgg1y")
+
+[node name="VL8" type="AudioStreamPlayer3D" parent="BaseCastle/CastleWallDoorClosed6/Room" unique_id=1309654822]
+stream = ExtResource("20_4aaa0")
+
+[node name="VL9" type="AudioStreamPlayer3D" parent="BaseCastle/CastleWallDoorClosed6/Room" unique_id=1553194395]
+stream = ExtResource("21_2wl2o")
+
 [node name="CastleWallDoorClosed5" parent="BaseCastle" unique_id=924246062 instance=ExtResource("14_bn47f")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4.9999995, 0, 3)
 
+[node name="Room" type="Node3D" parent="BaseCastle/CastleWallDoorClosed5" unique_id=2061310647]
+script = ExtResource("12_5t1hh")
+
+[node name="Area" type="Area3D" parent="BaseCastle/CastleWallDoorClosed5/Room" unique_id=1014292697]
+
+[node name="Collision" type="CollisionShape3D" parent="BaseCastle/CastleWallDoorClosed5/Room/Area" unique_id=2123601043]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0, 0)
+shape = SubResource("SphereShape3D_u1rar")
+
+[node name="VL1" type="AudioStreamPlayer3D" parent="BaseCastle/CastleWallDoorClosed5/Room" unique_id=1197108137]
+stream = ExtResource("13_yqbje")
+
+[node name="VL2" type="AudioStreamPlayer3D" parent="BaseCastle/CastleWallDoorClosed5/Room" unique_id=889228689]
+stream = ExtResource("14_e1d2m")
+
+[node name="VL3" type="AudioStreamPlayer3D" parent="BaseCastle/CastleWallDoorClosed5/Room" unique_id=941686767]
+stream = ExtResource("15_jve3c")
+
+[node name="VL4" type="AudioStreamPlayer3D" parent="BaseCastle/CastleWallDoorClosed5/Room" unique_id=1330469242]
+stream = ExtResource("16_37naf")
+
+[node name="VL6" type="AudioStreamPlayer3D" parent="BaseCastle/CastleWallDoorClosed5/Room" unique_id=200774875]
+stream = ExtResource("18_m3dmy")
+
+[node name="VL7" type="AudioStreamPlayer3D" parent="BaseCastle/CastleWallDoorClosed5/Room" unique_id=233334367]
+stream = ExtResource("19_qgg1y")
+
+[node name="VL8" type="AudioStreamPlayer3D" parent="BaseCastle/CastleWallDoorClosed5/Room" unique_id=78743971]
+stream = ExtResource("20_4aaa0")
+
+[node name="VL9" type="AudioStreamPlayer3D" parent="BaseCastle/CastleWallDoorClosed5/Room" unique_id=2640247]
+stream = ExtResource("21_2wl2o")
+
+[node name="VL5" type="AudioStreamPlayer3D" parent="BaseCastle/CastleWallDoorClosed5/Room" unique_id=32495868]
+stream = ExtResource("17_e1d2m")
+
 [node name="CastleWallDoorClosed9" parent="BaseCastle" unique_id=527851373 instance=ExtResource("14_bn47f")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.9999995, 0, -9)
+
+[node name="Room" type="Node3D" parent="BaseCastle/CastleWallDoorClosed9" unique_id=711224462]
+script = ExtResource("12_5t1hh")
+
+[node name="Area" type="Area3D" parent="BaseCastle/CastleWallDoorClosed9/Room" unique_id=864653456]
+
+[node name="Collision" type="CollisionShape3D" parent="BaseCastle/CastleWallDoorClosed9/Room/Area" unique_id=1458968201]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0, 0)
+shape = SubResource("SphereShape3D_u1rar")
+
+[node name="VL1" type="AudioStreamPlayer3D" parent="BaseCastle/CastleWallDoorClosed9/Room" unique_id=373986877]
+stream = ExtResource("13_yqbje")
+
+[node name="VL2" type="AudioStreamPlayer3D" parent="BaseCastle/CastleWallDoorClosed9/Room" unique_id=979089771]
+stream = ExtResource("14_e1d2m")
+
+[node name="VL3" type="AudioStreamPlayer3D" parent="BaseCastle/CastleWallDoorClosed9/Room" unique_id=1521864918]
+stream = ExtResource("15_jve3c")
+
+[node name="VL4" type="AudioStreamPlayer3D" parent="BaseCastle/CastleWallDoorClosed9/Room" unique_id=1446197677]
+stream = ExtResource("16_37naf")
+
+[node name="VL6" type="AudioStreamPlayer3D" parent="BaseCastle/CastleWallDoorClosed9/Room" unique_id=161686316]
+stream = ExtResource("18_m3dmy")
+
+[node name="VL7" type="AudioStreamPlayer3D" parent="BaseCastle/CastleWallDoorClosed9/Room" unique_id=1440848546]
+stream = ExtResource("19_qgg1y")
+
+[node name="VL8" type="AudioStreamPlayer3D" parent="BaseCastle/CastleWallDoorClosed9/Room" unique_id=956436604]
+stream = ExtResource("20_4aaa0")
+
+[node name="VL9" type="AudioStreamPlayer3D" parent="BaseCastle/CastleWallDoorClosed9/Room" unique_id=1240842215]
+stream = ExtResource("21_2wl2o")
+
+[node name="VL5" type="AudioStreamPlayer3D" parent="BaseCastle/CastleWallDoorClosed9/Room" unique_id=2057280897]
+stream = ExtResource("17_e1d2m")
 
 [node name="CastleWallDoorClosed4" parent="BaseCastle" unique_id=2076572122 instance=ExtResource("14_bn47f")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -5, 0, -1)

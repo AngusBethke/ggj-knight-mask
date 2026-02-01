@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b0xv7hodkk234" path="res://scripts/MainMenu.cs" id="1_wugcc"]
 [ext_resource type="Texture2D" uid="uid://d2jol45vukeud" path="res://ui/assets/Play button.png" id="2_a0t7b"]
 [ext_resource type="Texture2D" uid="uid://q5yucu025ala" path="res://ui/assets/logo.png" id="2_i8ogv"]
+[ext_resource type="Texture2D" uid="uid://cw16hjn5orcjd" path="res://assets/menu/menu_artwork.png" id="2_iegkc"]
 [ext_resource type="Texture2D" uid="uid://bha1ohrp7hlde" path="res://ui/assets/mask.png" id="3_epfls"]
 [ext_resource type="Texture2D" uid="uid://bf37dd0hmjasu" path="res://ui/assets/Quit button.png" id="3_iegkc"]
 
@@ -25,11 +26,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="ButtonManager" unique_id=1367843131]
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
-color = Color(0.5882353, 0.7921569, 0.1764706, 1)
+[node name="MenuArtwork" type="Sprite2D" parent="ButtonManager" unique_id=1719812499]
+position = Vector2(960, 540)
+texture = ExtResource("2_iegkc")
 
 [node name="Play" type="Button" parent="ButtonManager" unique_id=1921657390]
 layout_mode = 0
@@ -38,6 +37,8 @@ offset_top = 474.0
 offset_right = 1331.0
 offset_bottom = 833.0
 scale = Vector2(0.8, 0.8)
+theme_override_colors/icon_pressed_color = Color(0.49411765, 0.49411765, 0.49411765, 1)
+theme_override_colors/icon_hover_color = Color(0.85490197, 0.85490197, 0.85490197, 1)
 icon = ExtResource("2_a0t7b")
 flat = true
 
@@ -48,6 +49,8 @@ offset_top = 769.0
 offset_right = 1329.0
 offset_bottom = 1128.0
 scale = Vector2(0.8, 0.8)
+theme_override_colors/icon_pressed_color = Color(0.49411765, 0.49411765, 0.49411765, 1)
+theme_override_colors/icon_hover_color = Color(0.85490197, 0.85490197, 0.85490197, 1)
 icon = ExtResource("3_iegkc")
 flat = true
 
