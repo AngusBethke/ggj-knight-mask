@@ -6,6 +6,7 @@ extends Node2D
 @export var voiceact1: AudioStreamPlayer2D
 @export var voiceact2: AudioStreamPlayer2D
 @export var voiceact3: AudioStreamPlayer2D
+@export var voiceactChoirScream: AudioStreamPlayer2D
 @export var blackfadeout: ColorRect
 #@export_range(0, 5, 0.2) var fade_duration = 1.0
 
@@ -24,14 +25,24 @@ func _ready() -> void:
 	await _titlecards()
 	blackfadeout.visible = true
 	blackfadeout.top_level = true
-	await _fade(255, 2.5)
+	
+	await _fade(254, 20.0)
+	
 	get_tree().change_scene_to_file("res://scenes/Main_World.tscn")
 	
 
 func _fade(target_alpha: float, fade_duration: float):
-	var tween = create_tween() 
+	var tween = create_tween()
+	tween.set_trans(Tween.TRANS_SINE);
+	tween.set_ease(Tween.EASE_IN);
 	tween.tween_property(blackfadeout, "color:a", target_alpha, fade_duration)
 	await tween.finished
+	
+func _fadeaudio(target_volume: float, fade_duration: float):
+	var tweenaudio = create_tween()
+	tweenaudio.set_trans(Tween.TRANS_SINE);
+	tweenaudio.set_ease(Tween.EASE_IN);
+	tweenaudio.tween_property(voiceactChoirScream, "volume_db", target_volume, fade_duration)
 	
 	
 func _card1() -> void:
@@ -50,6 +61,9 @@ func _card3() -> void:
 	voicecard3.visible = true
 	voicecard3.top_level = true
 	voiceact3.playing = true
+	voiceactChoirScream.volume_db = -10.0
+	voiceactChoirScream.playing = true
+	_fadeaudio(5.0, 3.0)
 	await voiceact3.finished
 
 func _titlecards():
