@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://rtakiwlkekwj" path="res://audio/effects/dragon/MedievalGame_Dragon_Wings_4.wav" id="7_yei2o"]
 [ext_resource type="AudioStream" uid="uid://dkcgf1tij2e4m" path="res://audio/effects/dragon/MedievalGame_Dragon_Wings_5.wav" id="8_l6coy"]
 [ext_resource type="AudioStream" uid="uid://cycgu436nwchk" path="res://audio/effects/dragon/MedievalGame_Dragon_Wings_6.wav" id="9_tki21"]
+[ext_resource type="AudioStream" uid="uid://cmcvl11bl5s7l" path="res://audio/effects/dragon/dragon_roar.mp3" id="10_de0tk"]
 
 [sub_resource type="Curve" id="Curve_sl8xs"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.0234942, 0.0, 0, 0]
@@ -469,3 +470,8 @@ stream = ExtResource("8_l6coy")
 
 [node name="Wings6" type="AudioStreamPlayer3D" parent="SoundEffects/DragonWings" unique_id=592124669]
 stream = ExtResource("9_tki21")
+
+[node name="DragonSounds" type="Node3D" parent="SoundEffects" unique_id=1255752305]
+
+[node name="Roar" type="AudioStreamPlayer3D" parent="SoundEffects/DragonSounds" unique_id=1433764938]
+stream = ExtResource("10_de0tk")

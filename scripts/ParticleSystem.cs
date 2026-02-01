@@ -46,6 +46,9 @@ public partial class ParticleSystem : Node3D
 
 	private ulong _lastWingSoundPlayedTime = 0;
 	private int _currentSoundIndex = 0;
+
+
+	private AudioStreamPlayer3D _dragonRoarSound => GetNode<Node3D>("SoundEffects").GetNode<Node3D>("DragonSounds").GetNode<AudioStreamPlayer3D>("Roar");
 	#endregion
 	public override void _Ready()
 	{
@@ -67,6 +70,12 @@ public partial class ParticleSystem : Node3D
 		
 		_dragonFirePorted.HandleAttack(delta);
 		
+		// roar sound logic
+		if(_dragonFirePorted.ShouldDragonRoar()){
+			// play roar sound
+			PlayDragonRoarSound();
+		}
+		// wing sound logic
 		if(_dragonFirePorted.IsDragonAboutToAttack()){
 			PlayDragonWingSound();
 		}
@@ -98,6 +107,12 @@ public partial class ParticleSystem : Node3D
 			}
 		}
 		return false;
+	}
+
+	private void PlayDragonRoarSound()
+	{
+		_dragonFirePorted.SetDragonRoared();
+		_dragonRoarSound.Play();
 	}
 
 	private void PlayDragonWingSound()
