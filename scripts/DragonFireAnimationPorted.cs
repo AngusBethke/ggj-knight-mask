@@ -29,6 +29,8 @@ public partial class DragonFireAnimationPorted : GpuParticles3D
 	private float _initalCooldown = 15;
 
 
+	private bool _canRoar = true;
+
 	
 
 	public override void _Ready()
@@ -57,6 +59,7 @@ public partial class DragonFireAnimationPorted : GpuParticles3D
 		{
 			AttackMove();
 			_actionCooldown = _initalCooldown;
+			_canRoar = true;
 		}
 
 		// Use an approximate comparison to avoid floating point equality issues
@@ -88,8 +91,11 @@ public partial class DragonFireAnimationPorted : GpuParticles3D
 	}
 
 	public bool ShouldDragonRoar(){
-		// is dragon at _moveStart
-		return _moveStart.Equals(Position);
+		// is dragon at the beginning of its attack
+		var timeDifference =  _initalCooldown - _actionCooldown;
+		var inWindow =  timeDifference > 12f &&  timeDifference < 13f;
+		
+		return inWindow;
 	}
 
 	public bool IsDragonAboutToAttack(){
@@ -102,5 +108,9 @@ public partial class DragonFireAnimationPorted : GpuParticles3D
 		var timeDifference =  _initalCooldown - _actionCooldown;
 		var inWindow =  timeDifference > 11f ||  timeDifference < 4f;
 		return inWindow;
+	}
+
+	public void SetDragonRoared(){
+		_canRoar = false;
 	}
 }
