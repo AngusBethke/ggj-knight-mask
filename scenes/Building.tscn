@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://bj0rjb1x8hwfr" path="res://scenes/Assets/castle_window_orange_glow.tscn" id="15_ylhbm"]
 [ext_resource type="AudioStream" uid="uid://b11qe00r3hsws" path="res://audio/voiceacting/voiceline4.wav" id="16_37naf"]
 [ext_resource type="PackedScene" uid="uid://di1g54mkffk0w" path="res://scenes/Assets/barrel.tscn" id="17_aheo6"]
+[ext_resource type="AudioStream" uid="uid://ubu1ttdyqiae" path="res://audio/voiceacting/voiceline5.wav" id="17_e1d2m"]
 [ext_resource type="PackedScene" uid="uid://nqfrh2nyo6a4" path="res://scenes/Assets/castle_window.tscn" id="17_ylhbm"]
 [ext_resource type="PackedScene" uid="uid://db5i3wjjjfqou" path="res://scenes/Assets/carpet_corner.tscn" id="18_1fch3"]
 [ext_resource type="PackedScene" uid="uid://5ae8vw3w0e8f" path="res://scenes/Building/light_fixtures.tscn" id="18_aheo6"]
@@ -542,8 +543,32 @@ stream = ExtResource("15_jve3c")
 [node name="VL4" type="AudioStreamPlayer3D" parent="BaseCastle/CastleWallDoorClosed6/Room" unique_id=1755887549]
 stream = ExtResource("16_37naf")
 
+[node name="VL5" type="AudioStreamPlayer3D" parent="BaseCastle/CastleWallDoorClosed6/Room" unique_id=1042249304]
+stream = ExtResource("17_e1d2m")
+
 [node name="CastleWallDoorClosed5" parent="BaseCastle" unique_id=924246062 instance=ExtResource("14_bn47f")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4.9999995, 0, 3)
+
+[node name="Room" type="Node3D" parent="BaseCastle/CastleWallDoorClosed5" unique_id=2061310647]
+script = ExtResource("12_5t1hh")
+
+[node name="Area" type="Area3D" parent="BaseCastle/CastleWallDoorClosed5/Room" unique_id=1014292697]
+
+[node name="Collision" type="CollisionShape3D" parent="BaseCastle/CastleWallDoorClosed5/Room/Area" unique_id=2123601043]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0, 0)
+shape = SubResource("SphereShape3D_u1rar")
+
+[node name="VL1" type="AudioStreamPlayer3D" parent="BaseCastle/CastleWallDoorClosed5/Room" unique_id=1197108137]
+stream = ExtResource("13_yqbje")
+
+[node name="VL2" type="AudioStreamPlayer3D" parent="BaseCastle/CastleWallDoorClosed5/Room" unique_id=889228689]
+stream = ExtResource("14_e1d2m")
+
+[node name="VL3" type="AudioStreamPlayer3D" parent="BaseCastle/CastleWallDoorClosed5/Room" unique_id=941686767]
+stream = ExtResource("15_jve3c")
+
+[node name="VL4" type="AudioStreamPlayer3D" parent="BaseCastle/CastleWallDoorClosed5/Room" unique_id=1330469242]
+stream = ExtResource("16_37naf")
 
 [node name="CastleWallDoorClosed9" parent="BaseCastle" unique_id=527851373 instance=ExtResource("14_bn47f")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.9999995, 0, -9)

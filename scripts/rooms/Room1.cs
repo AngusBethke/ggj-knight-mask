@@ -16,22 +16,16 @@ public partial class Room1 : Node3D
 	private AudioStreamPlayer3D _vl2 => GetNode<AudioStreamPlayer3D>("VL2");
 	private AudioStreamPlayer3D _vl3 => GetNode<AudioStreamPlayer3D>("VL3");
 	private AudioStreamPlayer3D _vl4 => GetNode<AudioStreamPlayer3D>("VL4");
-
+	
+	private AudioStreamPlayer3D _vl5 => GetNode<AudioStreamPlayer3D>("VL4");
 	private List<AudioStreamPlayer3D> _voiceLines => new List<AudioStreamPlayer3D>{
 		_vl1,
 		_vl2,
 		_vl3,
-		_vl4
+		_vl4,
+		_vl5
 	};
 	#endregion
-	public override void _Ready()
-	{
-	}
-
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-	}
 
 	public bool IsPlayerInRoomArea(Player player)
 	{
@@ -48,7 +42,7 @@ public partial class Room1 : Node3D
 	{
 		
 		GD.Randomize();
-		var randomVoiceLine = (int)(GD.Randi() % 4);
+		var randomVoiceLine = (int)(GD.Randi() % 5);
 		if (!_voiceLinePlayed)
 		{
 			_voiceLines[randomVoiceLine].Play();
