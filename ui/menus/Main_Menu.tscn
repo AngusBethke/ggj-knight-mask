@@ -37,20 +37,12 @@ offset_right = 1152.0
 offset_bottom = 614.0
 text = "PLAY"
 
-[node name="Options" type="Button" parent="ButtonManager" unique_id=208897741]
-layout_mode = 0
-offset_left = 752.0
-offset_top = 644.0
-offset_right = 1152.0
-offset_bottom = 714.0
-text = "SETTINGS"
-
 [node name="Quit" type="Button" parent="ButtonManager" unique_id=810043555]
 layout_mode = 0
 offset_left = 752.0
-offset_top = 744.0
+offset_top = 654.0
 offset_right = 1152.0
-offset_bottom = 814.0
+offset_bottom = 724.0
 text = "QUIT"
 
 [node name="Logo" type="Sprite2D" parent="." unique_id=708989424]

@@ -204,7 +204,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3228192, -0.3402363, -0.642
 
 [node name="DragonBreathParticleEngine" type="GPUParticles3D" parent="Particles/DragonFire" unique_id=131187047]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7261589, -5.4032974)
-amount = 50
+amount = 5000
 sub_emitter = NodePath("GPUParticles3D")
 lifetime = 8.0
 collision_base_size = 0.02
@@ -227,7 +227,7 @@ process_material = SubResource("ParticleProcessMaterial_gs0tm")
 draw_pass_1 = SubResource("CylinderMesh_ny1of")
 
 [node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="Particles/DragonFire" unique_id=1566665024]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10897279, -1.1042699, 1.1072955)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10897279, -0.9830091, 1.1072955)
 layers = 7
 size = Vector3(2.5285492, 0.41186523, 10.625569)
 
