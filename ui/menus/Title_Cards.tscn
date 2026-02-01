@@ -25,7 +25,6 @@ voiceact1 = NodePath("CanvasLayer/Audio/StartbuttonVoiceActing1")
 voiceact2 = NodePath("CanvasLayer/Audio/StartbuttonVoiceActing2")
 voiceact3 = NodePath("CanvasLayer/Audio/StartbuttonVoiceActing3")
 blackfadeout = NodePath("CanvasLayer/ColorRect")
-fade_duration = 1.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1078953437]
 
@@ -33,6 +32,7 @@ fade_duration = 1.0
 
 [node name="MenuMusic" type="AudioStreamPlayer2D" parent="CanvasLayer/Audio" unique_id=467930272]
 stream = SubResource("AudioStreamWAV_mfxom")
+volume_db = -5.0
 autoplay = true
 
 [node name="StartbuttonVoiceActing1" type="AudioStreamPlayer2D" parent="CanvasLayer/Audio" unique_id=1672043222]
@@ -52,21 +52,22 @@ volume_db = 8.0
 [node name="Node2D" type="Node2D" parent="CanvasLayer" unique_id=1104346379]
 
 [node name="VoiceCard1" type="Sprite2D" parent="CanvasLayer/Node2D" unique_id=904185767]
-position = Vector2(964, 549)
+position = Vector2(960, 540)
 texture = ExtResource("2_3wksm")
 
 [node name="VoiceCard2" type="Sprite2D" parent="CanvasLayer/Node2D" unique_id=1679623669]
-position = Vector2(964, 538)
+position = Vector2(960, 540)
 texture = ExtResource("3_6lgsh")
 
 [node name="VoiceCard3" type="Sprite2D" parent="CanvasLayer/Node2D" unique_id=43676259]
-position = Vector2(960, 542)
+position = Vector2(960, 540)
 texture = ExtResource("4_6elep")
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=422426194]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0)
+color = Color(0, 0, 0, 0.29411766)
