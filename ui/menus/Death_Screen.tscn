@@ -32,6 +32,8 @@ offset_top = 80.0
 offset_right = 1352.0
 offset_bottom = 439.0
 scale = Vector2(0.8, 0.8)
+theme_override_colors/icon_pressed_color = Color(0.49411765, 0.49411765, 0.49411765, 1)
+theme_override_colors/icon_hover_color = Color(0.85490197, 0.85490197, 0.85490197, 1)
 text = "
 "
 icon = ExtResource("2_thfex")
@@ -44,6 +46,8 @@ offset_top = 395.0
 offset_right = 1348.0
 offset_bottom = 754.0
 scale = Vector2(0.8, 0.8)
+theme_override_colors/icon_pressed_color = Color(0.49411765, 0.49411765, 0.49411765, 1)
+theme_override_colors/icon_hover_color = Color(0.85490197, 0.85490197, 0.85490197, 1)
 icon = ExtResource("3_1u846")
 flat = true
 
@@ -54,6 +58,8 @@ offset_top = 707.0
 offset_right = 1348.0
 offset_bottom = 1066.0
 scale = Vector2(0.8, 0.8)
+theme_override_colors/icon_pressed_color = Color(0.49411765, 0.49411765, 0.49411765, 1)
+theme_override_colors/icon_hover_color = Color(0.85490197, 0.85490197, 0.85490197, 1)
 icon = ExtResource("4_qs4dm")
 flat = true
 
