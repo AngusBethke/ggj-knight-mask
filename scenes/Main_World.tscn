@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bejjccqnx8hlu" path="res://assets/NightSky HRD/qwantani_moon_noon_puresky_4k.exr" id="7_05n7d"]
 [ext_resource type="PackedScene" uid="uid://c5rnm55i7qhub" path="res://scenes/Areas.tscn" id="8_uds4v"]
 [ext_resource type="Script" uid="uid://jmfkq1x2tjdy" path="res://scripts/Areas.cs" id="9_vw1ok"]
+[ext_resource type="PackedScene" uid="uid://c6qe1k3kftffv" path="res://scenes/Ambience/world_ambient_sounds.tscn" id="10_a3pl3"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_uds4v"]
 panorama = ExtResource("7_05n7d")
@@ -62,3 +63,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3965373, 2.25573, -16.31201
 script = ExtResource("9_vw1ok")
 
 [node name="PauseMenu" parent="." unique_id=525812452 instance=ExtResource("4_35ipm")]
+
+[node name="World Ambient Sounds" parent="." unique_id=1641263436 instance=ExtResource("10_a3pl3")]
