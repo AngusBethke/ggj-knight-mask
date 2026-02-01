@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://d2lt8aiad66p3"]
+
+[ext_resource type="Texture2D" uid="uid://bfdo4f7ifoq2m" path="res://assets/mountain/textures/tree.png" id="1_ady8m"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_ady8m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_46k07"]
+transparency = 1
+albedo_texture = ExtResource("1_ady8m")
+billboard_mode = 2
+billboard_keep_scale = true
+
+[node name="Tree" type="Node3D" unique_id=806518505]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1708424444]
+transform = Transform3D(12, 0, 0, 0, -5.2453663e-07, -12, 0, 12, -5.2453663e-07, 0, 0, 0)
+mesh = SubResource("QuadMesh_ady8m")
+surface_material_override/0 = SubResource("StandardMaterial3D_46k07")
