@@ -5,6 +5,21 @@
 [ext_resource type="PackedScene" uid="uid://dv8frnonek74m" path="res://ui/overlays/Interaction_Hint.tscn" id="4_mdl7e"]
 [ext_resource type="Script" uid="uid://c8662437yiu7u" path="res://scripts/InteractionHint.cs" id="5_qu4a1"]
 [ext_resource type="Script" uid="uid://c8mf2a1xa7uyf" path="res://scripts/Player.cs" id="5_rkt7w"]
+[ext_resource type="AudioStream" uid="uid://bgyoc4kuf23x7" path="res://audio/effects/footsteps/MedievalGame_Fs_Heavyarmour_Reverb_1.wav" id="6_70d11"]
+[ext_resource type="AudioStream" uid="uid://dvlh3lru72v0x" path="res://audio/effects/footsteps/MedievalGame_Fs_Heavyarmour_1.wav" id="7_cw2d6"]
+[ext_resource type="AudioStream" uid="uid://dfne6enwld6kr" path="res://audio/effects/footsteps/MedievalGame_Fs_Heavyarmour_Reverb_2.wav" id="7_jfpux"]
+[ext_resource type="AudioStream" uid="uid://brref2ht8mu48" path="res://audio/effects/footsteps/MedievalGame_Fs_Heavyarmour_Reverb_3.wav" id="8_61ith"]
+[ext_resource type="AudioStream" uid="uid://cvfdyk3r4hbge" path="res://audio/effects/footsteps/MedievalGame_Fs_Heavyarmour_Reverb_4.wav" id="9_ebwui"]
+[ext_resource type="AudioStream" uid="uid://dgd0hdv1xhh3y" path="res://audio/effects/footsteps/MedievalGame_Fs_Heavyarmour_Reverb_5.wav" id="10_sfy4j"]
+[ext_resource type="AudioStream" uid="uid://dgyfdrgn2ple4" path="res://audio/effects/footsteps/MedievalGame_Fs_Heavyarmour_Reverb_6.wav" id="11_gv3ic"]
+[ext_resource type="AudioStream" uid="uid://h43xvttqeghw" path="res://audio/effects/footsteps/MedievalGame_Fs_Heavyarmour_2.wav" id="13_b8lor"]
+[ext_resource type="AudioStream" uid="uid://scsmuakrt32q" path="res://audio/effects/footsteps/MedievalGame_Fs_Heavyarmour_3.wav" id="14_6e537"]
+[ext_resource type="AudioStream" uid="uid://gpssu33rnawf" path="res://audio/effects/footsteps/MedievalGame_Fs_Heavyarmour_4.wav" id="15_p07f3"]
+[ext_resource type="AudioStream" uid="uid://dpt6jvbcagiow" path="res://audio/effects/footsteps/MedievalGame_Fs_Heavyarmour_5.wav" id="16_viqgg"]
+[ext_resource type="AudioStream" uid="uid://ct4wpag60r34s" path="res://audio/effects/footsteps/MedievalGame_Fs_Heavyarmour_6.wav" id="17_fgkxt"]
+[ext_resource type="AudioStream" uid="uid://co7ti7nj61sx1" path="res://audio/effects/visor/MedievalGame_Metalvisor.wav" id="18_61ith"]
+[ext_resource type="AudioStream" uid="uid://bgs87p8o0kobi" path="res://audio/effects/visor/MedievalGame_Metalvisor2.wav" id="19_sfy4j"]
+[ext_resource type="AudioStream" uid="uid://cl4g8vvvjgqmf" path="res://audio/effects/visor/MedievalGame_Metalvisor3.wav" id="20_gv3ic"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_v7774"]
 
@@ -22,6 +37,7 @@ script = ExtResource("3_mdl7e")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player" unique_id=1158525261]
 transform = Transform3D(1, -2.741718e-11, 2.910383e-11, 2.6631142e-11, 1, -2.910383e-11, 2.910383e-11, 1.4551915e-11, 1, -0.00018368941, 0.9110524, 0.0001001358)
+visible = false
 mesh = SubResource("CapsuleMesh_v7774")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=355038630]
@@ -46,3 +62,82 @@ transform = Transform3D(1, -1.4432899e-11, 1.4551914e-11, 1.4432899e-11, 1, -1.4
 
 [node name="InteractionHint" parent="Player" unique_id=464639353 instance=ExtResource("4_mdl7e")]
 script = ExtResource("5_qu4a1")
+
+[node name="SoundEffects" type="Node3D" parent="Player" unique_id=1179924643]
+
+[node name="FootstepsReverb" type="Node3D" parent="Player/SoundEffects" unique_id=823388270]
+
+[node name="Footstep1" type="AudioStreamPlayer3D" parent="Player/SoundEffects/FootstepsReverb" unique_id=2109338832]
+transform = Transform3D(1.6666665, 9.49818e-12, 1.4551915e-11, -1.960565e-11, 1.6666665, -1.4551915e-11, -2.910383e-11, 2.910383e-11, 1.6666664, 0, 0, 0)
+stream = ExtResource("6_70d11")
+volume_db = -4.0
+
+[node name="Footstep2" type="AudioStreamPlayer3D" parent="Player/SoundEffects/FootstepsReverb" unique_id=1999693174]
+transform = Transform3D(1.6666665, 3.8603787e-11, 4.3655746e-11, -4.8705928e-11, 1.6666665, -4.3655746e-11, -4.3655746e-11, 4.3655746e-11, 1.6666664, 0, 0, 0)
+stream = ExtResource("7_jfpux")
+volume_db = -4.0
+
+[node name="Footstep3" type="AudioStreamPlayer3D" parent="Player/SoundEffects/FootstepsReverb" unique_id=1719320442]
+transform = Transform3D(1.6666665, 1.2592416e-10, 8.731149e-11, -1.0690826e-10, 1.6666665, -1.0186341e-10, -1.0186341e-10, 1.1641532e-10, 1.6666664, 0, 0, 0)
+stream = ExtResource("8_61ith")
+volume_db = -4.0
+
+[node name="Footstep4" type="AudioStreamPlayer3D" parent="Player/SoundEffects/FootstepsReverb" unique_id=707559000]
+transform = Transform3D(1.6666665, 2.4235902e-10, 1.891749e-10, -2.2331292e-10, 1.6666665, -2.4738256e-10, -1.891749e-10, 2.6193447e-10, 1.6666664, 0, 0, 0)
+stream = ExtResource("9_ebwui")
+volume_db = -4.0
+
+[node name="Footstep5" type="AudioStreamPlayer3D" parent="Player/SoundEffects/FootstepsReverb" unique_id=36070202]
+transform = Transform3D(1.6666665, 5.04329e-10, 3.783498e-10, -4.852261e-10, 1.6666665, -5.3842086e-10, -3.929017e-10, 5.529728e-10, 1.6666664, 0, 0, 0)
+stream = ExtResource("10_sfy4j")
+volume_db = -4.0
+
+[node name="Footstep6" type="AudioStreamPlayer3D" parent="Player/SoundEffects/FootstepsReverb" unique_id=1410150617]
+transform = Transform3D(1.6666665, 9.99167e-10, 7.712515e-10, -9.799486e-10, 1.6666665, -1.1204975e-09, -7.712515e-10, 1.1350494e-09, 1.6666664, 0, 0, 0)
+stream = ExtResource("11_gv3ic")
+volume_db = -4.0
+
+[node name="FootstepsNormal" type="Node3D" parent="Player/SoundEffects" unique_id=1294616485]
+
+[node name="Footstep1" type="AudioStreamPlayer3D" parent="Player/SoundEffects/FootstepsNormal" unique_id=263509999]
+transform = Transform3D(1.6666665, 3.8603787e-11, 4.3655746e-11, -4.8705928e-11, 1.6666665, -4.3655746e-11, -4.3655746e-11, 4.3655746e-11, 1.6666664, 0, 0, 0)
+stream = ExtResource("7_cw2d6")
+volume_db = -4.0
+
+[node name="Footstep2" type="AudioStreamPlayer3D" parent="Player/SoundEffects/FootstepsNormal" unique_id=1841126270]
+transform = Transform3D(1.6666665, 1.2592416e-10, 8.731149e-11, -1.0690826e-10, 1.6666665, -1.0186341e-10, -1.0186341e-10, 1.1641532e-10, 1.6666664, 0, 0, 0)
+stream = ExtResource("13_b8lor")
+volume_db = -4.0
+
+[node name="Footstep3" type="AudioStreamPlayer3D" parent="Player/SoundEffects/FootstepsNormal" unique_id=68944607]
+transform = Transform3D(1.6666665, 2.4235902e-10, 1.891749e-10, -2.2331292e-10, 1.6666665, -2.4738256e-10, -1.891749e-10, 2.6193447e-10, 1.6666664, 0, 0, 0)
+stream = ExtResource("14_6e537")
+volume_db = -4.0
+
+[node name="Footstep4" type="AudioStreamPlayer3D" parent="Player/SoundEffects/FootstepsNormal" unique_id=865082193]
+transform = Transform3D(1.6666665, 5.04329e-10, 3.783498e-10, -4.852261e-10, 1.6666665, -5.3842086e-10, -3.929017e-10, 5.529728e-10, 1.6666664, 0, 0, 0)
+stream = ExtResource("15_p07f3")
+volume_db = -4.0
+
+[node name="Footstep5" type="AudioStreamPlayer3D" parent="Player/SoundEffects/FootstepsNormal" unique_id=1255757334]
+transform = Transform3D(1.6666665, 9.99167e-10, 7.712515e-10, -9.799486e-10, 1.6666665, -1.1204975e-09, -7.712515e-10, 1.1350494e-09, 1.6666664, 0, 0, 0)
+stream = ExtResource("16_viqgg")
+volume_db = -4.0
+
+[node name="Footstep6" type="AudioStreamPlayer3D" parent="Player/SoundEffects/FootstepsNormal" unique_id=578116708]
+transform = Transform3D(1.6666665, 1.9888446e-09, 1.542503e-09, -1.9693935e-09, 1.6666665, -2.2846507e-09, -1.5570549e-09, 2.2992026e-09, 1.6666664, 0, 0, 0)
+stream = ExtResource("17_fgkxt")
+volume_db = -4.0
+
+[node name="Visor" type="Node3D" parent="Player/SoundEffects" unique_id=1819113496]
+
+[node name="Lift1" type="AudioStreamPlayer3D" parent="Player/SoundEffects/Visor" unique_id=1127809408]
+stream = ExtResource("18_61ith")
+
+[node name="Lift2" type="AudioStreamPlayer3D" parent="Player/SoundEffects/Visor" unique_id=698814737]
+transform = Transform3D(1.6666665, 9.49818e-12, 1.4551915e-11, -1.960565e-11, 1.6666665, -1.4551915e-11, -2.910383e-11, 2.910383e-11, 1.6666664, 0, 0, 0)
+stream = ExtResource("19_sfy4j")
+
+[node name="Lift3" type="AudioStreamPlayer3D" parent="Player/SoundEffects/Visor" unique_id=1186189772]
+transform = Transform3D(1.6666665, 6.771472e-11, 4.3655746e-11, -4.8705928e-11, 1.6666665, -8.731149e-11, -4.3655746e-11, 8.731149e-11, 1.6666664, 0, 0, 0)
+stream = ExtResource("20_gv3ic")

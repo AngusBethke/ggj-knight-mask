@@ -1,5 +1,7 @@
 using Godot;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 public partial class Player : CharacterBody3D
@@ -34,7 +36,6 @@ public partial class Player : CharacterBody3D
 
 	#endregion
 
-
 	#region Nodes
 	protected Node3D Head => GetNode<Node3D>("Head");
 	protected Camera3D Camera => GetNode<Node3D>("Head")
@@ -49,8 +50,37 @@ public partial class Player : CharacterBody3D
 	// interaction hints
 	private Node2D _interactionHint => GetNode<Node2D>("InteractionHint");
 	#endregion
-	
-	public override void _Ready()
+
+	#region SoundNodes
+	private ulong _lastWalkingSoundPlayedTime = 0;
+	private int _currentSoundIndex = 0;
+
+	// -- Footstep Sounds -- //
+	// Reverb
+	private AudioStreamPlayer3D _reverbFootstep1 => GetNode<Node3D>("SoundEffects").GetNode<Node3D>("FootstepsReverb").GetNode<AudioStreamPlayer3D>("Footstep1");
+    private AudioStreamPlayer3D _reverbFootstep2 => GetNode<Node3D>("SoundEffects").GetNode<Node3D>("FootstepsReverb").GetNode<AudioStreamPlayer3D>("Footstep2");
+    private AudioStreamPlayer3D _reverbFootstep3 => GetNode<Node3D>("SoundEffects").GetNode<Node3D>("FootstepsReverb").GetNode<AudioStreamPlayer3D>("Footstep3");
+    private AudioStreamPlayer3D _reverbFootstep4 => GetNode<Node3D>("SoundEffects").GetNode<Node3D>("FootstepsReverb").GetNode<AudioStreamPlayer3D>("Footstep4");
+    private AudioStreamPlayer3D _reverbFootstep5 => GetNode<Node3D>("SoundEffects").GetNode<Node3D>("FootstepsReverb").GetNode<AudioStreamPlayer3D>("Footstep5");
+    private AudioStreamPlayer3D _reverbFootstep6 => GetNode<Node3D>("SoundEffects").GetNode<Node3D>("FootstepsReverb").GetNode<AudioStreamPlayer3D>("Footstep6");
+
+	// Normal
+    private AudioStreamPlayer3D _normalFootstep1 => GetNode<Node3D>("SoundEffects").GetNode<Node3D>("FootstepsNormal").GetNode<AudioStreamPlayer3D>("Footstep1");
+    private AudioStreamPlayer3D _normalFootstep2 => GetNode<Node3D>("SoundEffects").GetNode<Node3D>("FootstepsNormal").GetNode<AudioStreamPlayer3D>("Footstep2");
+    private AudioStreamPlayer3D _normalFootstep3 => GetNode<Node3D>("SoundEffects").GetNode<Node3D>("FootstepsNormal").GetNode<AudioStreamPlayer3D>("Footstep3");
+    private AudioStreamPlayer3D _normalFootstep4 => GetNode<Node3D>("SoundEffects").GetNode<Node3D>("FootstepsNormal").GetNode<AudioStreamPlayer3D>("Footstep4");
+    private AudioStreamPlayer3D _normalFootstep5 => GetNode<Node3D>("SoundEffects").GetNode<Node3D>("FootstepsNormal").GetNode<AudioStreamPlayer3D>("Footstep5");
+    private AudioStreamPlayer3D _normalFootstep6 => GetNode<Node3D>("SoundEffects").GetNode<Node3D>("FootstepsNormal").GetNode<AudioStreamPlayer3D>("Footstep6");
+
+	// -- Visor Sounds -- //
+    // Normal
+    private AudioStreamPlayer3D _visorSound1 => GetNode<Node3D>("SoundEffects").GetNode<Node3D>("Visor").GetNode<AudioStreamPlayer3D>("Lift1");
+    private AudioStreamPlayer3D _visorSound2 => GetNode<Node3D>("SoundEffects").GetNode<Node3D>("Visor").GetNode<AudioStreamPlayer3D>("Lift2");
+    private AudioStreamPlayer3D _visorSound3 => GetNode<Node3D>("SoundEffects").GetNode<Node3D>("Visor").GetNode<AudioStreamPlayer3D>("Lift3");
+    #endregion
+
+
+    public override void _Ready()
 	{
 		Input.MouseMode = Input.MouseModeEnum.Captured;
 
@@ -111,6 +141,7 @@ public partial class Player : CharacterBody3D
 		{
 			if (direction != Vector3.Zero)
 			{
+				PlayWalkingSound();
 				velocity.X = direction.X * _speed;
 				velocity.Z = direction.Z * _speed;
 			}
@@ -180,9 +211,69 @@ public partial class Player : CharacterBody3D
 
 	}
 
+    #region Movement Sounds
+	private void PlayWalkingSound()
+	{
+		// Bail out if the sound should not be played
+		var speedDelta = 500 * (1 - _speed / WalkSpeed);
 
-	#region Helper Methods
-	private static Vector3 HeadBob(float time)
+        if (!((_lastWalkingSoundPlayedTime + (500 + speedDelta)) < Time.GetTicksMsec())) { return; }
+        _lastWalkingSoundPlayedTime = Time.GetTicksMsec();
+
+        var speed = _speed;
+
+        List<AudioStreamPlayer3D> reverbWalkingSounds = [
+            _reverbFootstep1,
+            _reverbFootstep2,
+            _reverbFootstep3,
+            _reverbFootstep4,
+            _reverbFootstep5,
+            _reverbFootstep6
+        ];
+
+        List<AudioStreamPlayer3D> normalWalkingSounds = [
+            _normalFootstep1,
+            _normalFootstep2,
+            _normalFootstep3,
+            _normalFootstep4,
+            _normalFootstep5,
+            _normalFootstep6
+        ];
+
+		if (_currentSoundIndex > 5)
+		{
+			_currentSoundIndex = 0;
+		}
+
+        bool isInside = false;
+
+		if (isInside)
+		{
+			var sound = reverbWalkingSounds[_currentSoundIndex];
+			sound.Play();
+        }
+		else
+		{
+            var sound = normalWalkingSounds[_currentSoundIndex];
+            sound.Play();
+        }
+
+		_currentSoundIndex++;
+    }
+    #endregion
+
+    #region Sound Helpers
+    private AudioStreamPlayer3D GetRandomSoundFromList(List<AudioStreamPlayer3D> sounds)
+    {
+		var random = new Random();
+		var index = random.Next(0, sounds.Count - 1);
+
+        return sounds[index];
+    }
+    #endregion
+
+    #region Helper Methods
+    private static Vector3 HeadBob(float time)
 	{
 		var pos = Vector3.Zero;
 		pos.Y = Mathf.Sin(time * BobFrequency) * BobAmplitude;
@@ -192,8 +283,14 @@ public partial class Player : CharacterBody3D
 
 	private void HandleInteraction(Node selectedObj)
 	{
-		// remove from scene
-		if (!_isHoldingObject)
+        List<AudioStreamPlayer3D> visorSounds = [
+            _visorSound1,
+            _visorSound2,
+            _visorSound3
+        ];
+
+        // remove from scene
+        if (!_isHoldingObject)
 		{
 			_heldObject = selectedObj;
 			selectedObj.GetParent().RemoveChild(selectedObj);
@@ -201,6 +298,9 @@ public partial class Player : CharacterBody3D
 
 			_maskOverlay.Visible = true;
 			_interactionHint.Visible = false;
+
+			var sound = GetRandomSoundFromList(visorSounds);
+			sound.Play();
 
 			// shake player
 			Shake(magnitude: 0.05f, period: 1f);
@@ -215,7 +315,10 @@ public partial class Player : CharacterBody3D
 			_isHoldingObject = false;
 			_heldObject = null;
 
-			_maskOverlay.Visible = false;
+            var sound = GetRandomSoundFromList(visorSounds);
+            sound.Play();
+
+            _maskOverlay.Visible = false;
 		}
 	}
 	#endregion
