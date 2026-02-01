@@ -3,6 +3,12 @@
 [ext_resource type="Script" uid="uid://dwtkchyhauvit" path="res://scripts/ParticleSystem.cs" id="1_ln80l"]
 [ext_resource type="PackedScene" uid="uid://cvwi5wkk64err" path="res://scenes/Assets/sconce.tscn" id="2_5ksqe"]
 [ext_resource type="Script" uid="uid://x0o6og6ecwc0" path="res://scripts/DragonFireAnimationPorted.cs" id="2_ln80l"]
+[ext_resource type="AudioStream" uid="uid://cec508lapwqs1" path="res://audio/effects/dragon/MedievalGame_Dragon_Wings_1.wav" id="4_gs0tm"]
+[ext_resource type="AudioStream" uid="uid://dc2edf8f8bjiy" path="res://audio/effects/dragon/MedievalGame_Dragon_Wings_2.wav" id="5_de0tk"]
+[ext_resource type="AudioStream" uid="uid://dr0om84g7eq4y" path="res://audio/effects/dragon/MedievalGame_Dragon_Wings_3.wav" id="6_ny1of"]
+[ext_resource type="AudioStream" uid="uid://rtakiwlkekwj" path="res://audio/effects/dragon/MedievalGame_Dragon_Wings_4.wav" id="7_yei2o"]
+[ext_resource type="AudioStream" uid="uid://dkcgf1tij2e4m" path="res://audio/effects/dragon/MedievalGame_Dragon_Wings_5.wav" id="8_l6coy"]
+[ext_resource type="AudioStream" uid="uid://cycgu436nwchk" path="res://audio/effects/dragon/MedievalGame_Dragon_Wings_6.wav" id="9_tki21"]
 
 [sub_resource type="Curve" id="Curve_sl8xs"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.0234942, 0.0, 0, 0]
@@ -435,3 +441,25 @@ light_energy = 0.675
 light_indirect_energy = 5.119
 spot_range = 2.108593
 spot_angle = 75.04933
+
+[node name="SoundEffects" type="Node3D" parent="." unique_id=1678105442]
+
+[node name="DragonWings" type="Node3D" parent="SoundEffects" unique_id=436884113]
+
+[node name="Wings1" type="AudioStreamPlayer3D" parent="SoundEffects/DragonWings" unique_id=1541129802]
+stream = ExtResource("4_gs0tm")
+
+[node name="Wings2" type="AudioStreamPlayer3D" parent="SoundEffects/DragonWings" unique_id=738063535]
+stream = ExtResource("5_de0tk")
+
+[node name="Wings3" type="AudioStreamPlayer3D" parent="SoundEffects/DragonWings" unique_id=1274993945]
+stream = ExtResource("6_ny1of")
+
+[node name="Wings4" type="AudioStreamPlayer3D" parent="SoundEffects/DragonWings" unique_id=1663550172]
+stream = ExtResource("7_yei2o")
+
+[node name="Wings5" type="AudioStreamPlayer3D" parent="SoundEffects/DragonWings" unique_id=946118007]
+stream = ExtResource("8_l6coy")
+
+[node name="Wings6" type="AudioStreamPlayer3D" parent="SoundEffects/DragonWings" unique_id=592124669]
+stream = ExtResource("9_tki21")
