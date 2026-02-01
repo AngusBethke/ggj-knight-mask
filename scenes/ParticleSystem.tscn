@@ -12,9 +12,16 @@
 [ext_resource type="AudioStream" uid="uid://cycgu436nwchk" path="res://audio/effects/dragon/MedievalGame_Dragon_Wings_6.wav" id="9_tki21"]
 [ext_resource type="AudioStream" uid="uid://cmcvl11bl5s7l" path="res://audio/effects/dragon/dragon_roar.mp3" id="10_de0tk"]
 
+[sub_resource type="Curve" id="Curve_yei2o"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.8378379, 0.8876405), -0.42760822, -0.42760822, 0, 0, Vector2(0.95945954, 0), -15.797695, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_l6coy"]
+curve = SubResource("Curve_yei2o")
+
 [sub_resource type="Curve" id="Curve_ny1of"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.3923602, 0.0, 0, 0]
-point_count = 2
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.41216218, 0.9550562), 0.0, 0.0, 0, 0, Vector2(0.8851352, 0.8314607), -0.21457072, -0.21457072, 0, 0, Vector2(1, 0), -5.358303, 0.0, 0, 0]
+point_count = 4
 
 [sub_resource type="CurveTexture" id="CurveTexture_nndnq"]
 curve = SubResource("Curve_ny1of")
@@ -29,7 +36,10 @@ initial_velocity_max = 3.0
 angular_velocity_min = -410.32
 angular_velocity_max = 363.86996
 gravity = Vector3(0, 0, 0)
+scale_min = 2.0
+scale_max = 2.0
 scale_curve = SubResource("CurveTexture_nndnq")
+alpha_curve = SubResource("CurveTexture_l6coy")
 collision_mode = 1
 collision_friction = 0.8
 collision_bounce = 0.0
@@ -221,11 +231,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6245925, 1.2910198, 0.49932
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3228192, -0.3402363, -0.6424222)
 
 [node name="DragonBreathParticleEngine" type="GPUParticles3D" parent="Particles/DragonFire" unique_id=131187047]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7261589, -7.520957)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7261589, -8.608634)
 amount = 2000
 sub_emitter = NodePath("GPUParticles3D")
 lifetime = 8.0
-collision_base_size = 0.2
+collision_base_size = 0.24
 process_material = SubResource("ParticleProcessMaterial_5ksqe")
 draw_pass_1 = SubResource("QuadMesh_l6coy")
 script = ExtResource("2_ln80l")
@@ -246,9 +256,9 @@ process_material = SubResource("ParticleProcessMaterial_gs0tm")
 draw_pass_1 = SubResource("CylinderMesh_ny1of")
 
 [node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="Particles/DragonFire" unique_id=1566665024]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10897279, -0.9830091, 1.1072955)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10897279, -0.9830091, 0.9413617)
 layers = 7
-size = Vector3(2.5285492, 0.41186523, 10.625569)
+size = Vector3(2.5285492, 0.41186523, 22.419514)
 
 [node name="GPUParticlesCollisionBox3D2" type="GPUParticlesCollisionBox3D" parent="Particles/DragonFire" unique_id=1301061491]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8405669, 1.158293, -2.973403)
