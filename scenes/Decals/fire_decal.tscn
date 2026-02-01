@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://2vscnd804lyb"]
+
+[ext_resource type="Texture2D" uid="uid://ulom3eedl4lm" path="res://assets/decals/fire/Plane_DefaultMaterial_BaseColor.png" id="1_md5jy"]
+[ext_resource type="Texture2D" uid="uid://bu4p0wctaxq5v" path="res://assets/decals/fire/Plane_DefaultMaterial_Emissive.png" id="2_fuiq1"]
+
+[node name="FireDecal" type="Node3D" unique_id=44523945]
+
+[node name="Decal" type="Decal" parent="." unique_id=504500823]
+texture_albedo = ExtResource("1_md5jy")
+texture_emission = ExtResource("2_fuiq1")
+emission_energy = 3.63
+
+[node name="Decal" type="Decal" parent="Decal" unique_id=71073744]
+emission_energy = 5.0

@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://67cisufvc4ye"]
+
+[ext_resource type="Texture2D" uid="uid://bqub7klmhfief" path="res://assets/crate/textures/wooden_crate_low_Crate_BaseColor.png" id="1_7wskg"]
+[ext_resource type="Texture2D" uid="uid://da8wvpan3yhjn" path="res://assets/crate/textures/wooden_crate_low_Crate_Normal.png" id="2_jge0o"]
+
+[resource]
+diffuse_mode = 3
+albedo_texture = ExtResource("1_7wskg")
+normal_enabled = true
+normal_scale = -1.0
+normal_texture = ExtResource("2_jge0o")
