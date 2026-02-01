@@ -63,7 +63,7 @@ public partial class MainWorld : Node3D
 		if (_particleSystem.IsPlayerInDragonFire(_player))
 		{
 			Input.MouseMode = Input.MouseModeEnum.Visible;
-			GetTree().ChangeSceneToFile("res://ui/menus/End_Screen.tscn");
+			GetTree().ChangeSceneToFile("res://ui/menus/Death_Screen.tscn");
 		}
 		#endregion
 	}

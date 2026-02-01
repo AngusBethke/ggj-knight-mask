@@ -1,12 +1,12 @@
-[gd_scene format=3 uid="uid://b2ipv4wq2e28d"]
+[gd_scene format=3 uid="uid://de6ije0h3v5jd"]
 
-[ext_resource type="Script" uid="uid://btlrhbhiq3yb4" path="res://scripts/EndScreen.cs" id="1_ybww2"]
-[ext_resource type="Texture2D" uid="uid://bha1ohrp7hlde" path="res://ui/assets/mask.png" id="2_k064j"]
-[ext_resource type="Texture2D" uid="uid://ga1ngxtcd1ey" path="res://ui/assets/winner.png" id="3_dsgr5"]
-[ext_resource type="AudioStream" uid="uid://bexs8fb5plpt2" path="res://audio/music/MedievalGame_MainMenu_Loop_combined.wav" id="4_weqv3"]
+[ext_resource type="Script" uid="uid://dj7my3d6j7a1m" path="res://scripts/DeathScreen.cs" id="1_4d5aa"]
+[ext_resource type="Texture2D" uid="uid://bha1ohrp7hlde" path="res://ui/assets/mask.png" id="2_8talb"]
+[ext_resource type="Texture2D" uid="uid://bt22qxtau3msp" path="res://ui/assets/dead.png" id="3_4d5aa"]
+[ext_resource type="AudioStream" uid="uid://bexs8fb5plpt2" path="res://audio/music/MedievalGame_MainMenu_Loop_combined.wav" id="4_8talb"]
 
-[node name="EndScreen" type="Node2D" unique_id=335169843]
-script = ExtResource("1_ybww2")
+[node name="DeathScreen" type="Node2D" unique_id=335169843]
+script = ExtResource("1_4d5aa")
 
 [node name="ButtonManager" type="Control" parent="." unique_id=1762115577]
 layout_mode = 3
@@ -20,7 +20,7 @@ grow_vertical = 2
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
-color = Color(0.043137256, 0.7647059, 0.83137256, 1)
+color = Color(0.8235294, 0.21176471, 0, 1)
 
 [node name="PlayAgain" type="Button" parent="ButtonManager" unique_id=1410330534]
 layout_mode = 0
@@ -50,13 +50,13 @@ text = "QUIT"
 [node name="Mask" type="Sprite2D" parent="." unique_id=324383885]
 position = Vector2(1404, 621)
 scale = Vector2(0.7125, 0.7125)
-texture = ExtResource("2_k064j")
+texture = ExtResource("2_8talb")
 
-[node name="Winner" type="Sprite2D" parent="." unique_id=1808518011]
-position = Vector2(412, 264)
-scale = Vector2(0.4642857, 0.4642857)
-texture = ExtResource("3_dsgr5")
+[node name="Dead" type="Sprite2D" parent="." unique_id=1392845579]
+position = Vector2(950, 215)
+scale = Vector2(0.4727679, 0.47276786)
+texture = ExtResource("3_4d5aa")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1229487788]
-stream = ExtResource("4_weqv3")
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1775178697]
+stream = ExtResource("4_8talb")
 autoplay = true

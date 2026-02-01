@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b7xfqbvck0h5n"]
+
+[ext_resource type="Texture2D" uid="uid://vysda3tcmk8t" path="res://assets/carpet cross/textures/carpet_crossroads_low_Carpet_BaseColor.png" id="1_j1d73"]
+[ext_resource type="Texture2D" uid="uid://bb4fa8nh8gw5d" path="res://assets/carpet cross/textures/carpet_crossroads_low_Carpet_Normal.png" id="2_oa0q2"]
+
+[resource]
+diffuse_mode = 3
+albedo_texture = ExtResource("1_j1d73")
+normal_enabled = true
+normal_texture = ExtResource("2_oa0q2")
