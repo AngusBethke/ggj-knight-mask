@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://dppxd30u7i0gs" path="res://scenes/Assets/carpet_cross.tscn" id="21_j1hpf"]
 [ext_resource type="PackedScene" uid="uid://d2pumd2ttkxcl" path="res://scenes/Assets/banner.tscn" id="22_1n5pf"]
 [ext_resource type="PackedScene" uid="uid://2vscnd804lyb" path="res://scenes/Decals/fire_decal.tscn" id="24_oqawt"]
+[ext_resource type="PackedScene" uid="uid://cpkq1w00u8e8g" path="res://scenes/Assets/mountain.tscn" id="25_u1rar"]
 
 [node name="Building" type="Node3D" unique_id=1672319449]
 script = ExtResource("1_1ej2i")
@@ -760,3 +761,31 @@ transform = Transform3D(2.1213202, -2.1213202, 0, 2.1213202, 2.1213202, 0, 0, 0,
 
 [node name="FireDecal" parent="Decals" unique_id=1883392343 instance=ExtResource("24_oqawt")]
 transform = Transform3D(2.1213202, -2.1213202, 0, 2.1213202, 2.1213202, 0, 0, 0, 3, 6.877808, 0, 3.5030775)
+
+[node name="Mountains" type="Node3D" parent="." unique_id=1950887957]
+
+[node name="Mountain" parent="Mountains" unique_id=1618284936 instance=ExtResource("25_u1rar")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 177.60799, -4.034046, 17.310776)
+
+[node name="CollisionBoxes" type="Node3D" parent="." unique_id=1012172541]
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CollisionBoxes" unique_id=679198120]
+transform = Transform3D(7.54979e-08, 1, 0, -1, 7.54979e-08, 0, 0, 0, 2.648754, -1.0276608, 2.036956, -3.434132)
+transparency = 1.0
+cast_shadow = 0
+use_collision = true
+size = Vector3(0.24731445, 4.084717, 3.7675781)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CollisionBoxes" unique_id=1534170744]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 2.648754, 3.9558597, 2.036956, 0.9612708)
+transparency = 1.0
+cast_shadow = 0
+use_collision = true
+size = Vector3(0.24731445, 2.1176758, 3.7675781)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CollisionBoxes" unique_id=318380979]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.648754, 5.013531, 0.9805329, 0.9612708)
+transparency = 1.0
+cast_shadow = 0
+use_collision = true
+size = Vector3(0.24731445, 2.1176758, 3.7675781)
