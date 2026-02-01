@@ -36,16 +36,16 @@ volumetric_fog_length = 256.0
 script = ExtResource("1_7vp6s")
 
 [node name="Building" parent="." unique_id=1672319449 instance=ExtResource("2_7vp6s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.33234197, 1.0741528, -1.2684388)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.074, -1.268)
 
 [node name="ParticleSystem" parent="." unique_id=429567959 instance=ExtResource("5_xk5sm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.47282004, 0.9645462, -1.2865866)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.074, -1.268)
 
 [node name="Player" parent="." unique_id=680051660 instance=ExtResource("5_68uxw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.009116352, 1.1329429, 16.254225)
 
 [node name="Mask" parent="." unique_id=2048324369 instance=ExtResource("6_68uxw")]
-transform = Transform3D(1, 0, 0, 0, 0.9659258, -0.25881904, 0, 0.25881904, 0.9659258, 2.3397238, 2.0563793, -1.7815126)
+transform = Transform3D(1, 0, 0, 0, 0.9659258, -0.25881904, 0, 0.25881904, 0.9659258, 2.010107, 2.0563793, -1.7815126)
 
 [node name="World Lighting" type="Node3D" parent="." unique_id=379688612]
 
@@ -59,7 +59,7 @@ light_energy = 0.042
 shadow_enabled = true
 
 [node name="Areas" parent="." unique_id=2018402989 instance=ExtResource("8_uds4v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3965373, 2.25573, -16.312017)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.256, -16.312)
 script = ExtResource("9_vw1ok")
 
 [node name="PauseMenu" parent="." unique_id=525812452 instance=ExtResource("4_35ipm")]
