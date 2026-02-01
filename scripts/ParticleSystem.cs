@@ -1,5 +1,7 @@
 using Godot;
 using System;
+using System.Collections.Generic;
+using Utils;
 
 public partial class ParticleSystem : Node3D
 {
@@ -21,8 +23,35 @@ public partial class ParticleSystem : Node3D
 	// dragon fire ported
 	DragonFireAnimationPorted _dragonFirePorted => _dragonFireNode.GetNode<DragonFireAnimationPorted>("DragonBreathParticleEngine");
 	#endregion
+
+	#region Dragon Sound Nodes
+	private AudioStreamPlayer3D _dragonWingSound1 => GetNode<Node3D>("SoundEffects").GetNode<Node3D>("DragonWings").GetNode<AudioStreamPlayer3D>("Wings1");
+	private AudioStreamPlayer3D _dragonWingSound2 => GetNode<Node3D>("SoundEffects").GetNode<Node3D>("DragonWings").GetNode<AudioStreamPlayer3D>("Wings2");
+	private AudioStreamPlayer3D _dragonWingSound3 => GetNode<Node3D>("SoundEffects").GetNode<Node3D>("DragonWings").GetNode<AudioStreamPlayer3D>("Wings3");
+
+	private AudioStreamPlayer3D _dragonWingSound4 => GetNode<Node3D>("SoundEffects").GetNode<Node3D>("DragonWings").GetNode<AudioStreamPlayer3D>("Wings4");
+	private AudioStreamPlayer3D _dragonWingSound5 => GetNode<Node3D>("SoundEffects").GetNode<Node3D>("DragonWings").GetNode<AudioStreamPlayer3D>("Wings5");
+	private AudioStreamPlayer3D _dragonWingSound6 => GetNode<Node3D>("SoundEffects").GetNode<Node3D>("DragonWings").GetNode<AudioStreamPlayer3D>("Wings6");
+
+	private bool _isFadingIn = false;
+
+	private List<AudioStreamPlayer3D> _wingSounds => new List<AudioStreamPlayer3D>{
+		_dragonWingSound1,
+		_dragonWingSound2,
+		_dragonWingSound3,
+		_dragonWingSound4,
+		_dragonWingSound5,
+		_dragonWingSound6
+	};
+
+	private ulong _lastWingSoundPlayedTime = 0;
+	private int _currentSoundIndex = 0;
+	#endregion
 	public override void _Ready()
 	{
+
+	
+		
 		// initially set the end door particles to on
 		_firstDoorParticles.Emitting = true;
 		_firstDoorParticles.Visible = true;
@@ -37,6 +66,10 @@ public partial class ParticleSystem : Node3D
 	{
 		
 		_dragonFirePorted.HandleAttack(delta);
+		
+		if(_dragonFirePorted.IsDragonAboutToAttack()){
+			PlayDragonWingSound();
+		}
 	}
 
 	public void ToggleDoorParticles(bool wearingMask)
@@ -65,5 +98,58 @@ public partial class ParticleSystem : Node3D
 			}
 		}
 		return false;
+	}
+
+	private void PlayDragonWingSound()
+	{
+
+		// Bail out if the sound should not be played
+		
+		var speedDelta = 350f;
+
+		
+
+		if (!((_lastWingSoundPlayedTime + (500 + speedDelta)) < Time.GetTicksMsec())) { return; }
+		_lastWingSoundPlayedTime = Time.GetTicksMsec();
+
+		var soundIncrease = _dragonFirePorted.isDragonIncoming();
+		var fadedSound = FadeDragonWingSound(soundIncrease, _wingSounds[5]);
+
+
+		// incase I want to randomize sounds later
+		if (_currentSoundIndex > 5)
+		{
+			_currentSoundIndex = 0;
+		}
+	
+		fadedSound.Play();
+		_currentSoundIndex++;
+	}
+
+	private AudioStreamPlayer3D FadeDragonWingSound(bool increasingVolume, AudioStreamPlayer3D sound)
+	{
+		
+		// Fade out the dragon wing sound over time
+		if(increasingVolume)
+		{
+			// fade in
+			if( _isFadingIn ) {
+				return sound;
+			}
+			var tween = CreateTween();
+			_isFadingIn = true;
+			tween.TweenProperty(sound, "volume_db", 1f, 2f);
+			
+		} else {
+			// fade out
+			if( !_isFadingIn ) {
+				return sound;
+			}
+			var tween = CreateTween();
+			_isFadingIn = false;
+			tween.TweenProperty(sound, "volume_db", -30f, 2f);
+			
+		}
+		return sound;
 	}
 }

@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 
 public partial class DragonFireAnimationPorted : GpuParticles3D
 {
@@ -26,6 +27,9 @@ public partial class DragonFireAnimationPorted : GpuParticles3D
 
 	private float _actionCooldown = 15;
 	private float _initalCooldown = 15;
+
+
+	
 
 	public override void _Ready()
 	{
@@ -81,5 +85,22 @@ public partial class DragonFireAnimationPorted : GpuParticles3D
 
 		return timeDifference > 2.2f &&  timeDifference < 8f;
 		
+	}
+
+	public bool ShouldDragonRoar(){
+		// is dragon at _moveStart
+		return _moveStart.Equals(Position);
+	}
+
+	public bool IsDragonAboutToAttack(){
+		
+		return true;
+		
+	}
+
+	public bool isDragonIncoming(){
+		var timeDifference =  _initalCooldown - _actionCooldown;
+		var inWindow =  timeDifference > 11f ||  timeDifference < 4f;
+		return inWindow;
 	}
 }
