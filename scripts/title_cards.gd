@@ -11,6 +11,12 @@ extends Node2D
 
 
 var finished: bool
+
+func _process(delta: float) -> void:
+	#check if "skip" input is pressed
+	if Input.is_action_just_pressed("skip"):
+		get_tree().change_scene_to_file("res://scenes/Main_World.tscn")
+		
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	voicecard1.visible = false

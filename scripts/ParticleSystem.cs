@@ -116,7 +116,7 @@ public partial class ParticleSystem : Node3D
 		var fadedSound = FadeDragonWingSound(soundIncrease, _wingSounds[5]);
 
 
-        // incase I want to randomize sounds later
+		// incase I want to randomize sounds later
 		if (_currentSoundIndex > 5)
 		{
 			_currentSoundIndex = 0;
