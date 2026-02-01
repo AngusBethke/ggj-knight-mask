@@ -25,7 +25,6 @@ public partial class MainMenu : Node2D
 	
 	private void Play()
 	{
-		GetTree().ChangeSceneToFile("res://scenes/Main_World.tscn");
+		GetTree().ChangeSceneToFile("res://ui/menus/Title_Cards.tscn");
 	}
-	
 }
