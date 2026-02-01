@@ -231,7 +231,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6245925, 1.2910198, 0.49932
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3228192, -0.3402363, -0.6424222)
 
 [node name="DragonBreathParticleEngine" type="GPUParticles3D" parent="Particles/DragonFire" unique_id=131187047]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7261589, -8.608634)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7261589, -8.574613)
 amount = 2000
 sub_emitter = NodePath("GPUParticles3D")
 lifetime = 8.0

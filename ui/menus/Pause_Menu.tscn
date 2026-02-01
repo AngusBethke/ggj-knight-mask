@@ -30,6 +30,8 @@ offset_top = 16.0
 offset_right = 1348.0
 offset_bottom = 375.0
 scale = Vector2(0.8, 0.8)
+theme_override_colors/icon_pressed_color = Color(0.49411765, 0.49411765, 0.49411765, 1)
+theme_override_colors/icon_hover_color = Color(0.85490197, 0.85490197, 0.85490197, 1)
 icon = ExtResource("2_nwyik")
 flat = true
 
@@ -40,6 +42,8 @@ offset_top = 380.0
 offset_right = 1348.0
 offset_bottom = 739.0
 scale = Vector2(0.8, 0.8)
+theme_override_colors/icon_pressed_color = Color(0.49411765, 0.49411765, 0.49411765, 1)
+theme_override_colors/icon_hover_color = Color(0.85490197, 0.85490197, 0.85490197, 1)
 icon = ExtResource("3_i8af0")
 flat = true
 
@@ -50,6 +54,8 @@ offset_top = 750.0
 offset_right = 1348.0
 offset_bottom = 1109.0
 scale = Vector2(0.8, 0.8)
+theme_override_colors/icon_pressed_color = Color(0.49411765, 0.49411765, 0.49411765, 1)
+theme_override_colors/icon_hover_color = Color(0.85490197, 0.85490197, 0.85490197, 1)
 icon = ExtResource("4_j6nch")
 flat = true
 

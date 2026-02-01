@@ -38,6 +38,8 @@ offset_top = 474.0
 offset_right = 1331.0
 offset_bottom = 833.0
 scale = Vector2(0.8, 0.8)
+theme_override_colors/icon_pressed_color = Color(0.49411765, 0.49411765, 0.49411765, 1)
+theme_override_colors/icon_hover_color = Color(0.85490197, 0.85490197, 0.85490197, 1)
 icon = ExtResource("2_a0t7b")
 flat = true
 
@@ -48,6 +50,8 @@ offset_top = 769.0
 offset_right = 1329.0
 offset_bottom = 1128.0
 scale = Vector2(0.8, 0.8)
+theme_override_colors/icon_pressed_color = Color(0.49411765, 0.49411765, 0.49411765, 1)
+theme_override_colors/icon_hover_color = Color(0.85490197, 0.85490197, 0.85490197, 1)
 icon = ExtResource("3_iegkc")
 flat = true
 
