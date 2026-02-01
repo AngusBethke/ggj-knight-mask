@@ -8,7 +8,5 @@
 [node name="Decal" type="Decal" parent="." unique_id=504500823]
 texture_albedo = ExtResource("1_md5jy")
 texture_emission = ExtResource("2_fuiq1")
-emission_energy = 3.63
-
-[node name="Decal" type="Decal" parent="Decal" unique_id=71073744]
 emission_energy = 5.0
+normal_fade = 0.5
