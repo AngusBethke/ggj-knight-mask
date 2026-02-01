@@ -20,6 +20,7 @@ sky_material = SubResource("PanoramaSkyMaterial_uds4v")
 [sub_resource type="Environment" id="Environment_vw1ok"]
 background_mode = 2
 sky = SubResource("Sky_s51gr")
+sky_rotation = Vector3(0.45204028, 2.2724187, 0)
 ambient_light_source = 3
 ambient_light_color = Color(0, 0, 0.27450982, 1)
 ambient_light_sky_contribution = 0.1
@@ -53,7 +54,7 @@ transform = Transform3D(1, 0, 0, 0, 0.9659258, -0.25881904, 0, 0.25881904, 0.965
 environment = SubResource("Environment_vw1ok")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="World Lighting" unique_id=664258060]
-transform = Transform3D(1, 0, 0, 0, 0.005585002, -0.9999844, 0, 0.9999844, 0.005585002, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.0055850013, -0.9999843, 0, 0.9999843, 0.0055850013, 0, 0, 0)
 light_color = Color(0.15170373, 0.15170373, 0.58383155, 1)
 light_energy = 0.042
 shadow_enabled = true
