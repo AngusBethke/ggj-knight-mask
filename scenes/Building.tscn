@@ -753,10 +753,10 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0
 [node name="Decals" type="Node3D" parent="." unique_id=982905047]
 
 [node name="FireDecal2" parent="Decals" unique_id=44523945 instance=ExtResource("24_oqawt")]
-transform = Transform3D(-9.272585e-08, 2.1213202, -2.1213202, 9.272585e-08, 2.1213202, 2.1213202, 3, 0, -1.3113416e-07, 5.5410028, 0.5234306, 0.73183334)
+transform = Transform3D(-9.272584e-08, -2.1213202, -2.1213202, -9.2725855e-08, 2.1213202, -2.1213202, 3, 0, -1.3113416e-07, 7.001939, 0.5234306, 0.73183334)
 
 [node name="FireDecal3" parent="Decals" unique_id=1441501327 instance=ExtResource("24_oqawt")]
-transform = Transform3D(2.1213202, 2.1213202, 0, -2.1213202, 2.1213202, 0, 0, 0, 3, 5.253434, 0, -1.9338953)
+transform = Transform3D(2.1213202, -2.1213202, 0, 2.1213202, 2.1213202, 0, 0, 0, 3, 6.3897543, 0, -0.8361002)
 
 [node name="FireDecal" parent="Decals" unique_id=1883392343 instance=ExtResource("24_oqawt")]
-transform = Transform3D(2.1213202, 2.1213202, 0, -2.1213202, 2.1213202, 0, 0, 0, 3, 5.12753, 0, 3.5030775)
+transform = Transform3D(2.1213202, -2.1213202, 0, 2.1213202, 2.1213202, 0, 0, 0, 3, 6.877808, 0, 3.5030775)
