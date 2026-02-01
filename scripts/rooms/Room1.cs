@@ -25,6 +25,8 @@ public partial class Room1 : Node3D
 		_vl4,
 		_vl5
 	};
+
+	private int _playedIndex = 0;
 	#endregion
 
 	public bool IsPlayerInRoomArea(Player player)
@@ -40,14 +42,16 @@ public partial class Room1 : Node3D
 
 	public void PlayVoiceLine()
 	{
-		
-		GD.Randomize();
-		var randomVoiceLine = (int)(GD.Randi() % 5);
+		if(_playedIndex > 4)
+		{
+			_playedIndex = 0;
+		}
 		if (!_voiceLinePlayed)
 		{
-			_voiceLines[randomVoiceLine].Play();
+			_voiceLines[_playedIndex].Play();
 			_voiceLinePlayed = true;
 		}
+		_playedIndex++;
 	}
 
 	public void ResetVoiceLineWhenPlayerLeavesArea(Player player)
