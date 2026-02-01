@@ -17,17 +17,34 @@ public partial class Room1 : Node3D
 	private AudioStreamPlayer3D _vl3 => GetNode<AudioStreamPlayer3D>("VL3");
 	private AudioStreamPlayer3D _vl4 => GetNode<AudioStreamPlayer3D>("VL4");
 	
-	private AudioStreamPlayer3D _vl5 => GetNode<AudioStreamPlayer3D>("VL4");
+	private AudioStreamPlayer3D _vl5 => GetNode<AudioStreamPlayer3D>("VL5");
+
+	private AudioStreamPlayer3D _vl6 => GetNode<AudioStreamPlayer3D>("VL6");
+	private AudioStreamPlayer3D _vl7 => GetNode<AudioStreamPlayer3D>("VL7");
+	private AudioStreamPlayer3D _vl8 => GetNode<AudioStreamPlayer3D>("VL8");
+	
+	private AudioStreamPlayer3D _vl9 => GetNode<AudioStreamPlayer3D>("VL9");
 	private List<AudioStreamPlayer3D> _voiceLines => new List<AudioStreamPlayer3D>{
 		_vl1,
 		_vl2,
 		_vl3,
 		_vl4,
-		_vl5
+		_vl5,
+		_vl6,
+		_vl7,
+		_vl8,
+		_vl9
 	};
 
 	private int _playedIndex = 0;
-	#endregion
+    #endregion
+
+    public override void _Ready()
+    {
+        GD.Randomize();
+		var sessionRandom = GD.Randi() % 9;
+		_playedIndex = (int)sessionRandom;
+    }
 
 	public bool IsPlayerInRoomArea(Player player)
 	{
