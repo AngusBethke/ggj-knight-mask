@@ -335,7 +335,7 @@ public partial class Player : CharacterBody3D
 	
 	public void Shake(float magnitude = 0.1f, float period = 2f)
 	{
-		CameraShakeAsync(magnitude, period);
+		_ =CameraShakeAsync(magnitude, period);
 	}
 
 	 private async Task CameraShakeAsync(float magnitude = 0.1f, float period = 2f)

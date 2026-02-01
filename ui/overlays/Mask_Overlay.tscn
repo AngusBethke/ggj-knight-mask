@@ -1,52 +1,15 @@
 [gd_scene format=3 uid="uid://de8xh8m4oi3sq"]
 
+[ext_resource type="Texture2D" uid="uid://db1ir2mxj2w46" path="res://ui/assets/drop.png" id="1_21jwv"]
+[ext_resource type="Texture2D" uid="uid://ffaoor6rk3qe" path="res://ui/assets/helmet3.png" id="1_goqyt"]
+
 [node name="MaskOverlay" type="Node2D" unique_id=1442896171]
 
-[node name="MainMask" type="ColorRect" parent="." unique_id=920337622]
-offset_right = 1920.0
-offset_bottom = 1080.0
-color = Color(1, 1, 1, 0)
+[node name="Helmet3" type="Sprite2D" parent="." unique_id=1547467484]
+position = Vector2(960, 540)
+texture = ExtResource("1_goqyt")
 
-[node name="Bottom5" type="ColorRect" parent="MainMask" unique_id=1828397180]
-layout_mode = 0
-offset_left = 1699.9999
-offset_top = 1073.0
-offset_right = 2812.4624
-offset_bottom = 1518.7568
-rotation = -1.2356931
-color = Color(0.1254902, 0.09019608, 0.011764706, 1)
-
-[node name="Bottom4" type="ColorRect" parent="MainMask" unique_id=1445008060]
-layout_mode = 0
-offset_left = -179.99994
-offset_top = 1226.0001
-offset_right = 932.46246
-offset_bottom = 1671.7568
-rotation = -1.9198622
-color = Color(0.1254902, 0.09019608, 0.011764706, 1)
-
-[node name="Bottom3" type="ColorRect" parent="MainMask" unique_id=1135874386]
-layout_mode = 0
-offset_left = -143.99995
-offset_top = 52.999985
-offset_right = 968.46246
-offset_bottom = 498.75677
-rotation = -0.34906584
-color = Color(0.12698519, 0.0905926, 0.011122733, 1)
-
-[node name="Bottom2" type="ColorRect" parent="MainMask" unique_id=970304384]
-layout_mode = 0
-offset_left = 1033.0
-offset_top = -319.0
-offset_right = 2145.4624
-offset_bottom = 126.756775
-rotation = 0.34906584
-color = Color(0.1254902, 0.09019608, 0.011764706, 1)
-
-[node name="Top" type="ColorRect" parent="MainMask" unique_id=1229772932]
-layout_mode = 0
-offset_left = 11.0
-offset_top = 778.0
-offset_right = 1931.0
-offset_bottom = 1078.0
-color = Color(0.1254902, 0.09019608, 0.011764706, 1)
+[node name="Drop" type="Sprite2D" parent="." unique_id=801937867]
+position = Vector2(1646, 1004.00006)
+scale = Vector2(0.219213, 0.21921298)
+texture = ExtResource("1_21jwv")
