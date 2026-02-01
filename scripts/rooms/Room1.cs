@@ -42,7 +42,7 @@ public partial class Room1 : Node3D
 
 	public void PlayVoiceLine()
 	{
-		if(_playedIndex > 4)
+		if(_playedIndex > _voiceLines.Count)
 		{
 			_playedIndex = 0;
 		}
