@@ -32,7 +32,7 @@ func _ready() -> void:
 	blackfadeout.visible = true
 	blackfadeout.top_level = true
 	
-	await _fade(254, 20.0)
+	await _fade(254, 5.5)
 	
 	get_tree().change_scene_to_file("res://scenes/Main_World.tscn")
 	
@@ -69,7 +69,7 @@ func _card3() -> void:
 	voiceact3.playing = true
 	voiceactChoirScream.volume_db = -10.0
 	voiceactChoirScream.playing = true
-	_fadeaudio(5.0, 3.0)
+	_fadeaudio(15.0, 8.0)
 	await voiceact3.finished
 
 func _titlecards():
